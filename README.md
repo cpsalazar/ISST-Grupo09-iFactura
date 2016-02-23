@@ -1,2 +1,2 @@
 # ISST-Grupo09-iFactura
-Aplicaciónd e gestión de facturas
+Aplicación de gestión de facturas
