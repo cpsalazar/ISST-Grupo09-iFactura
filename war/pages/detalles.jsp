@@ -42,7 +42,7 @@
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="index.html">iFactura</a>
+			<a class="navbar-brand" href="index.jsp">iFactura</a>
 		</div>
 		<ul class="nav navbar-top-links navbar-right">
 			<!-- /.dropdown -->
@@ -55,7 +55,7 @@
 					<li><a href="#"><i class="fa fa-user fa-fw"></i>Perfil</a></li>
 					<li><a href="#"><i class="fa fa-gear fa-fw"></i>Ajustes</a></li>
 					<li class="divider"></li>
-					<li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
+					<li><a href="login.jsp"><i class="fa fa-sign-out fa-fw"></i>Logout</a></li>
 				</ul> <!-- /.dropdown-user --></li>
 			<!-- /.dropdown -->
 		</ul>
@@ -65,30 +65,30 @@
 					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
 							Año 2016<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="detalles.html">Luz</a></li>
-							<li><a href="index.html">Agua</a></li>
-							<li><a href="index.html">Teléfono</a></li>
+							<li><a href="detalles.jsp">Luz</a></li>
+							<li><a href="index.jsp">Agua</a></li>
+							<li><a href="index.jsp">Teléfono</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
 							Año 2015<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="index.html">Luz</a></li>
-							<li><a href="index.html">Agua</a></li>
-							<li><a href="index.html">Teléfono</a></li>
+							<li><a href="index.jsp">Luz</a></li>
+							<li><a href="index.jsp">Agua</a></li>
+							<li><a href="index.jsp">Teléfono</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
 							Año 2014<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="index.html">Luz</a></li>
-							<li><a href="index.html">Agua</a></li>
-							<li><a href="index.html">Teléfono</a></li>
+							<li><a href="index.jsp">Luz</a></li>
+							<li><a href="index.jsp">Agua</a></li>
+							<li><a href="index.jsp">Teléfono</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
 							Año 2013<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="index.html">Luz</a></li>
-							<li><a href="index.html">Agua</a></li>
-							<li><a href="index.html">Teléfono</a></li>
+							<li><a href="index.jsp">Luz</a></li>
+							<li><a href="index.jsp">Agua</a></li>
+							<li><a href="index.jsp">Teléfono</a></li>
 						</ul> <!-- /.nav-second-level --></li>
 				</ul>
 			</div>

@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">iFactura</a>
+                <a class="navbar-brand" href="index.jsp">iFactura</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -254,7 +254,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="login.jsp"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -277,7 +277,7 @@
                             </div>
                         </li> -->
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Facturas</a>
+                            <a href="index.jsp"><i class="fa fa-dashboard fa-fw"></i> Facturas</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
@@ -355,7 +355,7 @@
                                     <a href="blank.html">Blank Page</a>
                                 </li> -->
                                 <li>
-                                    <a href="login.html">Login Page</a>
+                                    <a href="login.jsp">Login Page</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
