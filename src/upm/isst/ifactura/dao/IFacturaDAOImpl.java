@@ -40,11 +40,41 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 
 	@Override
-	public List<IFactura> getIFactura(String cliente) {
+	public List<IFactura> getIFactura_cliente(String cliente) {
 		EntityManager em = EMFService.get().createEntityManager();
 		Query q = em
 				.createQuery("select t from IFactura t where t.cliente =:cliente");
 						q.setParameter("cliente", cliente);
+		List<IFactura> ifactura = q.getResultList();
+		return ifactura;
+	}
+	
+	@Override
+	public List<IFactura> getIFactura_compania(String compania) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em
+				.createQuery("select t from IFactura t where t.compania =:compania");
+						q.setParameter("compania", compania);
+		List<IFactura> ifactura = q.getResultList();
+		return ifactura;
+	}
+	
+	@Override
+	public List<IFactura> getIFactura_tipo_factura(String tipo_factura) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em
+				.createQuery("select t from IFactura t where t.tipo_factura =:tipo_factura");
+						q.setParameter("tipo_factura", tipo_factura);
+		List<IFactura> ifactura = q.getResultList();
+		return ifactura;
+	}
+	
+	@Override
+	public List<IFactura> getIFactura_franja(String franja) {
+		EntityManager em = EMFService.get().createEntityManager();
+		Query q = em
+				.createQuery("select t from IFactura t where t.franja =:franja");
+						q.setParameter("franja", franja);
 		List<IFactura> ifactura = q.getResultList();
 		return ifactura;
 	}
