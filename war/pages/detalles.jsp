@@ -65,7 +65,7 @@
 					<li><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i>
 							Año 2016<span class="fa arrow"></span></a>
 						<ul class="nav nav-second-level">
-							<li><a href="detalles.jsp">Luz</a></li>
+							<li><a href="index.jsp">Luz</a></li>
 							<li><a href="index.jsp">Agua</a></li>
 							<li><a href="index.jsp">Teléfono</a></li>
 						</ul> <!-- /.nav-second-level --></li>
@@ -104,9 +104,9 @@
 						<table class="table" id="dataTables-example">
 							<tbody>
 								<tr>
-									<td>Factura</td>
-									<td>Factura</td>
-									<td>Factura</td>
+									<td><img alt="Importe total" src="http://www.elementoscomunes.com/wp-content/uploads/2010/09/Factura-Movistar-sep-2010-big.jpg" width="50px" height="50px" style="padding-right: 10px"/><label>	Enero</label></td>
+									<td><img alt="Importe total" src="http://www.elementoscomunes.com/wp-content/uploads/2010/09/Factura-Movistar-sep-2010-big.jpg" width="50px" height="50px" style="padding-right: 10px"/><label>	Febrero</label></td>
+									<td><img alt="Importe total" src="http://www.elementoscomunes.com/wp-content/uploads/2010/09/Factura-Movistar-sep-2010-big.jpg" width="50px" height="50px" style="padding-right: 10px"/><label>	Marzo</label></td>
 								</tr>
 								<tr>
 									<td>Factura</td>
