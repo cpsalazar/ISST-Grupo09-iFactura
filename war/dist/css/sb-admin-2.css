@@ -27,6 +27,14 @@ body {
     }
 }
 
+.form_input {
+	font-size: 12;
+	color: black;
+	border-width: 0;
+	background-color: transparent;
+	text-align: right;
+}
+
 .navbar-top-links {
     margin-right: 0;
 }
