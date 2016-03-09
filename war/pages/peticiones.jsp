@@ -59,7 +59,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="paginaPrincipal.jsp">iFactura</a>
+				<a class="navbar-brand" href="index.jsp">iFactura</a>
 			</div>
 			<!-- /.navbar-header -->
 
@@ -130,7 +130,7 @@
 			<div class="navbar-default sidebar" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
-						<li><a href="paginaPrincipal.jsp"><i
+						<li><a href="index.jsp"><i
 								class="fa fa-dashboard fa-fw"></i> Subastas en curso</a></li>
 						<li><a href="peticiones.jsp"><i
 								class="fa fa-bar-chart-o fa-fw"></i> Petición de subastas</a></li>
