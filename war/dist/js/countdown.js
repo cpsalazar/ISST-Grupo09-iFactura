@@ -1,36 +1,43 @@
-//Codigo que muestra una cuenta atras hasta finalizar el tiempo indicado
-
-//variables que determinan el tital de horas, minutos y segundos para la cuenta atras
-toHour=1;
-toMinute=0;
-toSecond=0;
-
-//cuenta atras
-function countDown()
-{
-	toSecond=toSecond-1;
-	if(toSecond<0)
-	{
-		toSecond=59;
-		toMinute=toMinute-1;
-	}
-	form.second.value=toSecond;
-
-	if(toMinute<0)
-	{
-		toMinute=59;
-		toHour=toHour-1;
-	}
-	form.minute.value=toMinute;
-
-	form.hour.value=toHour;
-	if(toHour<0)
-	{
-		//final
-		form.second.value=0;
-		form.minute.value=0;
-		//form.hour.value=0;
-	}else{
-		setTimeout("countDown()",1000);
-	}
+function getTimeRemaining(endtime) {
+  var t = Date.parse(endtime) - Date.parse(new Date());
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
 }
+
+function initializeClock(id, endtime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
+
+  function updateClock() {
+    var t = getTimeRemaining(endtime);
+
+    daysSpan.innerHTML = t.days + 'd '+ ':';
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2) + 'h ' + ':';
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2) + 'm ' + ':';
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2) + 's ';
+
+    if (t.total <= 0) {
+      clearInterval(timeinterval);
+    }
+  }
+
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
+
+//var deadline = new Date(Date.parse(new Date()) + 1 * 1 * 60 * 60 * 1000);
+var deadline = 'March 11 2016 19:59:59 GMT+02:00';
+
+initializeClock('clockdiv', deadline);

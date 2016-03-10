@@ -27,14 +27,6 @@ body {
     }
 }
 
-.form_input {
-	font-size: 12;
-	color: black;
-	border-width: 0;
-	background-color: transparent;
-	text-align: right;
-}
-
 .navbar-top-links {
     margin-right: 0;
 }
@@ -235,6 +227,12 @@ body {
 .dataTables_wrapper {
     position: relative;
     clear: both;
+}
+
+#dataTables-example{
+  text-align: center; 
+  font-family: sans-serif;
+  font-weight: 100;
 }
 
 table.dataTable thead .sorting,

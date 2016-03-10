@@ -43,7 +43,7 @@
 	rel="stylesheet" type="text/css">
 </head>
 
-<body onload="countDown();">
+<body>
 
 	<div id="wrapper">
 
@@ -129,14 +129,14 @@
 			<div class="navbar-default sidebar" role="navigation">
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
-						<li><a href="index.jsp"><i
-								class="fa fa-dashboard fa-fw"></i> Subastas en curso</a></li>
+						<li><a href="index.jsp"><i class="fa fa-dashboard fa-fw"></i>
+								Subastas en curso</a></li>
 						<li><a href="peticiones.jsp"><i
 								class="fa fa-bar-chart-o fa-fw"></i> Petición de subastas</a></li>
 						<!--<li>
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li> -->
-						<li><a href="#"><i class="fa fa-edit fa-fw"></i>
+						<li><a href="historial.jsp"><i class="fa fa-edit fa-fw"></i>
 								Historial de subastas</a></li>
 						<li><a href="#"><i class="fa fa-files-o fa-fw"></i>
 								Sample Pages<span class="fa arrow"></span></a>
@@ -172,222 +172,104 @@
 									id="dataTables-example">
 									<thead>
 										<tr>
-											<th>Nombre</th>
+											<th>Nº Subasta</th>
+											<th>Nº Usuarios</th>
 											<th>Finaliza en</th>
 											<th>Puja actual</th>
+											<th>Ganador actual</th>
 											<th>Tu puja</th>
+
 										</tr>
 									</thead>
 									<tbody>
+									<tr class="odd gradeX">
+											<td>7</td>
+											<td>200</td>
+											<td>
+												<div id="clockdiv">
+													<div>
+														<span class="days"></span> <span class="hours"></span> <span
+															class="minutes"></span> <span class="seconds"></span>
+													</div>
+												</div>
+											</td>
+											<td>10</td>
+											<td>Yoigo</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
+										</tr>
 										<tr class="odd gradeX">
-
-											<td></td>
-											<td><form name="form">
-													<input type="text" size="1" class="form_input" name="hour"
-														disabled>: <input type="text" size="1"
-														class="form_input" name="minute" disabled>: <input
-														type="text" size="1" class="form_input" name="second"
-														disabled>
-												</form></td>
-											<td></td>
-											<td><input type="number" class="form-control" placeholder="Introduzca puja"><input type="submit" class="btn btn-primary" value="Enviar"></td>
+											<td>6</td>
+											<td>190</td>
+											<td>
+												0d : 05h : 13m : 40s
+											</td>
+											<td>12</td>
+											<td>Orange</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>5</td>
+											<td>240</td>
+											<td>
+												0d : 12h : 53m : 20s
+											</td>
+											<td>14</td>
+											<td>Vodafone</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>4</td>
+											<td>180</td>
+											<td>
+												4d : 01h : 32m : 20s
+											</td>
+											<td>15</td>
+											<td>Movistar</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>3</td>
+											<td>350</td>
+											<td>
+												2d : 12h : 43m : 50s
+											</td>
+											<td>12</td>
+											<td>Vodafone</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
+										</tr>
+										<tr class="odd gradeX">
+											<td>2</td>
+											<td>450</td>
+											<td>
+												0d : 07h : 21m : 32s
+											</td>
+											<td>17</td>
+											<td>Movistar</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
 										</tr>
 										<tr class="even gradeC">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="odd gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="even gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="odd gradeA">
-
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="even gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
-										</tr>
-										<tr class="gradeA">
-
-											<td></td>
-											<td></td>
-											<td></td>
-											<td></td>
+											<td>1</td>
+											<td>220</td>
+											<td>
+												1d : 02h : 43m : 20s
+											</td>
+											<td>11</td>
+											<td>Yoigo</td>
+											<td><input type="number" class="form-control"
+												placeholder="Introduzca puja"><input type="submit"
+												class="btn btn-primary" value="Enviar"></td>
 										</tr>
 									</tbody>
 								</table>
