@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import com.google.appengine.api.datastore.Key;
 
 @Entity
 public class IFactura implements Serializable {
@@ -12,7 +13,8 @@ public class IFactura implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Key id;
+	
 	private String cliente;
 	private String dni;
 	private String compania;
