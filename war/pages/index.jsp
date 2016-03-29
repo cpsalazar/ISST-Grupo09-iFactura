@@ -266,9 +266,12 @@
                         </td>
                         <td class=" ">10</td>
                         <td class=" ">Yoigo</td>
-                        <td><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
                       <tr class="odd pointer">
                         <td class="a-center ">
@@ -280,9 +283,12 @@
                         </td>
                         <td class=" ">12</td>
                         <td class=" ">Orange</td>
-                        <td class="a-right a-right "><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
                       <tr class="even pointer">
                         <td class="a-center ">
@@ -294,9 +300,12 @@
                         </td>
                         <td class=" ">15</td>
                         <td class=" ">Movistar</td>
-                        <td class="a-right a-right "><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
                       <tr class="odd pointer">
                         <td class="a-center ">
@@ -308,9 +317,12 @@
                         </td>
                         <td class=" ">14</td>
                         <td class=" ">Vodafone</td>
-                        <td class="a-right a-right "><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
                       <tr class="even pointer">
                         <td class="a-center ">
@@ -322,9 +334,12 @@
                         </td>
                         <td class=" ">12</td>
                         <td class=" ">Vodafone</td>
-                        <td class="a-right a-right "><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
                       <tr class="odd pointer">
                         <td class="a-center ">
@@ -336,9 +351,12 @@
                         </td>
                         <td class=" ">17</td>
                         <td class=" ">Movistar</td>
-                        <td class="a-right a-right "><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
                       <tr class="even pointer">
                         <td class="a-center ">
@@ -350,9 +368,12 @@
                         </td>
                         <td class=" ">11</td>
                         <td class=" ">Yoigo</td>
-                        <td class="a-right a-right "><input type="number" class="form-control"
-												placeholder="Introduzca puja"><input type="submit"
-												class="btn btn-primary" value="Enviar"></td>
+                        <td class="a-right a-right ">
+                        	<div class="div-form">
+                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+                        	</div>
+                        </td>
                       </tr>
   
                     </tbody>
