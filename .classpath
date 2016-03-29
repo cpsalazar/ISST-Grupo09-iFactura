@@ -7,6 +7,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/hector/workspace/ISST-Grupo09-iFactura/lib/h2-1.4.191.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>

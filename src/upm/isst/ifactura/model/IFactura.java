@@ -35,7 +35,7 @@ public class IFactura implements Serializable {
 		pagos = true;
 	}
 	
-	public Long getId() {
+	public Key getId() {
 		return id;
 	}
 	
