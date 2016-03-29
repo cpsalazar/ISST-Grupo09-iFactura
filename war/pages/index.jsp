@@ -32,6 +32,10 @@
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/nprogress.js"></script>
+  <script src="../js/jquery-numeric.js"></script>
+  <script>
+	$(".numeric").numeric();
+  </script>
 
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -268,7 +272,7 @@
                         <td class=" ">Yoigo</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
@@ -285,7 +289,7 @@
                         <td class=" ">Orange</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
@@ -302,7 +306,7 @@
                         <td class=" ">Movistar</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
@@ -319,7 +323,7 @@
                         <td class=" ">Vodafone</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
@@ -336,7 +340,7 @@
                         <td class=" ">Vodafone</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
@@ -353,7 +357,7 @@
                         <td class=" ">Movistar</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
@@ -370,7 +374,7 @@
                         <td class=" ">Yoigo</td>
                         <td class="a-right a-right ">
                         	<div class="div-form">
-                        		<input type="number" class="form-control" placeholder="Introduzca puja">
+                        		<input type="number" class="form-control numeric" placeholder="Introduzca puja">
                         		<input type="submit" class="btn btn-primary btn-form" value="Enviar">
                         	</div>
                         </td>
