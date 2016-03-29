@@ -2432,8 +2432,6 @@ span.section {
 
 .form-control {
     border-radius: 0;
-    line-height: 30px;
-    width: 100%;
 }
 
 .form-horizontal .control-label {
@@ -2451,6 +2449,17 @@ legend {
 }
 
 .checkbox {}
+
+.div-form {
+    position: relative;
+}
+
+.btn-form {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
 
 .form-horizontal .form-group {
     margin-right: 0;
@@ -2481,6 +2490,15 @@ legend {
 
 .form-control.has-feedback-right {
     padding-right: 45px;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 .form-group {
