@@ -32,10 +32,6 @@
 
   <script src="../js/jquery.min.js"></script>
   <script src="../js/nprogress.js"></script>
-  <script src="../js/jquery-numeric.js"></script>
-  <script>
-	$(".numeric").numeric();
-  </script>
 
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -296,7 +292,7 @@
                       </tr>
                       <tr class="even pointer">
                         <td class="a-center ">
-                          <input type="checkbox" checked class="tableflat">
+                          <input type="checkbox" class="tableflat">
                         </td>
                         <td class=" ">5</td>
                         <td class=" ">240</td>
@@ -945,6 +941,10 @@
       });
       window.prettyPrint && prettyPrint();
     });
+  </script>
+   <script src="../js/jquery-numeric.js"></script>
+  <script>
+	$(".numeric").numeric();
   </script>
   <!-- /footer content -->
 </body>
