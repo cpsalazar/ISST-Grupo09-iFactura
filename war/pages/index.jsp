@@ -3,7 +3,6 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <%@page isELIgnored="false"%>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,21 +16,10 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../fonts/css/font-awesome.min.css" rel="stylesheet">
 	<link href="../css/animate.min.css" rel="stylesheet">
-	<!-- Custom styling plus plugins -->
+	<!-- Custom CSS -->
 	<link href="../css/custom.css" rel="stylesheet">
 	<link href="../css/icheck/flat/green.css" rel="stylesheet" />
 	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
-	<!-- jQuery -->
-	<script src="../js/jquery.min.js"></script>
-	<script src="../js/nprogress.js"></script>
-	<!--[if lt IE 9]>
-	<script src="../assets/js/ie8-responsive-file-warning.js"></script>
-	<![endif]-->
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
 </head>
 <body class="nav-md">
 	<div class="container body">
@@ -184,5 +172,6 @@
 			<div id="notif-group" class="tabbed_notifications"></div>
 		</div>
 		<%@ include file="scripts.jsp" %>
-	</body>
+	</div>
+</body>
 </html>

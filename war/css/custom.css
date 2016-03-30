@@ -1346,8 +1346,16 @@ table.countries_list td {
 
 .dataTables_paginate a {
     padding: 6px 9px !important;
-    background: #ddd !important;
-    border-color: #ddd !important;
+    color: white;
+    background: #1ABB9C !important;
+    border-color: #1ABB9C !important;
+}
+
+.dataTables_paginate a:hover {
+    padding: 6px 9px !important;
+    color: white;
+    background: #17A68B !important;
+    border-color: #17A68B !important;
 }
 
 .paging_full_numbers a.paginate_active {
@@ -1426,7 +1434,6 @@ table.jambo_table tbody tr.selected td {
 }
 
 .dataTables_info {
-    width: 60%;
     float: left;
 }
 
@@ -2434,6 +2441,10 @@ span.section {
     border-radius: 0;
 }
 
+#peticion-subasta .form-control {
+	width: 100%;
+}
+
 .form-horizontal .control-label {
     padding-top: 8px
 }
@@ -2441,6 +2452,10 @@ span.section {
 .form-control:focus {
     border-color: #CCD0D7;
     box-shadow: none !important;
+}
+
+#example_filter input {
+	margin-left: 10px;
 }
 
 legend {
@@ -2461,6 +2476,16 @@ legend {
     margin: 0;
     background-color: #1ABB9C;
   	border-color: #1ABB9C;
+}
+
+.btn-form:hover,
+.btn-form:focus,
+.btn-form:active,
+.btn-form.active,
+.open .dropdown-toggle.btn-form {
+    background-color: #17A68B;
+    border-color: #17A68B;
+    color: #FFFFFF;
 }
 
 .form-horizontal .form-group {
@@ -3991,11 +4016,18 @@ html > body > .ui-pnotify {
 
 .btn.btn-outline {
     background: transparent;
+    
 }
 
 .btn-primary.btn-outline {
     color: #1A82C3;
     border-width: 2px;
+}
+
+.btn-primary {
+	background-color: #1ABB9C;
+    border-color: #1ABB9C;
+    color: #FFFFFF;
 }
 
 .btn-default.btn-outline {
@@ -4083,8 +4115,8 @@ html > body > .ui-pnotify {
 .btn-primary:active,
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
-    background-color: #1479B8;
-    border-color: #1479B8;
+    background-color: #17A68B;
+    border-color: #17A68B;
     color: #FFFFFF;
 }
 

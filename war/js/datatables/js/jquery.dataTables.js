@@ -11271,7 +11271,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "Primera",
 	
 	
 				/**
@@ -11294,7 +11294,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Última",
 	
 	
 				/**
@@ -11317,7 +11317,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sNext": "Next",
+				"sNext": "Siguiente",
 	
 	
 				/**
@@ -11340,7 +11340,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sPrevious": "Previous"
+				"sPrevious": "Anterior"
 			},
 	
 			/**
@@ -11381,7 +11381,7 @@
 			 * * `\_PAGES\_` - Total number of pages of data in the table
 			 *
 			 *  @type string
-			 *  @default Showing _START_ to _END_ of _TOTAL_ entries
+			 *  @default Mostrando de la subasta _START_ a la _END_ de un total de _TOTAL_ subastas
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.info
@@ -11390,12 +11390,12 @@
 			 *    $(document).ready( function() {
 			 *      $('#example').dataTable( {
 			 *        "language": {
-			 *          "info": "Showing page _PAGE_ of _PAGES_"
+			 *          "info": "Mostrando página _PAGE_ of _PAGES_"
 			 *        }
 			 *      } );
 			 *    } );
 			 */
-			"sInfo": "Showing _START_ to _END_ of _TOTAL_ entries",
+			"sInfo": "Mostrando de la subasta _START_ a la _END_ de un total de _TOTAL_ subastas",
 	
 	
 			/**
@@ -11524,7 +11524,7 @@
 			 * with a default select list of 10, 25, 50 and 100, and can be replaced
 			 * with a custom select box if required.
 			 *  @type string
-			 *  @default Show _MENU_ entries
+			 *  @default Mostrar _MENU_ subastas por página
 			 *
 			 *  @dtopt Language
 			 *  @name DataTable.defaults.language.lengthMenu
@@ -11556,7 +11556,7 @@
 			 *      } );
 			 *    } );
 			 */
-			"sLengthMenu": "Show _MENU_ entries",
+			"sLengthMenu": "Mostrar _MENU_ subastas por página",
 	
 	
 			/**

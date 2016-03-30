@@ -1,11 +1,116 @@
-<!-- scripts -->
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/progressbar/bootstrap-progressbar.min.js"></script>
+<!--[if lt IE 9]>
+	<script src="../assets/js/ie8-responsive-file-warning.js"></script>
+<![endif]-->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- jQuery -->
+<script src="../js/jquery.min.js"></script>
 <script src="../js/nicescroll/jquery.nicescroll.min.js"></script>
+<script src="../js/jquery-numeric.js"></script>
+<script>$(".numeric").numeric();</script>
+<!-- Bootstrap -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/nprogress.js"></script>
+<script src="../js/progressbar/bootstrap-progressbar.min.js"></script>
 <script src="../js/icheck/icheck.min.js"></script>
-<script type="text/javascript" src="../js/moment/moment.min.js"></script>
-<script type="text/javascript" src="../js/datepicker/daterangepicker.js"></script>
+<script src="../js/moment/moment.min.js"></script>
+<script src="../js/datepicker/daterangepicker.js"></script>
 <script src="../js/custom.js"></script>
+<!-- Form validation -->
+<script type="text/javascript" src="../js/parsley/parsley.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.listen('parsley:field:validate', function() {
+			validateFront();
+		});
+		$('#demo-form .btn').on('click', function() {
+			$('#demo-form').parsley().validate();
+			validateFront();
+		});
+		var validateFront = function() {
+			if (true === $('#demo-form').parsley().isValid()) {
+				$('.bs-callout-info').removeClass('hidden');
+				$('.bs-callout-warning').addClass('hidden');
+			} else {
+				$('.bs-callout-info').addClass('hidden');
+				$('.bs-callout-warning').removeClass('hidden');
+			}
+		};
+	});
+	$(document).ready(function() {
+		$.listen('parsley:field:validate', function() {
+			validateFront();
+		});
+		$('#demo-form2 .btn').on('click', function() {
+			$('#demo-form2').parsley().validate();
+			validateFront();
+		});
+		var validateFront = function() {
+			if (true === $('#demo-form2').parsley().isValid()) {
+				$('.bs-callout-info').removeClass('hidden');
+				$('.bs-callout-warning').addClass('hidden');
+			} else {
+				$('.bs-callout-info').addClass('hidden');
+				$('.bs-callout-warning').removeClass('hidden');
+			}
+		};
+	});
+	try {
+		hljs.initHighlightingOnLoad();
+	} catch (err) {}
+</script>
+<!-- Buscador -->
+<script>
+	$(document).ready(function() {
+		$('input.tableflat').iCheck({
+			checkboxClass: 'icheckbox_flat-green',
+			radioClass: 'iradio_flat-green'
+		});
+	});
+	var asInitVals = new Array();
+	$(document).ready(function() {
+		var oTable = $('#example').dataTable({
+			"oLanguage": {
+				"sSearch": "Buscar:"
+			},
+			"aoColumnDefs": [{
+				'bSortable': false,
+				'aTargets': [0]
+				} //disables sorting for column one
+				],
+				'iDisplayLength': 12,
+				"sPaginationType": "full_numbers",
+				"dom": 'T<"clear">lfrtip',
+				"tableTools": {
+					"sSwfPath": "js/datatables/tools/swf/copy_csv_xls_pdf.swf"
+				}
+			});
+		$("tfoot input").keyup(function() {
+			/* Filter on the column based on the index of this element's parent <th> */
+			oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+		});
+		$("tfoot input").each(function(i) {
+			asInitVals[i] = this.value;
+		});
+		$("tfoot input").focus(function() {
+			if (this.className == "search_init") {
+				this.className = "";
+				this.value = "";
+			}
+		});
+		$("tfoot input").blur(function(i) {
+			if (this.value == "") {
+				this.className = "search_init";
+				this.value = asInitVals[$("tfoot input").index(this)];
+			}
+		});
+	});
+</script>
+
 <script>
 	$(document).ready(function() {
 		// [17, 74, 6, 39, 20, 85, 7]
@@ -19,7 +124,6 @@
 			[gd(2012, 1, 6), 85],
 			[gd(2012, 1, 7), 7]
 		];
-
 		var data2 = [
 			[gd(2012, 1, 1), 82],
 			[gd(2012, 1, 2), 23],
@@ -81,23 +185,9 @@
 			}
 	});
 </script>
-<script src="../js/pace/pace.min.js"></script>
-<script src="../js/skycons/skycons.min.js"></script>
-<script>
-	var icons = new Skycons({
-		"color": "#73879C"
-	}),
-	list = [
-	"clear-day", "clear-night", "partly-cloudy-day",
-	"partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-	"fog"
-	],
-	i;
-	for (i = list.length; i--;)
-		icons.set(list[i], list[i]);
-	icons.play();
-</script>
+
 <script src="../js/datatables/js/jquery.dataTables.js"></script>
+
 <!-- datepicker -->
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -169,92 +259,23 @@
 		});
 	});
 </script>
+
 <script>NProgress.done();</script>
-<!-- /datepicker -->
-<!-- bootstrap progress js -->
-<script src="../js/progressbar/bootstrap-progressbar.min.js"></script>
-<script src="../js/nicescroll/jquery.nicescroll.min.js"></script>
-<script src="../js/icheck/icheck.min.js"></script>
-<script src="../js/custom.js"></script>
-<!-- pace -->
-<script src="../js/pace/pace.min.js"></script>
-<script>
-	$(document).ready(function() {
-		$('input.tableflat').iCheck({
-			checkboxClass: 'icheckbox_flat-green',
-			radioClass: 'iradio_flat-green'
-		});
-	});
-	var asInitVals = new Array();
-	$(document).ready(function() {
-		var oTable = $('#example').dataTable({
-			"oLanguage": {
-				"sSearch": "Search all columns:"
-			},
-			"aoColumnDefs": [{
-				'bSortable': false,
-				'aTargets': [0]
-				} //disables sorting for column one
-				],
-				'iDisplayLength': 12,
-				"sPaginationType": "full_numbers",
-				"dom": 'T<"clear">lfrtip',
-				"tableTools": {
-					"sSwfPath": "js/datatables/tools/swf/copy_csv_xls_pdf.swf"
-				}
-			});
-		$("tfoot input").keyup(function() {
-			/* Filter on the column based on the index of this element's parent <th> */
-			oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
-		});
-		$("tfoot input").each(function(i) {
-			asInitVals[i] = this.value;
-		});
-		$("tfoot input").focus(function() {
-			if (this.className == "search_init") {
-				this.className = "";
-				this.value = "";
-			}
-		});
-		$("tfoot input").blur(function(i) {
-			if (this.value == "") {
-				this.className = "search_init";
-				this.value = asInitVals[$("tfoot input").index(this)];
-			}
-		});
-	});
-</script>
-<script src="../js/bootstrap.min.js"></script>
-<!-- bootstrap progress js -->
-<script src="../js/progressbar/bootstrap-progressbar.min.js"></script>
-<script src="../js/nicescroll/jquery.nicescroll.min.js"></script>
-<!-- icheck -->
-<script src="../js/icheck/icheck.min.js"></script>
+
 <!-- tags -->
 <script src="../js/tags/jquery.tagsinput.min.js"></script>
 <!-- switchery -->
 <script src="../js/switchery/switchery.min.js"></script>
-<!-- daterangepicker -->
-<script type="text/javascript" src="../js/moment/moment.min.js"></script>
-<script type="text/javascript" src="../js/datepicker/daterangepicker.js"></script>
 <!-- richtext editor -->
 <script src="../js/editor/bootstrap-wysiwyg.js"></script>
 <script src="../js/editor/external/jquery.hotkeys.js"></script>
 <script src="../js/editor/external/google-code-prettify/prettify.js"></script>
-<!-- select2 -->
-<script src="../js/select/select2.full.js"></script>
-<!-- form validation -->
-<script type="text/javascript" src="../js/parsley/parsley.min.js"></script>
 <!-- textarea resize -->
 <script src="../js/textarea/autosize.min.js"></script>
-<script>
-	autosize($('.resizable_textarea'));
-</script>
+<script>autosize($('.resizable_textarea'));</script>
 <!-- Autocomplete -->
 <script type="text/javascript" src="../js/autocomplete/countries.js"></script>
 <script src="../js/autocomplete/jquery.autocomplete.js"></script>
-<!-- pace -->
-<script src="../js/pace/pace.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		'use strict';
@@ -268,22 +289,6 @@
 		$('#autocomplete-custom-append').autocomplete({
 			lookup: countriesArray,
 			appendTo: '#autocomplete-container'
-		});
-	});
-</script>
-<script src="../js/custom.js"></script>
-<!-- select2 -->
-<script>
-	$(document).ready(function() {
-		$(".select2_single").select2({
-			placeholder: "Select a state",
-			allowClear: true
-		});
-		$(".select2_group").select2({});
-		$(".select2_multiple").select2({
-			maximumSelectionLength: 4,
-			placeholder: "With Max Selection limit 4",
-			allowClear: true
 		});
 	});
 </script>
@@ -303,48 +308,6 @@
 			width: 'auto'
 		});
 	});
-</script>
-<!-- form validation -->
-<script type="text/javascript">
-	$(document).ready(function() {
-		$.listen('parsley:field:validate', function() {
-			validateFront();
-		});
-		$('#demo-form .btn').on('click', function() {
-			$('#demo-form').parsley().validate();
-			validateFront();
-		});
-		var validateFront = function() {
-			if (true === $('#demo-form').parsley().isValid()) {
-				$('.bs-callout-info').removeClass('hidden');
-				$('.bs-callout-warning').addClass('hidden');
-			} else {
-				$('.bs-callout-info').addClass('hidden');
-				$('.bs-callout-warning').removeClass('hidden');
-			}
-		};
-	});
-	$(document).ready(function() {
-		$.listen('parsley:field:validate', function() {
-			validateFront();
-		});
-		$('#demo-form2 .btn').on('click', function() {
-			$('#demo-form2').parsley().validate();
-			validateFront();
-		});
-		var validateFront = function() {
-			if (true === $('#demo-form2').parsley().isValid()) {
-				$('.bs-callout-info').removeClass('hidden');
-				$('.bs-callout-warning').addClass('hidden');
-			} else {
-				$('.bs-callout-info').addClass('hidden');
-				$('.bs-callout-warning').removeClass('hidden');
-			}
-		};
-	});
-	try {
-		hljs.initHighlightingOnLoad();
-	} catch (err) {}
 </script>
 <!-- editor -->
 <script>
@@ -407,8 +370,4 @@
 		});
 		window.prettyPrint && prettyPrint();
 	});
-</script>
-<script src="../js/jquery-numeric.js"></script>
-<script>
-	$(".numeric").numeric();
 </script>

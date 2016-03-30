@@ -1,3 +1,4 @@
+<%@page pageEncoding="utf8"%>
 <div class="col-md-3 left_col">
 	<div class="left_col scroll-view">
 		<div class="navbar nav_title" style="border: 0;">
@@ -11,7 +12,7 @@
 			</div>
 			<div class="profile_info">
 				<span>Bienvenido,</span>
-				<h2>Andrés Menéndez</h2>
+				<h2>AndrÃ©s MenÃ©ndez</h2>
 			</div>
 		</div>
 		<br/>
@@ -20,25 +21,10 @@
 			<div class="menu_section">
 				<ul class="nav side-menu">
 					<li><a href="index.jsp"><i class="fa fa-table"></i> Subastas en curso <span class="fa fa-chevron-down"></span></a></li>
-					<li><a href="peticiones.jsp"><i class="fa fa-edit"></i> Petición de subastas <span class="fa fa-chevron-down"></span></a></li>
+					<li><a href="peticiones.jsp"><i class="fa fa-edit"></i> PeticiÃ³n de subastas <span class="fa fa-chevron-down"></span></a></li>
 					<li><a href="historial.jsp"><i class="fa fa-bar-chart-o"></i> Historial de subastas <span class="fa fa-chevron-down"></span></a></li>
 				</ul>
 			</div>
-		</div>
-		<!-- /menu footer buttons -->
-		<div class="sidebar-footer hidden-small">
-			<a data-toggle="tooltip" data-placement="top" title="Settings">
-				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-			</a>
-			<a data-toggle="tooltip" data-placement="top" title="FullScreen">
-				<span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-			</a>
-			<a data-toggle="tooltip" data-placement="top" title="Lock">
-				<span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-			</a>
-			<a data-toggle="tooltip" data-placement="top" title="Logout">
-				<span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-			</a>
 		</div>
 	</div>
 </div>
@@ -52,14 +38,14 @@
 			<ul class="nav navbar-nav navbar-right">
 				<li class="">
 					<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-						<img src="../images/img.jpg" alt="">Andrés Menéndez
+						<img src="../images/img.jpg" alt="">AndrÃ©s MenÃ©ndez
 						<span class=" fa fa-angle-down"></span>
 					</a>
 					<ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
 						<li><a href="javascript:;">Perfil</a></li>
 						<li><a href="javascript:;"><span>Ajustes</span></a></li>
 						<li><a href="javascript:;">Ayuda</a></li>
-						<li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
+						<li><a href="login.jsp"><i class="fa fa-sign-out pull-right"></i> Salir</a></li>
 					</ul>
 				</li>
 				<li role="presentation" class="dropdown">
@@ -72,8 +58,8 @@
 							<a>
 								<span class="image"><img src="../images/img.jpg" alt="Profile Image" /></span>
 								<span>
-									<span>John Smith</span>
-									<span class="time">3 mins ago</span>
+									<span>AndrÃ©s MenÃ©ndez</span>
+									<span class="time">Hace 3 minutos</span>
 								</span>
 								<span class="message">Film festivals used to be do-or-die moments for movie makers. They were where...</span>
 							</a>
@@ -82,8 +68,8 @@
 							<a>
 								<span class="image"><img src="../images/img.jpg" alt="Profile Image" /></span>
 								<span>
-									<span>John Smith</span>
-									<span class="time">3 mins ago</span>
+									<span>AndrÃ©s MenÃ©ndez</span>
+									<span class="time">Hace 8 minutos</span>
 								</span>
 								<span class="message">Film festivals used to be do-or-die moments for movie makers. They were where...</span>
 							</a>
