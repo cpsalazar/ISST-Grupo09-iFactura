@@ -878,7 +878,8 @@ li.current-page a {
 .x_content canvas {}
 
 footer {
-    background: #fff;
+	color: white;
+    background: #1ABB9C;
     padding: 5px 20px 0;
     height: 45px;
     margin: 0 -17px;
@@ -2459,6 +2460,8 @@ legend {
     top: 0;
     right: 0;
     margin: 0;
+    background-color: #1ABB9C;
+  	border-color: #1ABB9C;
 }
 
 .form-horizontal .form-group {
