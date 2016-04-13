@@ -24,13 +24,13 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			req.getSession().setAttribute("user", user);
 			req.getSession().setAttribute("url", url);
 			req.getSession().setAttribute("urlLinktext", urlLinktext);
-			RequestDispatcher view = req.getRequestDispatcher("pages/index.jsp");
+			RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
 			view.forward(req, resp);
 		} else {
 			req.getSession().setAttribute("user", user);
 			req.getSession().setAttribute("url", url);
 			req.getSession().setAttribute("urlLinktext", urlLinktext);
-			RequestDispatcher view = req.getRequestDispatcher("pages/login.jsp");
+			RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
 			view.forward(req, resp);
 		}
 	}
