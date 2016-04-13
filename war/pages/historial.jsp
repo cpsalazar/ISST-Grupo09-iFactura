@@ -22,6 +22,7 @@
 	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="nav-md">
+	<c:if test="${user != null}">
 	<div class="container body">
 		<div class="main_container">
 			<%@ include file="menu.jsp" %>
@@ -116,6 +117,14 @@
 		<div class="clearfix"></div>
 		<div id="notif-group" class="tabbed_notifications"></div>
 	</div>
+	</c:if>
+	<c:if test="${user == null}">
+		<br>
+		<p>
+			No estas registrado en el sistema, puedes pulsar el siguiente enlace para registrarte
+			<a href="<c:url value="${url}"/>"><c:out value="${urlLinktext}" /></a>
+		</p>
+	</c:if>
  <%@ include file="scripts.jsp" %>
 </body>
 </html>

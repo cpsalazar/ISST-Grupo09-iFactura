@@ -1,97 +1,75 @@
 package upm.isst.ifactura.model;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import com.google.appengine.api.datastore.Key;
 
 @Entity
 public class IFactura implements Serializable {
 	
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 01L;
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Key id;
+	private int id;
+	private int numUsuarios;
+	private Date fechaFin;
+	private int pujaActual;
+	private String ganadorActual;
 	
-	private String cliente;
-	private String dni;
-	private String compania;
-	private String tipo_factura;
-	private String franja;
-	private double datos;
-	private double telefono;
-	boolean pagos;
-	
-	public IFactura(String cliente, String dni, String compania, String tipo_factura, String franja, double datos, double telefono) {
-		this.cliente = cliente;
-		this.dni = dni;
-		this.compania = compania;
-		this.tipo_factura = tipo_factura;
-		this.franja = franja;
-		this.datos = datos;
-		this.telefono = telefono;
-		pagos = true;
+	public IFactura(int id, int numUsuarios, Date fechaFin, int pujaActual, String ganadorActual) {
+		super();
+		this.id = id;
+		this.numUsuarios = numUsuarios;
+		this.fechaFin = fechaFin;
+		this.pujaActual = pujaActual;
+		this.ganadorActual = ganadorActual;
 	}
-	
-	public Key getId() {
+
+	public int getId() {
 		return id;
 	}
-	
-	public String getCliente() {
-		return cliente;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public void setCliente(String cliente) {
-		this.cliente = cliente;
+
+	public int getNumUsuarios() {
+		return numUsuarios;
 	}
-	
-	public String getDni() {
-		return dni;
+
+	public void setNumUsuarios(int numUsuarios) {
+		this.numUsuarios = numUsuarios;
 	}
-	public void setDni(String dni) {
-		this.dni = dni;
+
+	public Date getFechaFin() {
+		return fechaFin;
 	}
-	
-	public String getCompania() {
-		return compania;
+
+	public void setFechaFin(Date fechaFin) {
+		this.fechaFin = fechaFin;
 	}
-	public void setCompania(String compania) {
-		this.compania = compania;
+
+	public int getPujaActual() {
+		return pujaActual;
 	}
-	
-	public String getTipo_factura() {
-		return tipo_factura;
+
+	public void setPujaActual(int pujaActual) {
+		this.pujaActual = pujaActual;
 	}
-	public void setTipo_factura(String tipo_factura) {
-		this.tipo_factura = tipo_factura;
+
+	public String getGanadorActual() {
+		return ganadorActual;
 	}
-	
-	public String getFranja() {
-		return franja;
+
+	public void setGanadorActual(String ganadorActual) {
+		this.ganadorActual = ganadorActual;
 	}
-	public void setFranja(String franja) {
-		this.franja = franja;
-	}
-	
-	public double getDatos() {
-		return datos;
-	}
-	public void setDatos(double datos) {
-		this.datos = datos;
-	}
-	
-	public double getTelefono() {
-		return telefono;
-	}
-	public void setTelefono(double telefono) {
-		this.telefono = telefono;
-	}
-	
-	public boolean haPagado() {
-		return pagos;
-	}
-	public void setPago(boolean pagos) {
-		this.pagos = pagos;
+
+	@Override
+	public String toString() {
+		return "IFactura [id=" + id + ", numUsuarios=" + numUsuarios
+				+ ", fechaFin=" + fechaFin + ", pujaActual=" + pujaActual
+				+ ", ganadorActual=" + ganadorActual + "]";
 	}
 }

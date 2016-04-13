@@ -1,8 +1,11 @@
 package upm.isst.ifactura.dao;
 
+import java.util.Date;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
 import upm.isst.ifactura.model.IFactura;
 
 public class IFacturaDAOImpl implements IFacturaDAO {
@@ -10,93 +13,100 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	private static IFacturaDAOImpl instance;
 	
 	private IFacturaDAOImpl() {
-		
 	}
 	
-	public static IFacturaDAOImpl getInstance(){
+	public static IFacturaDAOImpl getInstance() {
 		if (instance == null)
 			instance = new IFacturaDAOImpl();
 		return instance;
 	}
-
-	@Override
-	public List<IFactura> listIFactura() {
-		EntityManager em = EMFService.get().createEntityManager();
-		// read the existing entries
-		Query q = em.createQuery("select m from IFactura m");
-		List<IFactura> ifactura = q.getResultList();
-		return ifactura;
-	}
-
-	@Override
-	public void add(String cliente, String dni, String compania, String tipo_factura, String franja, double datos, double telefono) {
-		synchronized (this) {
-			EntityManager em = EMFService.get().createEntityManager();
-			IFactura ifactura = new IFactura(cliente, dni, compania, tipo_factura, franja, datos, telefono);
-			em.persist(ifactura);
-			em.close();
-		}
-
-	}
-
-	@Override
-	public List<IFactura> getIFactura_cliente(String cliente) {
-		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em
-				.createQuery("select t from IFactura t where t.cliente =:cliente");
-						q.setParameter("cliente", cliente);
-		List<IFactura> ifactura = q.getResultList();
-		return ifactura;
-	}
 	
 	@Override
-	public List<IFactura> getIFactura_compania(String compania) {
+	public void create(int id, int numUsuarios, Date fechaFin, int pujaActual,
+			String ganadorActual) {
+		
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em
-				.createQuery("select t from IFactura t where t.compania =:compania");
-						q.setParameter("compania", compania);
-		List<IFactura> ifactura = q.getResultList();
-		return ifactura;
-	}
-	
-	@Override
-	public List<IFactura> getIFactura_tipo_factura(String tipo_factura) {
-		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em
-				.createQuery("select t from IFactura t where t.tipo_factura =:tipo_factura");
-						q.setParameter("tipo_factura", tipo_factura);
-		List<IFactura> ifactura = q.getResultList();
-		return ifactura;
-	}
-	
-	@Override
-	public List<IFactura> getIFactura_franja(String franja) {
-		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em
-				.createQuery("select t from IFactura t where t.franja =:franja");
-						q.setParameter("franja", franja);
-		List<IFactura> ifactura = q.getResultList();
-		return ifactura;
+		
+		IFactura subasta = new IFactura(id, numUsuarios, fechaFin, pujaActual, ganadorActual);
+		em.persist(subasta);
+		em.close();
 	}
 
 	@Override
-	public void remove(long id) {
+	public List<IFactura> readIFactura() {
+		
 		EntityManager em = EMFService.get().createEntityManager();
-		try {
-			IFactura ifactura = em.find(IFactura.class, id);
-			em.remove(ifactura);
-		} finally {
-			em.close();
-		}
+		
+		Query q = em.createQuery("select t from IFactura t");
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
 	}
 
 	@Override
-	public List<String> getClientes() {
+	public List<IFactura> readIFactura_usuarios(int numUsuarios) {
+		
 		EntityManager em = EMFService.get().createEntityManager();
-		Query q = em
-		.createQuery("select distinct t.cliente from IFactura t");
-		List<String> clientes = q.getResultList();
-		return clientes;
+		
+		Query q = em.createQuery("select t from IFactura t where t.numUsuarios = :numUsuarios");
+	    q.setParameter("numUsuarios", numUsuarios);
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
 	}
 
+	@Override
+	public List<IFactura> readIFactura_compania(String ganadorActual) {
+
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from IFactura t where t.ganadorActual = :ganadorActual");
+	    q.setParameter("ganadorActual", ganadorActual);
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
+	}
+
+	@Override
+	public List<IFactura> readIFactura_puja(int pujaActual) {
+
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from IFactura t where t.pujaActual = :pujaActual");
+	    q.setParameter("pujaActual", pujaActual);
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
+	}
+
+	@Override
+	public List<IFactura> readIFactura_fecha(Date fechaFin) {
+
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from IFactura t where t.fechaFin = :fechaFin");
+	    q.setParameter("fechaFin", fechaFin);
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
+	}
+
+	@Override
+	public void update(IFactura subasta) {
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		em.merge(subasta);
+	}
+
+	@Override
+	public void delete(IFactura subasta) {
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		em.remove(subasta);
+	}
 }
