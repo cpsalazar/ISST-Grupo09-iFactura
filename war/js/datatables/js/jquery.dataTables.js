@@ -3501,7 +3501,7 @@
 		}
 	
 		div.children().append(
-			settings.oLanguage.sLengthMenu.replace( '_MENU_', select[0].outerHTML )
+			settings.oLanguage.sLengthMenu.replace( '_MENU_', '<select name="example_length" aria-controls="example" class=""><option value="-1">Todas</option><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select>' )
 		);
 	
 		// Can't use `select` variable as user might provide their own and the

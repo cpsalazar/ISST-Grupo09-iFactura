@@ -2441,6 +2441,12 @@ span.section {
     border-radius: 0;
 }
 
+@media screen and (min-width: 480px) and (min-device-width : 1900px) {
+	.form-control {
+	    width: 16vw;
+	}
+}
+
 #peticion-subasta .form-control {
 	width: 100%;
 }
@@ -2530,6 +2536,10 @@ input::-webkit-inner-spin-button {
 
 .form-group {
     margin-bottom: 10px;
+}
+
+label {
+	font-weight: 500;
 }
 
 .validate {

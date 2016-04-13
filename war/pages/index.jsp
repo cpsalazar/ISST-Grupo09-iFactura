@@ -56,10 +56,80 @@
 												</tr>
 											</thead>
 											<tbody>
+												<tr class="odd pointer">
+													<td class="a-center "><input type="checkbox" class="tableflat"></td>
+													<td class=" ">12</td>
+													<td class=" ">2000</td>
+													<td class=" "> 1d : 03h : 39m : 05s</td>
+													<td class=" ">16</td>
+													<td class=" ">Movistar</td>
+													<td class="a-right a-right ">
+														<div class="div-form">
+															<input type="number" class="form-control numeric" placeholder="Introduzca puja">
+															<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+														</div>
+													</td>
+												</tr>
+												<tr class="even pointer">
+													<td class="a-center "><input type="checkbox" class="tableflat"></td>
+													<td class=" ">11</td>
+													<td class=" ">4600</td>
+													<td class=" "> 0d : 05h : 13m : 40s</td>
+													<td class=" ">9</td>
+													<td class=" ">Yoigo</td>
+													<td class="a-right a-right ">
+														<div class="div-form">
+															<input type="number" class="form-control numeric" placeholder="Introduzca puja">
+															<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+														</div>
+													</td>
+												</tr>
+												<tr class="odd pointer">
+													<td class="a-center "><input type="checkbox" class="tableflat"></td>
+													<td class=" ">10</td>
+													<td class=" ">3900</td>
+													<td class=" "> 1d : 03h : 39m : 05s</td>
+													<td class=" ">11</td>
+													<td class=" ">Yoigo</td>
+													<td class="a-right a-right ">
+														<div class="div-form">
+															<input type="number" class="form-control numeric" placeholder="Introduzca puja">
+															<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+														</div>
+													</td>
+												</tr>
+												<tr class="even pointer">
+													<td class="a-center "><input type="checkbox" class="tableflat"></td>
+													<td class=" ">9</td>
+													<td class=" ">5000</td>
+													<td class=" "> 0d : 05h : 13m : 40s</td>
+													<td class=" ">14</td>
+													<td class=" ">Vodafone</td>
+													<td class="a-right a-right ">
+														<div class="div-form">
+															<input type="number" class="form-control numeric" placeholder="Introduzca puja">
+															<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+														</div>
+													</td>
+												</tr>
+												<tr class="odd pointer">
+													<td class="a-center "><input type="checkbox" class="tableflat"></td>
+													<td class=" ">8</td>
+													<td class=" ">2100</td>
+													<td class=" "> 1d : 03h : 39m : 05s</td>
+													<td class=" ">12</td>
+													<td class=" ">Orange</td>
+													<td class="a-right a-right ">
+														<div class="div-form">
+															<input type="number" class="form-control numeric" placeholder="Introduzca puja">
+															<input type="submit" class="btn btn-primary btn-form" value="Enviar">
+														</div>
+													</td>
+												</tr>
 												<tr class="even pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">7</td>
-													<td class=" ">200 </td>
+													<td class=" ">2000</td>
 													<td class=" "> 0d : 05h : 13m : 40s</td>
 													<td class=" ">10</td>
 													<td class=" ">Yoigo</td>
@@ -73,7 +143,7 @@
 												<tr class="odd pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">6</td>
-													<td class=" ">190</td>
+													<td class=" ">1900</td>
 													<td class=" "> 1d : 03h : 39m : 05s</td>
 													<td class=" ">12</td>
 													<td class=" ">Orange</td>
@@ -87,7 +157,7 @@
 												<tr class="even pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">5</td>
-													<td class=" ">240</td>
+													<td class=" ">2400</td>
 													<td class=" "> 4d : 01h : 32m : 20s</td>
 													<td class=" ">15</td>
 													<td class=" ">Movistar</td>
@@ -101,7 +171,7 @@
 												<tr class="odd pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">4</td>
-													<td class=" ">180</td>
+													<td class=" ">1800</td>
 													<td class=" "> 0d : 12h : 53m : 20s</td>
 													<td class=" ">14</td>
 													<td class=" ">Vodafone</td>
@@ -115,7 +185,7 @@
 												<tr class="even pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">3</td>
-													<td class=" ">350</td>
+													<td class=" ">3500</td>
 													<td class=" "> 2d : 22h : 33m : 10s</td>
 													<td class=" ">12</td>
 													<td class=" ">Vodafone</td>
@@ -129,7 +199,7 @@
 												<tr class="odd pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">2</td>
-													<td class=" ">450</td>
+													<td class=" ">4500</td>
 													<td class=" "> 0d : 07h : 21m : 32s</td>
 													<td class=" ">17</td>
 													<td class=" ">Movistar</td>
@@ -143,7 +213,7 @@
 												<tr class="even pointer">
 													<td class="a-center "><input type="checkbox" class="tableflat"></td>
 													<td class=" ">1</td>
-													<td class=" ">220</td>
+													<td class=" ">2200</td>
 													<td class=" "> 1d : 02h : 43m : 20s</td>
 													<td class=" ">11</td>
 													<td class=" ">Yoigo</td>
