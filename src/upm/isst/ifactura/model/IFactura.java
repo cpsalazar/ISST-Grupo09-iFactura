@@ -1,6 +1,7 @@
 package upm.isst.ifactura.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -12,11 +13,11 @@ public class IFactura implements Serializable {
 	@Id
 	private Long id;
 	private int numUsuarios;
-	private String fechaFin;
+	private Date fechaFin;
 	private int pujaActual;
 	private String ganadorActual;
 	
-	public IFactura(Long id, int numUsuarios, String fechaFin, int pujaActual, String ganadorActual) {
+	public IFactura(Long id, int numUsuarios, Date fechaFin, int pujaActual, String ganadorActual) {
 		super();
 		this.id = id;
 		this.numUsuarios = numUsuarios;
@@ -41,11 +42,11 @@ public class IFactura implements Serializable {
 		this.numUsuarios = numUsuarios;
 	}
 
-	public String getFechaFin() {
+	public Date getFechaFin() {
 		return fechaFin;
 	}
 
-	public void setFechaFin(String fechaFin) {
+	public void setFechaFin(Date fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 

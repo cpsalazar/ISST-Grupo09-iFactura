@@ -1,6 +1,9 @@
 package upm.isst.ifactura;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,7 +35,21 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			urlLinktext = "Logout";
 			
 			IFacturaDAO dao = IFacturaDAOImpl.getInstance();
-			dao.create((long) 1, 500, "18 Mayo", 14, "Movistar");
+			
+			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+			String stringFechaConHora = "16/01/2016 15:03:23";
+			Date fechaConHora = new java.util.Date();
+			try {
+				fechaConHora = sdf.parse(stringFechaConHora);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			/*@SuppressWarnings("deprecation")
+			Date fechaConHora = new Date(2016, 5, 2, 10, 10, 5); */
+			
+			dao.create((long) 1, 500, fechaConHora, 14, "Movistar");
 			
 			view = req.getRequestDispatcher("/pages/index.jsp");
 			
