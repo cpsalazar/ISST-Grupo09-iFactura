@@ -1,9 +1,14 @@
 package upm.isst.ifactura;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+
+import upm.isst.ifactura.dao.IFacturaDAO;
+import upm.isst.ifactura.dao.IFacturaDAOImpl;
+import upm.isst.ifactura.model.IFactura;
 
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
@@ -18,20 +23,39 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String user = null;
 		
 		if (req.getUserPrincipal() != null) {
+			
 			user = req.getUserPrincipal().getName();
 			url = userService.createLogoutURL(req.getRequestURI());
 			urlLinktext = "Logout";
-			req.getSession().setAttribute("user", user);
-			req.getSession().setAttribute("url", url);
-			req.getSession().setAttribute("urlLinktext", urlLinktext);
-			RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
+			
+			IFacturaDAO dao = IFacturaDAOImpl.getInstance();
+			dao.create((long) 1, 500, "18 Mayo", 14, "Movistar");
+			
+			//view = req.getRequestDispatcher("/pages/index.jsp");
+			
+		} 
+		
+		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
+		
+		req.getSession().setAttribute("user", user);
+		req.getSession().setAttribute("url", url);
+		req.getSession().setAttribute("urlLinktext", urlLinktext);
+		
+		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
+		
+		/*try {
+			req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
+		} catch (NullPointerException e) {
+			e.printStackTrace();
+		}*/
+		
+		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
+	
+		try {
 			view.forward(req, resp);
-		} else {
-			req.getSession().setAttribute("user", user);
-			req.getSession().setAttribute("url", url);
-			req.getSession().setAttribute("urlLinktext", urlLinktext);
-			RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
-			view.forward(req, resp);
+		} catch (ServletException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 }

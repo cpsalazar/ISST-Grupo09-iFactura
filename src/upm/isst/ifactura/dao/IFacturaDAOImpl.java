@@ -1,9 +1,9 @@
 package upm.isst.ifactura.dao;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import upm.isst.ifactura.model.IFactura;
@@ -22,14 +22,19 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 	
 	@Override
-	public void create(int id, int numUsuarios, Date fechaFin, int pujaActual,
+	public IFactura create(Long id, int numUsuarios, String fechaFin, int pujaActual,
 			String ganadorActual) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
 		
 		IFactura subasta = new IFactura(id, numUsuarios, fechaFin, pujaActual, ganadorActual);
+		transaction.begin();
 		em.persist(subasta);
+		transaction.commit();
 		em.close();
+		
+		return subasta;
 	}
 
 	@Override
@@ -84,7 +89,7 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 
 	@Override
-	public List<IFactura> readIFactura_fecha(Date fechaFin) {
+	public List<IFactura> readIFactura_fecha(String fechaFin) {
 
 		EntityManager em = EMFService.get().createEntityManager();
 		
