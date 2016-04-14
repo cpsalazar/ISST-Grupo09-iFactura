@@ -59,11 +59,21 @@
 												<tbody>
 													<c:forEach items="${subastas}" var="subasta">
 														<tr>
-															<td><c:out value="${subasta.id}" /></td>
-															<td><c:out value="${subasta.numUsuarios}" /></td>
-															<td><c:out value="${subasta.fechaFin}" /></td>
-															<td><c:out value="${subasta.pujaActual}" /></td>
-															<td><c:out value="${subasta.ganadorActual}" /></td>
+														<td class="a-center "><input type="checkbox"
+															class="tableflat"></td>
+															<td class=" "><c:out value="${subasta.id}" /></td>
+															<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
+															<td class=" "><c:out value="${subasta.fechaFin}" /></td>
+															<td class=" "><c:out value="${subasta.pujaActual}" /></td>
+															<td class=" "><c:out value="${subasta.ganadorActual}" /></td>
+															<td class="a-right a-right ">
+															<div class="div-form">
+																<input type="number" class="form-control numeric"
+																	placeholder="Introduzca puja"> <input
+																	type="submit" class="btn btn-primary btn-form"
+																	value="Enviar">
+															</div>
+														</td>
 														</tr>
 													</c:forEach>
 													<tr class="odd pointer">

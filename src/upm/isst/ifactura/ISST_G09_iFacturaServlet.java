@@ -22,6 +22,9 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String urlLinktext = "Login";
 		String user = null;
 		
+		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
+
+		
 		if (req.getUserPrincipal() != null) {
 			
 			user = req.getUserPrincipal().getName();
@@ -31,7 +34,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 			dao.create((long) 1, 500, "18 Mayo", 14, "Movistar");
 			
-			//view = req.getRequestDispatcher("/pages/index.jsp");
+			view = req.getRequestDispatcher("/pages/index.jsp");
 			
 		} 
 		
@@ -48,9 +51,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		} catch (NullPointerException e) {
 			e.printStackTrace();
 		}*/
-		
-		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
-	
+			
 		try {
 			view.forward(req, resp);
 		} catch (ServletException e) {
