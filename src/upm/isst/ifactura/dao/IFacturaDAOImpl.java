@@ -101,12 +101,28 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 		em.close();
 		return subastas;
 	}
+	
+	@Override
+	public List<IFactura> readIFactura_id(Long id) {
+
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from IFactura t where t.id = :id");
+	    q.setParameter("id", id);
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
+	}
 
 	@Override
 	public void update(IFactura subasta) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
+		
 		em.merge(subasta);
+				
+		em.close();
 	}
 
 	@Override
@@ -114,5 +130,7 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		em.remove(subasta);
+		
+		em.close();
 	}
 }

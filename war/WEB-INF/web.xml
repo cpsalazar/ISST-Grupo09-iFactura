@@ -18,11 +18,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-class>upm.isst.ifactura.ISST_G09_SubastasServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet> 
-	<!--
+	
+	<servlet>
+		<servlet-name>ISST_G09_Pujas</servlet-name>
+		<servlet-class>upm.isst.ifactura.ISST_G09_PujasServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
-		<servlet-name>ISST_G09_Subastas</servlet-name>
-		<url-pattern>/pages/index.jsp</url-pattern>
-	</servlet-mapping> -->
+		<servlet-name>ISST_G09_Pujas</servlet-name>
+		<url-pattern>/postPuja</url-pattern>
+	</servlet-mapping>
 	
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

@@ -13,6 +13,7 @@ public interface IFacturaDAO {
 	public List<IFactura> readIFactura_compania(String ganadorActual);
 	public List<IFactura> readIFactura_puja(int pujaActual);
 	public List<IFactura> readIFactura_fecha(Date fechaFin);
+	public List<IFactura> readIFactura_id(Long id);
 	public void update (IFactura subasta);
 	public void delete (IFactura subasta);
 }

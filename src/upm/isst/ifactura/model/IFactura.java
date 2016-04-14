@@ -65,5 +65,12 @@ public class IFactura implements Serializable {
 	public void setGanadorActual(String ganadorActual) {
 		this.ganadorActual = ganadorActual;
 	}
+
+	@Override
+	public String toString() {
+		return "IFactura [id=" + id + ", numUsuarios=" + numUsuarios
+				+ ", fechaFin=" + fechaFin + ", pujaActual=" + pujaActual
+				+ ", ganadorActual=" + ganadorActual + "]";
+	}
 	
 }
