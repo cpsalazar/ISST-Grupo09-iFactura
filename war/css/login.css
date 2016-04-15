@@ -51,7 +51,7 @@ body {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.15)
 }
 
-.login-form input{
+input{
 	display: block;
 	margin:0 auto 15px;
 	width:70%;
@@ -81,6 +81,7 @@ body {
 .btn.btn-login:hover {	 
 	background: rgba(15, 97, 83, 0.8);
 } 
+
 n.btn-reset {
 	width: 180px;
 }
@@ -88,23 +89,37 @@ n.btn-reset {
 .login-links {
 	text-align: center;
 }
-.login-links a {
+
+a, a:active {
 	color: #FFF; 
 	display: inline-block;
 	opacity: 0.7;
 }
-.login-links a:hover {
+
+a:hover, a:focus {
+	color: #fff;
 	text-decoration: none;
     opacity: 0.99999;
 }
 
-label.checkbox {
+.azm-google {
+	opacity: 1;
+}
+
+#pw {
 	width: 70%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+label.checkbox {
+	width: 65%;
 	display: block;
 	margin: 0 auto;
 }
 label.checkbox input{
-	width:14px;
+	width: 14px;
 	margin: 4px 0 0;
 	padding: 0;
 	background: none;
@@ -143,7 +158,7 @@ label.checkbox input{
 .azm-btn i:after {
     content: "";
     position: absolute;
-    top: 80.7%;
+    top: 81%;
     left: 37%;
     width: 1px;
     height: 36px;

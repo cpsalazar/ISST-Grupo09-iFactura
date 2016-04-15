@@ -606,6 +606,29 @@ a:focus {
     text-decoration: none
 }
 
+.denied-top {
+    margin-top: 5vh;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}
+
+.denied {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+.denied-a {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.denied-a:hover a {
+    text-decoration: none;
+}
+
 .navbar {
     margin-bottom: 0
 }
@@ -2443,7 +2466,7 @@ span.section {
 
 @media screen and (min-width: 480px) and (min-device-width : 1900px) {
 	.form-control {
-	    width: 16vw;
+	    width: 25vw;
 	}
 }
 

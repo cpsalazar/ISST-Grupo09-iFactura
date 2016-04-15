@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <head>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+	<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,9 +29,9 @@
 	<div class="container" id="login-block">
 		<div class="row">
 			<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4 animated flipInY">
-				<div class="login-box clearfix" style="padding-top: 50px; padding-bottom: 50px;">
+				<div class="login-box clearfix" style="padding-top: 40px; padding-bottom: 50px;">
 					<div class="login-logo">
-						<img src="../images/login-logo.png" alt="Company Logo">
+						<img src="../images/logo.png" alt="iFactura" style="width: 16vh;">
 					</div> 
 					<hr>
 					<div class="login-form" style="margin-top: 16px;">
@@ -41,7 +42,7 @@
 						</div>
 						<!-- End Error box -->
 						<form action="#" method="get">
-							<input type="text" placeholder="Usuario o correo" class="input-field" required=""> 
+							<input type="text" placeholder="Correo electrónico" class="input-field" required=""> 
 							<input type="password" placeholder="Contraseña" class="input-field" required=""> 
 							<button type="submit" class="btn btn-login">Login</button> 
 						</form>
@@ -60,14 +61,47 @@
 							</a>
 						</div>
 					</div>
+					<div class="register-form" style="margin-top: 16px; display: none;">
+						<!-- Start Error box -->
+						<div class="alert alert-danger hide">
+							<button type="button" class="close" data-dismiss="alert"> ×</button>
+							<h4>Error</h4>Mensaje de error
+						</div>
+						<!-- End Error box -->
+						<form action="#" method="get">
+							<input type="text" placeholder="Nombre y Apellidos" class="input-field" required=""> 
+							<input type="text" placeholder="Correo electrónico" class="input-field" required=""> 
+							<input type="password" placeholder="Contraseña" class="input-field" required="">
+							<input type="password" placeholder="Confirmar contraseña" class="input-field" required=""> 
+							<label class="checkbox">
+								<input type="checkbox" value="option1" required=""> Acepto los <a href="">términos y condiciones</a>
+							</label>
+							<button type="submit" class="btn btn-login" style="margin-bottom: 0;">Registrarme</button> 
+						</form>
+					</div>
+					<div class="password-form" style="margin-top: 16px; display: none;">
+						<!-- Start Error box -->
+						<div class="alert alert-danger hide">
+							<button type="button" class="close" data-dismiss="alert"> ×</button>
+							<h4>Error</h4>Mensaje de error
+						</div>
+						<!-- End Error box -->
+						<form action="#" method="get">
+							<p id="pw">Introduce tu correo electrónico y te enviaremos un enlace para resetear tu contraseña</p>
+							<input type="text" placeholder="Correo electrónico" class="input-field" required=""> 
+							<button type="submit" class="btn btn-login" style="margin-bottom: 0;">Enviar</button> 
+						</form>
+					</div>
 				</div>
 				<div class="login-links"> 
-					<a href="https://hungerfreethemes.com/preview/login-pack1/login5/forgot-password.html?login-theme-1" style="padding: 10px 0 0 0;">
-						¿Has olvidado tu contraseña?
+					<a href="#" id="password-form-link" style="padding: 10px 0 0 0;">
+						<p style="margin: 0;">¿Has olvidado tu contraseña?</p>
 					</a>
-					<br>
-					<a href="https://hungerfreethemes.com/preview/login-pack1/login5/sign-up.html?login-theme-1">
-						¿No tienes una cuenta? <strong>Regístrate</strong>
+					<a href="#" id="login-form-link" style="padding: 10px 0 0 0; display:none;">
+						<p style="margin: 0;">Inicia sesión</p>
+					</a>
+					<a href="#" id="register-form-link">
+						<p style="margin: 0;">¿No tienes una cuenta? <strong>Regístrate</strong></p>
 					</a>
 				</div>
 			</div>
@@ -81,5 +115,36 @@
 	<script src="../js/jquery.min.js"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		$(function() {
+			$('#register-form-link').click(function(e) {
+				$(".register-form").delay(100).fadeIn(100);
+				$("#login-form-link").delay(100).fadeIn(100);
+		 		$(".login-form").fadeOut(100);
+		 		$(".password-form").fadeOut(100);
+		 		$("#register-form-link").fadeOut(100);
+		 		$("#password-form-link").fadeOut(100);
+				e.preventDefault();
+			});	
+		    $('#login-form-link').click(function(e) {
+				$(".login-form").delay(100).fadeIn(100);
+				$("#register-form-link").delay(100).fadeIn(100);
+				$("#password-form-link").delay(100).fadeIn(100);
+		 		$(".register-form").fadeOut(100);
+		 		$(".password-form").fadeOut(100);
+		 		$("#login-form-link").fadeOut(100);
+				e.preventDefault();
+			});
+			$('#password-form-link').click(function(e) {
+				$(".password-form").delay(100).fadeIn(100);
+				$("#login-form-link").delay(100).fadeIn(100);
+		 		$(".register-form").fadeOut(100);
+		 		$(".login-form").fadeOut(100);
+		 		$("#register-form-link").fadeOut(100);
+		 		$("#password-form-link").fadeOut(100);
+				e.preventDefault();
+			});	
+		});
+	</script>
 </body>
 </html>
