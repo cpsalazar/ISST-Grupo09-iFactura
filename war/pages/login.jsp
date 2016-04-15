@@ -31,7 +31,7 @@
 			<div class="col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4 animated flipInY">
 				<div class="login-box clearfix" style="padding-top: 40px; padding-bottom: 50px;">
 					<div class="login-logo">
-						<img src="../images/logo.png" alt="iFactura" style="width: 16vh;">
+						<img src="../images/logo.png" alt="iFactura" style="width: 45%;">
 					</div> 
 					<hr>
 					<div class="login-form" style="margin-top: 16px;">
@@ -74,7 +74,7 @@
 							<input type="password" placeholder="Contraseña" class="input-field" required="">
 							<input type="password" placeholder="Confirmar contraseña" class="input-field" required=""> 
 							<label class="checkbox">
-								<input type="checkbox" value="option1" required=""> Acepto los <a href="">términos y condiciones</a>
+								<input type="checkbox" value="option1" required=""> Acepto los <a href="#openModal">términos y condiciones</a>
 							</label>
 							<button type="submit" class="btn btn-login" style="margin-bottom: 0;">Registrarme</button> 
 						</form>
@@ -107,6 +107,19 @@
 			</div>
 		</div>
 	</div>
+	<div id="openModal" class="modalDialog">
+		<div class="col-xs-4 col-xs-offset-4">
+			<a href="#close" title="Close" class="close">X</a>
+			<h2 style="margin-top: 0;"><strong>Términos y condiciones</strong></h2>
+			<h4><strong>Complaints</strong></h4>
+			<p>Any complaints about items or sellers may be sent to our support team: support@wesellyourstuff.com or (888) 555-0198.
+			There is no guarantee of a resolution. Each case will be looked at individually, and the seller will be in contact as well.</p>
+			<h4><strong>Legalities</strong></h4>
+			<p>blablablablablablabla blablabla blablablabla blablalablablablabla</p>
+			<p>blablablablablablabla blablabla blablablabla blablalablablablabla</p>
+			<p><strong>These terms and conditions are subject to change</strong></p>
+		</div>
+	</div>
 	<!-- End Login box -->
 	<footer class="container">
 		<p id="footer-text"><small>Copyright © 2016 iFactura. Todos los derechos reservados</small></p>
@@ -115,36 +128,6 @@
 	<script src="../js/jquery.min.js"></script>
 	<!-- Bootstrap Core JavaScript -->
 	<script src="../js/bootstrap.min.js"></script>
-	<script>
-		$(function() {
-			$('#register-form-link').click(function(e) {
-				$(".register-form").delay(100).fadeIn(100);
-				$("#login-form-link").delay(100).fadeIn(100);
-		 		$(".login-form").fadeOut(100);
-		 		$(".password-form").fadeOut(100);
-		 		$("#register-form-link").fadeOut(100);
-		 		$("#password-form-link").fadeOut(100);
-				e.preventDefault();
-			});	
-		    $('#login-form-link').click(function(e) {
-				$(".login-form").delay(100).fadeIn(100);
-				$("#register-form-link").delay(100).fadeIn(100);
-				$("#password-form-link").delay(100).fadeIn(100);
-		 		$(".register-form").fadeOut(100);
-		 		$(".password-form").fadeOut(100);
-		 		$("#login-form-link").fadeOut(100);
-				e.preventDefault();
-			});
-			$('#password-form-link').click(function(e) {
-				$(".password-form").delay(100).fadeIn(100);
-				$("#login-form-link").delay(100).fadeIn(100);
-		 		$(".register-form").fadeOut(100);
-		 		$(".login-form").fadeOut(100);
-		 		$("#register-form-link").fadeOut(100);
-		 		$("#password-form-link").fadeOut(100);
-				e.preventDefault();
-			});	
-		});
-	</script>
+	<script src="../js/login.js"></script>
 </body>
 </html>

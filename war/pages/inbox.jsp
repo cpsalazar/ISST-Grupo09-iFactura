@@ -587,13 +587,11 @@
 	</c:if>
 	<c:if test="${user == null}">
 		<br>
-		<p>
-			No estas registrado en el sistema, puedes pulsar el siguiente enlace
-			para registrarte <a href="<c:url value=" ${url}"/>">
-			<c:out value="${urlLinktext}" />
-			</a>
-		</p>
+		<div class="container">
+			<p class="denied-top col-xs-12">Acceso denegado</p>
+			<p class="denied col-xs-12">No has iniciado sesión en el sistema, pulsa el siguiente enlace para registrarte</p>
+			<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
+		</div>
 	</c:if>
 </body>
-
 </html>

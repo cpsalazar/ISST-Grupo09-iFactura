@@ -621,12 +621,13 @@ a:focus {
 
 .denied-a {
     font-size: 20px;
-    color: rgba(255, 255, 255, 0.8);
+    color: #5A738E;
     text-align: center;
 }
 
-.denied-a:hover a {
+.denied-a:hover {
     text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .navbar {

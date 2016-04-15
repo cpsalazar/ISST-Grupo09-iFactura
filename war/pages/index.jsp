@@ -114,7 +114,7 @@
 		<div class="container">
 			<p class="denied-top col-xs-12">Acceso denegado</p>
 			<p class="denied col-xs-12">No has iniciado sesión en el sistema, pulsa el siguiente enlace para registrarte</p>
-			<p class="denied-a col-xs-12"><a href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
+			<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
 		</div>
 	</c:if>
 </body>
