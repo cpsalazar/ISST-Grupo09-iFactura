@@ -64,22 +64,22 @@
 																<td class="a-center "><input type="checkbox"
 																	class="tableflat"></td>
 																<td class=" "><c:out value="${subasta.id}" /></td>
-															<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
-															<td class=" "><c:out value="${subasta.fechaFin}" /></td>
-															<td class=" "><c:out value="${subasta.pujaActual}" /></td>
-															<td class=" "><c:out
-																	value="${subasta.ganadorActual}" /></td>
-															<td class="a-right a-right ">
+																<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
+																<td class=" "><c:out value="${subasta.fechaFin}" /></td>
+																<td class=" "><c:out value="${subasta.pujaActual}" /></td>
+																<td class=" "><c:out
+																		value="${subasta.ganadorActual}" /></td>
+																<td class="a-right a-right ">
 
-																<div class="div-form">
-																	<input type="hidden" name="id" value="${subasta.id}">
-																	<input type="number" name="puja"
-																		class="form-control numeric"
-																		placeholder="Introduzca puja"> <input
-																		type="submit" class="btn btn-primary btn-form"
-																		value="Enviar">
-																</div>
-																</form>
+																	<div class="div-form">
+																		<input type="hidden" name="id" value="${subasta.id}">
+																		<input type="number" name="puja"
+																			class="form-control numeric"
+																			placeholder="Introduzca puja"> <input
+																			type="submit" class="btn btn-primary btn-form"
+																			value="Enviar">
+																	</div>
+															</form>
 															</td>
 														</tr>
 													</c:forEach>
@@ -87,6 +87,11 @@
 											</table>
 										</div>
 									</div>
+									<c:if test="${alerta != null}">
+										<p>
+											<c:out value="${alerta}" />
+										</p>
+									</c:if>
 								</div>
 							</div>
 						</div>
