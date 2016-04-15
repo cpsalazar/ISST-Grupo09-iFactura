@@ -21,6 +21,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String url = userService.createLoginURL(req.getRequestURI());
 		String urlLinktext = "Login";
 		String user = null;
+		String alerta = null;
 
 		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
 
@@ -34,7 +35,8 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		} 
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
-
+		
+		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("user", user);
 		req.getSession().setAttribute("url", url);
 		req.getSession().setAttribute("urlLinktext", urlLinktext);

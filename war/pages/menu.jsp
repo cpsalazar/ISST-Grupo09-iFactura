@@ -6,7 +6,7 @@
 <div class="col-md-3 left_col">
 	<div class="left_col scroll-view">
 		<div class="navbar nav_title" style="border: 0;">
-			<a href="/pages/index.jsp" class="site_title"><i class="fa fa-paw"></i>
+			<a href="/isst_g09_ifactura" class="site_title"><i class="fa fa-paw"></i>
 				<span>iFactura</span></a>
 		</div>
 		<div class="clearfix"></div>
@@ -29,7 +29,7 @@
 							<p>Ningún usuario registrado</p>
 						</c:if>
 					</li>
-					<li><a href="/pages/index.jsp"><i class="fa fa-table"></i>
+					<li><a href="/isst_g09_ifactura"><i class="fa fa-table"></i>
 							Subastas en curso <span class="fa fa-chevron-down"></span></a></li>
 					<li><a href="/pages/peticiones.jsp"><i class="fa fa-edit"></i>
 							Petición de subastas <span class="fa fa-chevron-down"></span></a></li>
