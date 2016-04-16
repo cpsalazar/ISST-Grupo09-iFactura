@@ -24,8 +24,8 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String fecha = req.getParameter("fecha");
 		String alerta = null;
-		int id= Integer.parseInt(req.getParameter("id"));
-		List<IFactura> subasta = dao.readIFactura_id((long) id);
+		
+		List<IFactura> subastas = dao.readIFactura();
 
 
 		int usuarios= Integer.parseInt(req.getParameter("usuarios"));
@@ -40,11 +40,8 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		if (subasta.size() != 0){
-			alerta = "El ID introducido ya existe";
-		}else {
-			dao.create((long) id, usuarios, fechaConHora, puja_inicial, "");
-		}
+		long id = subastas.size() + 1;
+		dao.create(id, usuarios, fechaConHora, puja_inicial, "");
 
 
 		/*PrintWriter out = resp.getWriter();
