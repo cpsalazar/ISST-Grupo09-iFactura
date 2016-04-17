@@ -8,26 +8,11 @@
 				<a href="/isst_g09_ifactura" class="site_title"><img id="menu_logo" src="../images/logo_white_.png" style="width: 60%;"></a>
 			</div>
 			<div class="clearfix"></div>
-			<!-- menu prile quick info -->
-			<div class="profile">
-				<div class="profile_pic">
-					<img src="../images/img.jpg" alt="..." class="img-circle profile_img">
-				</div>
-			</div>
-			<br />
+			
 			<!-- sidebar menu -->
 			<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 				<div class="menu_section">
 					<ul class="nav side-menu">
-						<li>
-							<c:if test="${user != null}">
-								<c:out value="${user}" />
-								<p>Bienvenido.</p>
-							</c:if>
-							<c:if test="${user == null}">
-								<p>Ningún usuario registrado</p>
-							</c:if>
-						</li>
 						<li><a href="/isst_g09_ifactura"><i class="fa fa-table"></i>
 								Subastas en curso <span class="fa fa-chevron-down"></span></a></li>
 						<li><a href="/pages/peticiones.jsp"><i class="fa fa-edit"></i>
