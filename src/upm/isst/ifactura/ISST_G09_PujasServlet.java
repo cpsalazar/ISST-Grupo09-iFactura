@@ -36,8 +36,9 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 			String user = req.getUserPrincipal().getName();
 			subasta.get(0).setGanadorActual(user);
 			dao.update(subasta.get(0));
+			alerta = "Eres el máximo pujador";
 		} else {
-			alerta = "La puja que ha introducido debe superar la puja actual";
+			alerta = "La puja introducida debe mejorar la actual";
 		}
 		
 		req.getSession().setAttribute("alerta", alerta);

@@ -713,6 +713,11 @@ a:focus {
     padding-left: 36px
 }
 
+label select {
+	border: medium none;
+	background: white;
+}
+
 body.nav-md ul.nav.child_menu li:before {
     background: #425668;
     bottom: auto;
@@ -926,10 +931,6 @@ a.btn-primary,
 a.btn-warning,
 a.btn-danger {
     color: #fff !important;
-}
-
-.btn {
-    border-radius: 3px;
 }
 
 .tooltip {
@@ -1448,8 +1449,9 @@ table.jambo_table tbody tr.selected td {
 }
 
 .dataTables_length {
-    width: 40%;
     float: left;
+	font-size: 14px;
+	padding-top: 5px;
 }
 
 .dataTables_filter {
@@ -2557,6 +2559,12 @@ input[type='number'] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+input {
+	border: 1px solid #ccc;
+	padding: 6px 12px;
+	line-height: 1.42857143
 }
 
 .form-group {
