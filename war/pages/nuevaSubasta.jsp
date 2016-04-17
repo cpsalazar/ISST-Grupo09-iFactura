@@ -42,12 +42,6 @@
 								<!-- /.panel-heading -->
 								<div class="panel-body">
 									<form class="form-horizontal" action="/crearSubasta" method="post" id="creacion-subasta">
-										<div class="form-group"> 
-											<label class="control-label col-md-2 col-md-offset-2">Nº subasta:</label>
-											<div class="col-md-6">
-												<input name="id" class="form-control numeric" placeholder="Introduzca ID">
-											</div>
-										</div>
 										<div class="form-group">
 											<label class="control-label col-md-2 col-md-offset-2">Nº usuarios:</label>
 											<div class="col-md-6">

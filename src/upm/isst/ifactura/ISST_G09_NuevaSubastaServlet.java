@@ -2,7 +2,6 @@ package upm.isst.ifactura;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-//import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -23,7 +22,6 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String fecha = req.getParameter("fecha");
-		String alerta = null;
 		
 		List<IFactura> subastas = dao.readIFactura();
 
@@ -42,17 +40,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		
 		long id = subastas.size() + 1;
 		dao.create(id, usuarios, fechaConHora, puja_inicial, "");
-
-
-		/*PrintWriter out = resp.getWriter();
-		 resp.setContentType("text/html");
-		 out.println("<html><body>");
-		 out.println("<p>" + subastas.toString() + "</p>");
-		 out.println("</body></html>");
-		 out.close();*/
 		
-		req.getSession().setAttribute("alerta", alerta);
-
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 
 		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");

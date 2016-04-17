@@ -8,7 +8,6 @@ import javax.persistence.Id;
 
 @Entity
 public class IFactura implements Serializable {
-	
 	private static final long serialVersionUID = 01L;
 	@Id
 	private Long id;
@@ -17,7 +16,7 @@ public class IFactura implements Serializable {
 	private int pujaActual;
 	private String ganadorActual;
 	
-	public IFactura(Long id, int numUsuarios, Date fechaFin, int pujaActual, String ganadorActual) {
+	public IFactura(Long id,int numUsuarios, Date fechaFin, int pujaActual, String ganadorActual) {
 		super();
 		this.id = id;
 		this.numUsuarios = numUsuarios;

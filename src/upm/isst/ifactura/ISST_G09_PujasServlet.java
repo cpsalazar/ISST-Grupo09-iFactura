@@ -33,6 +33,8 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		if (subasta.get(0).getPujaActual() > Integer.parseInt(req.getParameter("puja"))){
 			
 			subasta.get(0).setPujaActual(Integer.parseInt (req.getParameter("puja")));
+			String user = req.getUserPrincipal().getName();
+			subasta.get(0).setGanadorActual(user);
 			dao.update(subasta.get(0));
 		} else {
 			alerta = "La puja que ha introducido debe superar la puja actual";
@@ -40,13 +42,6 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		
 		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
-		
-		/*PrintWriter out = resp.getWriter();
-		 resp.setContentType("text/html");
-		 out.println("<html><body>");
-		 out.println("<p>" + subastas.toString() + "</p>");
-		 out.println("</body></html>");
-		 out.close();*/
 		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
 		
