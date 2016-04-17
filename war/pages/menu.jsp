@@ -5,7 +5,7 @@
 	<div class="col-md-3 left_col">
 		<div class="left_col scroll-view">
 			<div class="navbar nav_title" style="border: 0;">
-				<a href="/isst_g09_ifactura" class="site_title"><img src="../images/logo_white_.png" style="width: 60%;"></a>
+				<a href="/isst_g09_ifactura" class="site_title"><img id="menu_logo" src="../images/logo_white_.png" style="width: 60%;"></a>
 			</div>
 			<div class="clearfix"></div>
 			<!-- menu prile quick info -->

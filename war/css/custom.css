@@ -688,6 +688,7 @@ a:focus {
 .nav.side-menu> li {
     position: relative;
     display: block;
+    overflow: hidden;
 }
 
 .nav.side-menu> li > a {

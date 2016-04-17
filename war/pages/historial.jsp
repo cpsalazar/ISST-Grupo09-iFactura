@@ -117,6 +117,7 @@
 		<div class="clearfix"></div>
 		<div id="notif-group" class="tabbed_notifications"></div>
 	</div>
+	<%@ include file="scripts.jsp" %>
 	</c:if>
 	<c:if test="${user == null}">
 		<br>
@@ -126,6 +127,5 @@
 			<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
 		</div>
 	</c:if>
- <%@ include file="scripts.jsp" %>
 </body>
 </html>

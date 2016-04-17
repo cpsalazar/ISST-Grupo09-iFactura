@@ -372,6 +372,20 @@
 			window.prettyPrint && prettyPrint();
 		});
 	</script>
+	<script>
+		var x = 0;
+		$('#menu_toggle').click(function(){
+			if (x === 0) {
+		    	$('#menu_logo').attr('src', '../images/logo_white.png');
+		    	$('#menu_logo').attr('style', 'width: 80%;');
+		    	x = 1;
+			} else {
+				$('#menu_logo').attr('src', '../images/logo_white_.png');
+		    	$('#menu_logo').attr('style', 'width: 60%;');
+		    	x = 0;
+			}
+		});
+	</script>
 </c:if>
 <c:if test="${user == null}">
 	<br>
