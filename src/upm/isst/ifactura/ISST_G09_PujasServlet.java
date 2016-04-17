@@ -27,7 +27,7 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 		
-		String alerta = null;
+		String alerta = "La puja introducida debe mejorar la actual";
 		
 		List<IFactura> subasta = dao.readIFactura_id((long) mensaje);
 		if (subasta.get(0).getPujaActual() > Integer.parseInt(req.getParameter("puja"))){
@@ -37,8 +37,6 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 			subasta.get(0).setGanadorActual(user);
 			dao.update(subasta.get(0));
 			alerta = "Eres el máximo pujador";
-		} else {
-			alerta = "La puja introducida debe mejorar la actual";
 		}
 		
 		req.getSession().setAttribute("alerta", alerta);

@@ -88,14 +88,14 @@
 										</div>
 									</div>
 									<c:if test="${alerta == 'Eres el máximo pujador'}">
-										<div class="alert alert-success fade in" style="margin-top: 18px;">
-											<a class="close" href="#" data-dismiss="alert" aria-label="close" title="close">x</a>
+										<div class="alert alert-success fade in" style="font-size: 14px;">
+											<a class="close" href="#" data-dismiss="alert">x</a>
 											<strong>Puja satisfactoria: </strong><c:out value="${alerta}" />
 										</div>
 									</c:if>
 									<c:if test="${alerta == 'La puja introducida debe mejorar la actual'}">
-										<div class="alert alert-danger fade in" style="color: white; margin-top: 18px;">
-											<a class="close" href="#" data-dismiss="alert" aria-label="close" title="close">x</a>
+										<div class="alert alert-danger fade in" style="color: white; font-size: 14px;">
+											<a class="close" href="#" data-dismiss="alert">x</a>
 											<strong>Error: </strong><c:out value="${alerta}" />
 										</div>
 									</c:if>
