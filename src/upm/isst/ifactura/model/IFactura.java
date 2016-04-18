@@ -13,10 +13,10 @@ public class IFactura implements Serializable {
 	private Long id;
 	private int numUsuarios;
 	private Date fechaFin;
-	private int pujaActual;
+	private double pujaActual;
 	private String ganadorActual;
 	
-	public IFactura(Long id,int numUsuarios, Date fechaFin, int pujaActual, String ganadorActual) {
+	public IFactura(Long id,int numUsuarios, Date fechaFin, double pujaActual, String ganadorActual) {
 		super();
 		this.id = id;
 		this.numUsuarios = numUsuarios;
@@ -49,11 +49,11 @@ public class IFactura implements Serializable {
 		this.fechaFin = fechaFin;
 	}
 
-	public int getPujaActual() {
+	public double getPujaActual() {
 		return pujaActual;
 	}
 
-	public void setPujaActual(int pujaActual) {
+	public void setPujaActual(double pujaActual) {
 		this.pujaActual = pujaActual;
 	}
 

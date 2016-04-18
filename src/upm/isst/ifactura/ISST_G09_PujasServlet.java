@@ -30,13 +30,13 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		String alerta = "La puja introducida debe mejorar la actual";
 		
 		List<IFactura> subasta = dao.readIFactura_id((long) mensaje);
-		if (subasta.get(0).getPujaActual() > Integer.parseInt(req.getParameter("puja"))){
+		if (subasta.get(0).getPujaActual() > Double.parseDouble(req.getParameter("puja")) && Double.parseDouble(req.getParameter("puja")) > 0){
 			
-			subasta.get(0).setPujaActual(Integer.parseInt (req.getParameter("puja")));
+			subasta.get(0).setPujaActual(Double.parseDouble (req.getParameter("puja")));
 			String user = req.getUserPrincipal().getName();
 			subasta.get(0).setGanadorActual(user);
 			dao.update(subasta.get(0));
-			alerta = "Eres el m√°ximo pujador";
+			alerta = "Eres el m·ximo pujador";
 		}
 		
 		req.getSession().setAttribute("alerta", alerta);

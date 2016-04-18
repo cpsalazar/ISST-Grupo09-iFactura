@@ -73,9 +73,9 @@
 
 																	<div class="div-form">
 																		<input type="hidden" name="id" value="${subasta.id}">
-																		<input type="number" name="puja"
+																		<input type="number" step="0.25" name="puja"
 																			class="form-control numeric"
-																			placeholder="Introduzca puja"> <input
+																			placeholder="Introduzca puja" required> <input
 																			type="submit" class="btn btn-primary btn-form"
 																			value="Enviar">
 																	</div>

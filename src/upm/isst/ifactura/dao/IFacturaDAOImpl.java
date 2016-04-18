@@ -23,7 +23,7 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 	
 	@Override
-	public IFactura create(Long id, int numUsuarios, Date fechaFin, int pujaActual,
+	public IFactura create(Long id, int numUsuarios, Date fechaFin, double pujaActual,
 			String ganadorActual) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
@@ -77,7 +77,7 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 
 	@Override
-	public List<IFactura> readIFactura_puja(int pujaActual) {
+	public List<IFactura> readIFactura_puja(double pujaActual) {
 
 		EntityManager em = EMFService.get().createEntityManager();
 		

@@ -57,7 +57,7 @@
 										<div class="form-group">
 											<label class="control-label col-md-2 col-md-offset-2">Puja inicial:</label>
 											<div class="col-md-6">
-												<input name="puja_inicial" class="form-control numeric" placeholder="Introduzca la puja inicial">
+												<input name="puja_inicial" class="form-control numeric" step="0.25" placeholder="Introduzca la puja inicial">
 											</div>
 										</div>
 										<div class="form-group">

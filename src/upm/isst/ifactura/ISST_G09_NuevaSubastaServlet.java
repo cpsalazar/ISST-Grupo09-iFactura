@@ -27,7 +27,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 
 
 		int usuarios= Integer.parseInt(req.getParameter("usuarios"));
-		int puja_inicial= Integer.parseInt(req.getParameter("puja_inicial"));
+		double puja_inicial= Double.parseDouble(req.getParameter("puja_inicial"));
 
 		Date fechaConHora = new java.util.Date();
 
