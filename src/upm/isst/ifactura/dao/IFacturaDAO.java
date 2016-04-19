@@ -7,7 +7,7 @@ import upm.isst.ifactura.model.IFactura;
 
 public interface IFacturaDAO {
 	
-	public IFactura create (Long id, int numUsuarios, Date fechaFin, double pujaActual, String ganadorActual);
+	public IFactura create(Long id, int numUsuarios, Date fechaFin, double pujaActual, String ganadorActual);
 	public List<IFactura> readIFactura();
 	public List<IFactura> readIFactura_usuarios(int numUsuarios);
 	public List<IFactura> readIFactura_compania(String ganadorActual);

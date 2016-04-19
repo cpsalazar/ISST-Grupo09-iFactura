@@ -67,8 +67,14 @@
 																<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
 																<td class=" "><c:out value="${subasta.fechaFin}" /></td>
 																<td class=" "><c:out value="${subasta.pujaActual}" /></td>
-																<td class=" "><c:out
-																		value="${subasta.ganadorActual}" /></td>
+																<td class=" ">
+																	<c:if test="${user == subasta.ganadorActual}">
+																		<c:out value="${subasta.ganadorActual}" />
+																	</c:if>
+																	<c:if test="${user != subasta.ganadorActual}">
+																		-
+																	</c:if>
+																</td>
 																<td class="a-right a-right ">
 
 																	<div class="div-form">

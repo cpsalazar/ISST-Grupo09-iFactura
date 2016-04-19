@@ -26,7 +26,7 @@ public class IFactura implements Serializable {
 	}
 
 	public Long getId() {
-		return id;
+		return this.id;
 	}
 
 	public void setId(Long id) {
@@ -34,7 +34,7 @@ public class IFactura implements Serializable {
 	}
 
 	public int getNumUsuarios() {
-		return numUsuarios;
+		return this.numUsuarios;
 	}
 
 	public void setNumUsuarios(int numUsuarios) {
@@ -42,7 +42,7 @@ public class IFactura implements Serializable {
 	}
 
 	public Date getFechaFin() {
-		return fechaFin;
+		return this.fechaFin;
 	}
 
 	public void setFechaFin(Date fechaFin) {
@@ -50,7 +50,7 @@ public class IFactura implements Serializable {
 	}
 
 	public double getPujaActual() {
-		return pujaActual;
+		return this.pujaActual;
 	}
 
 	public void setPujaActual(double pujaActual) {
@@ -58,18 +58,11 @@ public class IFactura implements Serializable {
 	}
 
 	public String getGanadorActual() {
-		return ganadorActual;
+		return this.ganadorActual;
 	}
 
 	public void setGanadorActual(String ganadorActual) {
 		this.ganadorActual = ganadorActual;
-	}
-
-	@Override
-	public String toString() {
-		return "IFactura [id=" + id + ", numUsuarios=" + numUsuarios
-				+ ", fechaFin=" + fechaFin + ", pujaActual=" + pujaActual
-				+ ", ganadorActual=" + ganadorActual + "]";
 	}
 	
 }
