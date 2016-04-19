@@ -60,7 +60,7 @@
 												<tbody>
 													<c:forEach items="${subastas}" var="subasta">
 														<tr>
-															<form action="/postPuja" method="post">
+															<form action="/postPuja" method="post" onsubmit="return getPuja${subasta.id}();">
 																<td class="a-center "><input type="checkbox"
 																	class="tableflat"></td>
 																<td class=" "><c:out value="${subasta.id}" /></td>
@@ -76,17 +76,19 @@
 																	</c:if>
 																</td>
 																<td class="a-right a-right ">
-
 																	<div class="div-form">
 																		<input type="hidden" name="id" value="${subasta.id}">
-																		<input type="number" step="0.25" name="puja"
-																			class="form-control numeric"
-																			placeholder="Introduzca puja" required> <input
-																			type="submit" class="btn btn-primary btn-form"
-																			value="Enviar">
+																		<input type="number" id="puja_${subasta.id}" step="0.25" name="puja" class="form-control numeric" placeholder="Introduzca puja" required>
+																		<input type="submit" id="pujar" class="btn btn-primary btn-form" value="Enviar">
+																		<script>
+																			function getPuja${subasta.id}() {
+																				var puja = document.getElementById("puja_${subasta.id}").value;
+																				return confirm('¿Seguro que desea pujar ' + puja + '€?');
+																			}
+																		</script>
 																	</div>
+																</td>
 															</form>
-															</td>
 														</tr>
 													</c:forEach>
 												</tbody>
