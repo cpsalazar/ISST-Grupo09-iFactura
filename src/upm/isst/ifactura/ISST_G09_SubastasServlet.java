@@ -11,7 +11,6 @@ import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
 import upm.isst.ifactura.dao.UsersDAO;
 import upm.isst.ifactura.dao.UsersDAOImpl;
-import upm.isst.ifactura.model.IFactura;
 
 @SuppressWarnings("serial")
 public class ISST_G09_SubastasServlet extends HttpServlet {
@@ -48,6 +47,6 @@ public class ISST_G09_SubastasServlet extends HttpServlet {
 		dao1.create("hectorbm94@gmail.com", "movistar");
 		dao1.create("oscarvb94@gmail.com", "vodafone");
 		dao1.create("cobealex@gmail.com", "orange");
-		//dao1.create(correo, compañia);
+		dao1.create("cpsalazar17@gmail.com", "yoigo");
 	}
 }

@@ -50,7 +50,8 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		
 		if (usuarios.size()>0){
 			subasta.get(0).setParticipantes(usuarios.get(0).getCorreo());
-			System.out.println(subasta.get(0).getParticipantes().toString());
+			dao.update(subasta.get(0));
+			//System.out.println(subasta.get(0).getParticipantes().toString());
 		}
 		
 		
