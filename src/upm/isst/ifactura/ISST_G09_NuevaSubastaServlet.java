@@ -39,7 +39,9 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		}
 		
 		long id = subastas.size() + 1;
-		dao.create(id, usuarios, fechaConHora, puja_inicial, "");
+		List<String> participantes = new ArrayList<String>();
+		
+		dao.create(id, usuarios, fechaConHora, puja_inicial, "", participantes);
 		
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 

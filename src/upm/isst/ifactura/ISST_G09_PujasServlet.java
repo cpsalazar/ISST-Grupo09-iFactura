@@ -10,7 +10,10 @@ import javax.servlet.http.*;
 
 import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
+import upm.isst.ifactura.dao.UsersDAO;
+import upm.isst.ifactura.dao.UsersDAOImpl;
 import upm.isst.ifactura.model.IFactura;
+import upm.isst.ifactura.model.Users;
 
 @SuppressWarnings("serial")
 public class ISST_G09_PujasServlet extends HttpServlet {
@@ -35,11 +38,21 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 			String user = req.getUserPrincipal().getName();
 			subasta.get(0).setGanadorActual(user);
 			dao.update(subasta.get(0));
-			alerta = "Eres el m√°ximo pujador";
+			alerta = "Eres el m·ximo pujador";
 		}
 		
 		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
+		
+		UsersDAO dao1 = UsersDAOImpl.getInstance();
+		
+		List<Users> usuarios = dao1.readCorreo(req.getUserPrincipal().getName());
+		
+		if (usuarios.size()>0){
+			subasta.get(0).setParticipantes(usuarios.get(0).getCorreo());
+			System.out.println(subasta.get(0).getParticipantes().toString());
+		}
+		
 		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
 		

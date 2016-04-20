@@ -2,6 +2,7 @@ package upm.isst.ifactura.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,14 +16,16 @@ public class IFactura implements Serializable {
 	private Date fechaFin;
 	private double pujaActual;
 	private String ganadorActual;
+	private List<String> participantes;
 	
-	public IFactura(Long id,int numUsuarios, Date fechaFin, double pujaActual, String ganadorActual) {
+	public IFactura(Long id,int numUsuarios, Date fechaFin, double pujaActual, String ganadorActual, List<String> participantes) {
 		super();
 		this.id = id;
 		this.numUsuarios = numUsuarios;
 		this.fechaFin = fechaFin;
 		this.pujaActual = pujaActual;
 		this.ganadorActual = ganadorActual;
+		this.participantes = participantes;
 	}
 
 	public Long getId() {
@@ -63,6 +66,14 @@ public class IFactura implements Serializable {
 
 	public void setGanadorActual(String ganadorActual) {
 		this.ganadorActual = ganadorActual;
+	}
+
+	public List<String> getParticipantes() {
+		return participantes;
+	}
+
+	public void setParticipantes(String participante) {
+		this.participantes.add(participante);
 	}
 	
 }

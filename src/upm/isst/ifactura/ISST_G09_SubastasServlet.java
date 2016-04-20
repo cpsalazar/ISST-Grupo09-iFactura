@@ -1,10 +1,17 @@
 package upm.isst.ifactura;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
 import javax.servlet.http.*;
+
 import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
+import upm.isst.ifactura.dao.UsersDAO;
+import upm.isst.ifactura.dao.UsersDAOImpl;
+import upm.isst.ifactura.model.IFactura;
 
 @SuppressWarnings("serial")
 public class ISST_G09_SubastasServlet extends HttpServlet {
@@ -27,11 +34,20 @@ public class ISST_G09_SubastasServlet extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		
+		List<String> participantes = new ArrayList<String>();
 
-		dao.create((long) 1, 500, fechaConHora, 14, "Movistar");
-		dao.create((long) 2, 700, fechaConHora, 12, "Vodafone");
-		dao.create((long) 3, 300, fechaConHora1, 13, "Orange");
-		dao.create((long) 4, 400, fechaConHora1, 11, "Yoigo");
-		dao.create((long) 5, 800, fechaConHora2, 20, "Pepephone");
+		dao.create((long) 1, 500, fechaConHora, 14, "", participantes);
+		dao.create((long) 2, 700, fechaConHora, 12, "", participantes);
+		dao.create((long) 3, 300, fechaConHora1, 13, "", participantes);
+		dao.create((long) 4, 400, fechaConHora1, 11, "", participantes);
+		dao.create((long) 5, 800, fechaConHora2, 20, "", participantes);
+		
+		UsersDAO dao1 = UsersDAOImpl.getInstance();
+		
+		dao1.create("hectorbm94@gmail.com", "movistar");
+		dao1.create("oscarvb94@gmail.com", "vodafone");
+		dao1.create("cobealex@gmail.com", "orange");
+		//dao1.create(correo, compañia);
 	}
 }

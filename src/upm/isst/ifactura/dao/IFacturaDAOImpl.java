@@ -24,12 +24,12 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	
 	@Override
 	public IFactura create(Long id, int numUsuarios, Date fechaFin, double pujaActual,
-			String ganadorActual) {
+			String ganadorActual, List<String> participantes) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
-		IFactura subasta = new IFactura(id, numUsuarios, fechaFin, pujaActual, ganadorActual);
+		IFactura subasta = new IFactura(id, numUsuarios, fechaFin, pujaActual, ganadorActual, participantes);
 		transaction.begin();
 		em.persist(subasta);
 		transaction.commit();
