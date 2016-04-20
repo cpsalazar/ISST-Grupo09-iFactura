@@ -23,14 +23,14 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		
 		try {
 			mensaje = Integer.parseInt (req.getParameter("id"));
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 	
 		}
 		
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 		
-		String alerta = "La puja introducida debe mejorar la actual";
+		String alerta;
+		alerta = "La puja introducida debe mejorar la actual";
 		
 		List<IFactura> subasta = dao.readIFactura_id((long) mensaje);
 		if (subasta.get(0).getPujaActual() > Double.parseDouble(req.getParameter("puja")) && Double.parseDouble(req.getParameter("puja")) > 0) {	
@@ -38,7 +38,7 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 			String user = req.getUserPrincipal().getName();
 			subasta.get(0).setGanadorActual(user);
 			dao.update(subasta.get(0));
-			alerta = "Eres el máximo pujador";
+			alerta = "Vas ganando la subasta";
 		}
 		
 		req.getSession().setAttribute("alerta", alerta);

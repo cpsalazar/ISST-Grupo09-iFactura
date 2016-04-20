@@ -6,7 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import upm.isst.ifactura.model.IFactura;
 import upm.isst.ifactura.model.Users;
 
 public class UsersDAOImpl implements UsersDAO {
@@ -23,12 +22,12 @@ public class UsersDAOImpl implements UsersDAO {
 	}
 	
 	@Override
-	public Users create(String correo, String compañia) {
+	public Users create(String correo, String compania) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
-		Users user = new Users(correo, compañia);
+		Users user = new Users(correo, compania);
 		transaction.begin();
 		em.persist(user);
 		transaction.commit();
@@ -63,12 +62,12 @@ public class UsersDAOImpl implements UsersDAO {
 	}
 
 	@Override
-	public List<Users> readCompañia(String compañia) {
+	public List<Users> readCompania(String compania) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		
-		Query q = em.createQuery("select t from Users t where t.compañia = :compañia");
-	    q.setParameter("compañia", compañia);
+		Query q = em.createQuery("select t from Users t where t.compania = :compania");
+	    q.setParameter("compania", compania);
 
 		List<Users> usuarios = q.getResultList();
 		em.close();

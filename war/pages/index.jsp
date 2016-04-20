@@ -79,7 +79,7 @@
 																	<div class="div-form">
 																		<input type="hidden" name="id" value="${subasta.id}">
 																		<input type="number" id="puja_${subasta.id}" step="0.25" name="puja" class="form-control numeric" placeholder="Introduzca puja" required>
-																		<input type="submit" id="pujar" class="btn btn-primary btn-form" value="Enviar">
+																		<input type="submit" id="pujar" class="btn btn-primary btn-form" value="Pujar">
 																		<script>
 																			function getPuja${subasta.id}() {
 																				var puja = document.getElementById("puja_${subasta.id}").value;
@@ -95,7 +95,7 @@
 											</table>
 										</div>
 									</div>
-									<c:if test="${alerta == 'Eres el máximo pujador'}">
+									<c:if test="${alerta == 'Vas ganando la subasta'}">
 										<div class="alert alert-success fade in" style="font-size: 14px;">
 											<a class="close" href="#" data-dismiss="alert">x</a>
 											<strong>Puja satisfactoria: </strong><c:out value="${alerta}" />

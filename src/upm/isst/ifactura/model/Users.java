@@ -12,12 +12,12 @@ public class Users implements Serializable{
 	private static final long serialVersionUID = 01L;
 	@Id @OneToMany
 	private String correo;
-	private String compañia;
+	private String compania;
 	
-	public Users(String correo, String compañia) {
+	public Users(String correo, String compania) {
 		super();
 		this.correo = correo;
-		this.compañia = compañia;
+		this.compania = compania;
 	}
 
 	public String getCorreo() {
@@ -28,12 +28,12 @@ public class Users implements Serializable{
 		this.correo = correo;
 	}
 
-	public String getCompañia() {
-		return compañia;
+	public String getCompania() {
+		return compania;
 	}
 
-	public void setCompañia(String compañia) {
-		this.compañia = compañia;
+	public void setCompania(String compania) {
+		this.compania = compania;
 	}
 	
 	
