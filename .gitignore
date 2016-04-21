@@ -15,7 +15,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
-.war/WEB-INF/lib/
+war/WEB-INF/lib/
 
 # External tool builders
 .externalToolBuilders/
