@@ -2456,6 +2456,10 @@ th {
 	width: auto !important;
 }
 
+td {
+	vertical-align: middle !important;
+}
+
 span.section {
   display: block;
   width: 100%;
@@ -2470,12 +2474,9 @@ span.section {
 
 .form-control {
     border-radius: 0;
-}
-
-@media screen and (min-width: 480px) and (min-device-width : 1900px) {
-	.form-control {
-	    width: 25vw;
-	}
+    width: 80%;
+    float: right;
+    margin-right: 70px;
 }
 
 #peticion-subasta .form-control {

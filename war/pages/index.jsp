@@ -71,7 +71,7 @@
 																	<span class="minutes${subasta.id}"></span>
 																	<span class="seconds${subasta.id}"></span>
 																</td>
-																<td class=" "><c:out value="${subasta.pujaActual}" /></td>
+																<td class=" "><c:out value="${subasta.pujaActual}" />€</td>
 																<td class=" ">
 																	<c:if test="${user == subasta.ganadorActual}">
 																		<c:out value="${subasta.ganadorActual}" />
@@ -108,7 +108,7 @@
 											<strong>Puja satisfactoria: </strong><c:out value="${alerta}" />
 										</div>
 									</c:if>
-									<c:if test="${alerta == 'La puja introducida debe mejorar la actual'}">
+									<c:if test="${alerta != null && alerta != 'Vas ganando la subasta'}">
 										<div class="alert alert-danger fade in" style="color: white; font-size: 14px;">
 											<a class="close" href="#" data-dismiss="alert">x</a>
 											<strong>Error: </strong><c:out value="${alerta}" />
