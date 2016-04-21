@@ -9,6 +9,9 @@
 	<![endif]-->
 	
 	<!-- jQuery -->
+	
+	<script src="../js/countdown.js"></script> 
+	
 	<script src="../js/jquery.min.js"></script>
 	<script src="../js/nicescroll/jquery.nicescroll.min.js"></script>
 	<script src="../js/jquery-numeric.js"></script>

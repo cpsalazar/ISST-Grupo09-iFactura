@@ -65,8 +65,12 @@
 																	class="tableflat"></td>
 																<td class=" "><c:out value="${subasta.id}" /></td>
 																<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
-																<td class=" " id="clock"><c:out value="${subasta.fechaFin}" />
-																<script type="text/javascript"></script>
+																<td class=" " id="clock${subasta.id}">
+																	<span class="days${subasta.id}"></span>
+																	<span class="hours${subasta.id}"></span>
+																	<span class="minutes${subasta.id}"></span>
+																	<span class="seconds${subasta.id}"></span>
+																	<c:out value="${subasta.fechaFin}" />
 																</td>
 																<td class=" "><c:out value="${subasta.pujaActual}" /></td>
 																<td class=" ">
@@ -77,6 +81,8 @@
 																		-
 																	</c:if>
 																</td>
+																<input type="hidden" id="fechaFin${subasta.id}" value="${subasta.fechaFin}" />
+																
 																<td class="a-right a-right ">
 																	<div class="div-form">
 																		<input type="hidden" name="id" value="${subasta.id}">
@@ -92,7 +98,7 @@
 																</td>
 															</form>
 														</tr>
-													</c:forEach>
+													</c:forEach>																									
 												</tbody>
 											</table>
 										</div>

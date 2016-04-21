@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -31,6 +32,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 
 		Date fechaConHora = new java.util.Date();
 
+
 		try {
 			fechaConHora = sdf.parse(fecha);
 
@@ -38,10 +40,30 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
+		long milihastafin = fechaConHora.getTime();
+		
+		
+		
+		req.getSession().setAttribute("milisegundos", milihastafin);
+
+		
 		long id = subastas.size() + 1;
 		List<String> participantes = new ArrayList<String>();
 		
-		dao.create(id, usuarios, fechaConHora, puja_inicial, "", participantes);
+		/*if (subastas.size() > 0) {
+			
+			List <Long> milisegundos = req.getSession().;
+			milisegundos.add(milihastafin);
+
+		} else {
+			List <Long> milisegundos = Arrays.asList(milihastafin);
+			req.getSession().setAttribute("milisegundos", milisegundos);
+			
+		}
+		
+		System.out.println(req.getSession().getAttribute("milisegundos").toString());*/
+		
+		dao.create(id, usuarios, milihastafin, puja_inicial, "", participantes);
 		
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 
