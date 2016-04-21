@@ -2452,6 +2452,10 @@ button,
     margin: 20px 0;
 }
 
+th {
+	width: auto !important;
+}
+
 span.section {
   display: block;
   width: 100%;
