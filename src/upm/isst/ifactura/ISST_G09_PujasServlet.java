@@ -64,7 +64,9 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 			}
 			//System.out.println(subasta.get(0).getParticipantes().toString());
 		}
-	
+		
+		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
+		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
 		
 		try {
