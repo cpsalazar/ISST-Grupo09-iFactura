@@ -70,7 +70,6 @@
 																	<span class="hours${subasta.id}"></span>
 																	<span class="minutes${subasta.id}"></span>
 																	<span class="seconds${subasta.id}"></span>
-																	<c:out value="${subasta.fechaFin}" />
 																</td>
 																<td class=" "><c:out value="${subasta.pujaActual}" /></td>
 																<td class=" ">

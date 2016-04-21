@@ -3,11 +3,9 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -42,38 +40,13 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		
 		long milihastafin = fechaConHora.getTime();
 		
-		
-		
-		req.getSession().setAttribute("milisegundos", milihastafin);
-
-		
 		long id = subastas.size() + 1;
 		List<String> participantes = new ArrayList<String>();
 		
-		/*if (subastas.size() > 0) {
-			
-			List <Long> milisegundos = req.getSession().;
-			milisegundos.add(milihastafin);
-
-		} else {
-			List <Long> milisegundos = Arrays.asList(milihastafin);
-			req.getSession().setAttribute("milisegundos", milisegundos);
-			
-		}
-		
-		System.out.println(req.getSession().getAttribute("milisegundos").toString());*/
 		
 		dao.create(id, usuarios, milihastafin, puja_inicial, "", participantes);
 		
-		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
-
-		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
-
-		try {
-			view.forward(req, resp);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		}
+		resp.sendRedirect("/isst_g09_ifactura");
 
 	}
 }

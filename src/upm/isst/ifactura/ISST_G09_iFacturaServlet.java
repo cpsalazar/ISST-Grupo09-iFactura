@@ -1,8 +1,6 @@
 package upm.isst.ifactura;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -37,9 +35,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		} 
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
-		
-		//List<String> milisegundos = new List <String>();
-		
+				
 		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("user", user);
 		req.getSession().setAttribute("url", url);
