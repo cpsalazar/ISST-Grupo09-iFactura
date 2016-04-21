@@ -47,14 +47,24 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		UsersDAO dao1 = UsersDAOImpl.getInstance();
 		
 		List<Users> usuarios = dao1.readCorreo(req.getUserPrincipal().getName());
+		boolean aux = false;
 		
 		if (usuarios.size()>0){
-			subasta.get(0).setParticipantes(usuarios.get(0).getCorreo());
-			dao.update(subasta.get(0));
+			List<String> participantes = subasta.get(0).getParticipantes();
+			if (participantes.size()>0){
+				for (int i=0; i<participantes.size(); i++){
+					if (participantes.get(i).equals(usuarios.get(0).getCorreo())){
+						aux = true;
+					}
+				}
+			}
+			if (aux == false){
+				subasta.get(0).setParticipantes(usuarios.get(0).getCorreo());
+				dao.update(subasta.get(0));
+			}
 			//System.out.println(subasta.get(0).getParticipantes().toString());
 		}
-		
-		
+	
 		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
 		
 		try {

@@ -65,7 +65,9 @@
 																	class="tableflat"></td>
 																<td class=" "><c:out value="${subasta.id}" /></td>
 																<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
-																<td class=" "><c:out value="${subasta.fechaFin}" /></td>
+																<td class=" " id="clock"><c:out value="${subasta.fechaFin}" />
+																<script type="text/javascript"></script>
+																</td>
 																<td class=" "><c:out value="${subasta.pujaActual}" /></td>
 																<td class=" ">
 																	<c:if test="${user == subasta.ganadorActual}">
@@ -107,6 +109,7 @@
 											<strong>Error: </strong><c:out value="${alerta}" />
 										</div>
 									</c:if>
+									<p id="clock"></p>
 								</div>
 							</div>
 						</div>
