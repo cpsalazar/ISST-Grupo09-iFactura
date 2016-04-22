@@ -24,6 +24,22 @@
 	<script src="../js/moment/moment.min.js"></script>
 	<script src="../js/datepicker/daterangepicker.js"></script>
 	<script src="../js/custom.js"></script>
+	<script type="text/javascript"> 
+	    (function($){
+	        $(function(){
+	            setInterval(function() {
+	                var url = '#';
+	                var num_subastas = document.getElementById("num_subastas").innerHTML;
+	               	for (i = 1; i <= num_subastas; i++) {
+	                	var id_puja = ('#rlpuja'+i);
+	                	var id_pujador = ('#rlpujador'+i);
+	                	$(id_puja).load(url + ' ' + id_puja + '_');
+	                	$(id_pujador).load(url + ' ' + id_pujador + '_');
+	               	}
+	            }, 500);
+	        }); 
+	     })(jQuery);
+    </script>
 	<!-- Form validation -->
 	<script type="text/javascript" src="../js/parsley/parsley.min.js"></script>
 	<script type="text/javascript">

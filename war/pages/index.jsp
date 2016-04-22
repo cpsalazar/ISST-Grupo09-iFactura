@@ -6,21 +6,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="refresh" content="30; url=isst_g09_ifactura"/>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- Meta, title, CSS, favicons, etc. -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>iFactura</title>
-<!-- Bootstrap core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-<link href="../fonts/css/font-awesome.min.css" rel="stylesheet">
-<link href="../css/animate.min.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="../css/custom.css" rel="stylesheet">
-<link href="../css/icheck/flat/green.css" rel="stylesheet" />
-<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>iFactura</title>
+	<!-- Bootstrap core CSS -->
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="../fonts/css/font-awesome.min.css" rel="stylesheet">
+	<link href="../css/animate.min.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="../css/custom.css" rel="stylesheet">
+	<link href="../css/icheck/flat/green.css" rel="stylesheet" />
+	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="nav-md">
 	<c:if test="${user != null}">
@@ -59,7 +57,8 @@
 													</tr>
 												</thead>
 												<tbody>
-													<c:forEach items="${subastas}" var="subasta">
+													<c:set var="cuenta" value="0" />
+													<c:forEach items="${subastas}" var="subasta" varStatus="loop">
 														<c:if test="${subasta.fechaFin lt miliActual}">
 															<form action="/postPuja" method="post"
 																onsubmit="return getPuja${subasta.id}();">
@@ -69,27 +68,31 @@
 														</c:if>
 														<c:if test="${subasta.fechaFin gt miliActual}">
 															<tr>
-																<form action="/postPuja" method="post"
-																	onsubmit="return getPuja${subasta.id}();">
-																	<td class="a-center "><input type="checkbox"
-																		class="tableflat"></td>
+																<form action="/postPuja" method="post" onsubmit="return getPuja${subasta.id}();">
+																	<td class="a-center "><input type="checkbox" class="tableflat"></td>
 																	<td class=" "><c:out value="${subasta.id}" /></td>
-																	<td class=" "><c:out
-																			value="${subasta.numUsuarios}" /></td>
+																	<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
 																	<td class=" " id="clock${subasta.id}"><span
 																		class="days${subasta.id}"></span> <span
 																		class="hours${subasta.id}"></span> <span
 																		class="minutes${subasta.id}"></span> <span
-																		class="seconds${subasta.id}"></span></td>
-																	<td class=" "><c:out value="${subasta.pujaActual}" />€</td>
-																	<td class=" "><c:if
-																			test="${user == subasta.ganadorActual}">
-																			<c:out value="${subasta.ganadorActual}" />
-																		</c:if> <c:if test="${user != subasta.ganadorActual}">
-																		-
-																	</c:if></td> <input type="hidden" id="fechaFin${subasta.id}"
+																		class="seconds${subasta.id}"></span>
+																	</td>
+																	<td id="rlpuja${subasta.id}">
+																		<span id="rlpuja${subasta.id}_"><c:out value="${subasta.pujaActual}" />€</span>
+																	</td>
+																	<td id="rlpujador${subasta.id}">
+																		<span id="rlpujador${subasta.id}_">
+																			<c:if test="${user == subasta.ganadorActual}">
+																				<c:out value="${subasta.ganadorActual}" />
+																			</c:if>
+																			<c:if test="${user != subasta.ganadorActual}">
+																				-
+																			</c:if>
+																		</span>
+																	</td>
+																	<input type="hidden" id="fechaFin${subasta.id}"
 																		value="${subasta.fechaFin}" />
-
 																	<td class="a-right a-right ">
 																		<div class="div-form">
 																			<input type="hidden" name="id" value="${subasta.id}">
@@ -99,17 +102,21 @@
 																				type="submit" id="pujar"
 																				class="btn btn-primary btn-form" value="Pujar">
 																			<script>
-																			function getPuja${subasta.id}() {
-																				var puja = document.getElementById("puja_${subasta.id}").value;
-																				return confirm('¿Seguro que desea pujar ' + puja + '€?');
-																			}
-																		</script>
+																				function getPuja${subasta.id}() {
+																					var puja = document.getElementById("puja_${subasta.id}").value;
+																					return confirm('¿Seguro que desea pujar ' + puja + '€?');
+																				}
+																			</script>
 																		</div>
 																	</td>
 																</form>
 															</tr>
 														</c:if>
+														<c:if test="${cuenta < loop.index}">
+															<c:set var="cuenta" value="${loop.index}" />
+														</c:if>
 													</c:forEach>
+													<span id="num_subastas" style="display: none;"><c:out value="${cuenta + 1}" /></span>
 												</tbody>
 											</table>
 										</div>
