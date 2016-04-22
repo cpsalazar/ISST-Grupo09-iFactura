@@ -1,6 +1,7 @@
 package upm.isst.ifactura;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -40,6 +41,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		req.getSession().setAttribute("user", user);
 		req.getSession().setAttribute("url", url);
 		req.getSession().setAttribute("urlLinktext", urlLinktext);
+		req.getSession().setAttribute("miliActual", new Date().getTime());
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 
 

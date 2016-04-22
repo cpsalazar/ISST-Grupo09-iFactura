@@ -50,7 +50,7 @@
 												<tr class="headings">
 													<th>Nº Subasta</th>
 													<th>Nº Usuarios</th>
-													<th>Finalizó hace</th>
+													<th>Estado</th>
 													<th>Puja ganadora</th>
 												</tr>
 											</thead>
@@ -60,7 +60,12 @@
 														<c:if test="${user == subasta.ganadorActual}">
 															<td class=" "><c:out value="${subasta.id}" /></td>
 															<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
-															<td class=" "><c:out value="${subasta.fechaFin}" /></td>
+															<c:if test="${subasta.fechaFin lt miliActual}">
+																<td class=" ">Terminada</td>
+															</c:if>
+															<c:if test="${subasta.fechaFin gt miliActual}">
+																<td class=" ">Activa</td>
+															</c:if>
 															<td class=" "><c:out value="${subasta.pujaActual}" /></td>
 														</c:if>
 													</tr>

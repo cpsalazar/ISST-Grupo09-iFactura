@@ -1,10 +1,8 @@
 package upm.isst.ifactura;
 import java.io.IOException;
-//import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 
@@ -64,18 +62,9 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 				subasta.get(0).setParticipantes(usuarios.get(0).getCorreo());
 				dao.update(subasta.get(0));
 			}
-			//System.out.println(subasta.get(0).getParticipantes().toString());
 		}
 		
-		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
-		
-		RequestDispatcher view = req.getRequestDispatcher("/pages/index.jsp");
-		
-		try {
-			view.forward(req, resp);
-		} catch (ServletException e) {
-			e.printStackTrace();
-		}
+		resp.sendRedirect("/isst_g09_ifactura");
 
 	}
 }

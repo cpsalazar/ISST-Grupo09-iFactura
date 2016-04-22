@@ -1,10 +1,16 @@
 function getTimeRemaining(endtime) {
 
 	var t = endtime - Date.parse(new Date());
-	var seconds = Math.floor((t / 1000) % 60);
-	var minutes = Math.floor((t / 1000 / 60) % 60);
-	var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-	var days = Math.floor(t / (1000 * 60 * 60 * 24));
+	var seconds = 0;
+	var minutes = 0;
+	var hours = 0;
+	var days = 0;
+	if (t > 0) {
+		seconds = Math.floor((t / 1000) % 60);
+		minutes = Math.floor((t / 1000 / 60) % 60);
+		hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+		days = Math.floor(t / (1000 * 60 * 60 * 24));
+	}
 	return {
 		'total': t,
 		'days': days,
@@ -23,33 +29,32 @@ function initializeClock(id, endtime) {
 		var j = 0;
 
 		for (i=0; i<endtime.length; i++){
+			if(endtime[i] != 0){
 
-			j = i+1;
 
-			var clock = document.getElementById(id + j);
-			var daysSpan = clock.querySelector('.days' + j);
-			var hoursSpan = clock.querySelector('.hours' + j);
-			var minutesSpan = clock.querySelector('.minutes' + j);
-			var secondsSpan = clock.querySelector('.seconds' + j);
+				j = i+1;
 
-			function updateClock() {
-				var t = getTimeRemaining(endtime[i]);
+				var clock = document.getElementById(id + j);
+				var daysSpan = clock.querySelector('.days' + j);
+				var hoursSpan = clock.querySelector('.hours' + j);
+				var minutesSpan = clock.querySelector('.minutes' + j);
+				var secondsSpan = clock.querySelector('.seconds' + j);
 
-				daysSpan.innerHTML = t.days + 'd '+ ':';
-				hoursSpan.innerHTML = ('0' + t.hours).slice(-2) + 'h ' + ':';
-				minutesSpan.innerHTML = ('0' + t.minutes).slice(-2) + 'm ' + ':';
-				secondsSpan.innerHTML = ('0' + t.seconds).slice(-2) + 's ';
+				function updateClock() {
+					var t = getTimeRemaining(endtime[i]);
 
-				if (t.total <= 0) {
-					clearInterval(timeinterval);
+					daysSpan.innerHTML = t.days + 'd '+ ':';
+					hoursSpan.innerHTML = ('0' + t.hours).slice(-2) + 'h ' + ':';
+					minutesSpan.innerHTML = ('0' + t.minutes).slice(-2) + 'm ' + ':';
+					secondsSpan.innerHTML = ('0' + t.seconds).slice(-2) + 's ';
 				}
-			}
 
-			updateClock();
+				updateClock();
+			}
 
 		}
 
-	}
+}
 
 	var timeinterval = setInterval(recurrencia, 1000);
 
@@ -65,11 +70,6 @@ while (document.getElementById("fechaFin" + i) != null){
 	arraymili.push(parseFloat(document.getElementById("fechaFin" + i).value));
 	i++;
 }
-
-/*var a = document.getElementById("fechaFin1").value;
-var deadline = parseFloat(a);
-var days = deadline.type;*/
-
 
 initializeClock('clock', arraymili);
 
