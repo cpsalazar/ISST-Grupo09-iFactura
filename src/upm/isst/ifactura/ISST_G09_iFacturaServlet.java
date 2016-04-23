@@ -26,7 +26,9 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String urlLinktext = "Login";
 		String user = null;
 		String alerta = null;
-
+		
+		NotificationDAO daonot = NotificationDAOImpl.getInstance();
+		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
 
 		if (req.getUserPrincipal() != null) {
@@ -36,10 +38,12 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			urlLinktext = "Logout";
 
 			view = req.getRequestDispatcher("/pages/index.jsp");
+			// Hay que inicializarlo aqui, porque si no user podría ser null
+			req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
+
 		} 
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
-		NotificationDAO daonot = NotificationDAOImpl.getInstance();
 				
 		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("user", user);
@@ -47,8 +51,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		req.getSession().setAttribute("urlLinktext", urlLinktext);
 		req.getSession().setAttribute("miliActual", new Date().getTime());
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
-		req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
-
+		
 		try {
 			view.forward(req, resp);
 		} catch (ServletException e) {

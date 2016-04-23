@@ -2,6 +2,8 @@ package upm.isst.ifactura;
 
 import javax.servlet.http.*;
 
+import upm.isst.ifactura.dao.NotificationDAO;
+import upm.isst.ifactura.dao.NotificationDAOImpl;
 import upm.isst.ifactura.dao.UsersDAO;
 import upm.isst.ifactura.dao.UsersDAOImpl;
 
@@ -41,5 +43,9 @@ public class ISST_G09_SubastasServlet extends HttpServlet {
 		dao1.create("oscarvb94@gmail.com", "vodafone");
 		dao1.create("cobealex@gmail.com", "orange");
 		dao1.create("cpsalazar17@gmail.com", "yoigo");
+		
+		NotificationDAO dao2 = NotificationDAOImpl.getInstance();
+		
+		dao2.create("hectorbm94@gmail.com", "texto de prueba");
 	}
 }
