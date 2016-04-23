@@ -10,6 +10,9 @@ import javax.servlet.http.*;
 import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
 import upm.isst.ifactura.model.IFactura;
+import upm.isst.ifactura.dao.NotificationDAO;
+import upm.isst.ifactura.dao.NotificationDAOImpl;
+import upm.isst.ifactura.model.Notification;
 
 import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
@@ -36,6 +39,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		} 
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
+		NotificationDAO daonot = NotificationDAOImpl.getInstance();
 				
 		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("user", user);
@@ -43,7 +47,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		req.getSession().setAttribute("urlLinktext", urlLinktext);
 		req.getSession().setAttribute("miliActual", new Date().getTime());
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
-
+		req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
 
 		try {
 			view.forward(req, resp);
