@@ -68,7 +68,7 @@
 							<c:forEach items="${notificaciones}" var="noti">
 								<li><a> <span class="image"><img
 										src="../images/img.jpg" alt="Profile Image" /></span> <span> <span>Andrés
-											Menéndez</span> <span class="time">Hace 3 minutos</span>
+											Menéndez</span>
 									</span> <span class="message"><c:out value="${noti.texto}"/></span>
 								</a></li>
 							</c:forEach>

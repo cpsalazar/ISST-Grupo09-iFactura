@@ -47,7 +47,7 @@
 												class="table table-striped responsive-utilities jambo_table">
 												<thead>
 													<tr class="headings">
-														<th><input type="checkbox" class="tableflat"></th>
+														<th> </th>
 														<th>Nº Subasta</th>
 														<th>Nº Usuarios</th>
 														<th>Finaliza en</th>
@@ -67,8 +67,8 @@
 															</form>
 														</c:if>
 														<c:if test="${subasta.fechaFin gt miliActual}">
-															<tr onclick="window.location.href='#openModal';">
-																<div id="openModal" class="modalDialog">
+															<tr>
+																<div id="openModal${subasta.id}" class="modalDialog">
 																	<div class="col-xs-4 col-xs-offset-4">
 																		<a href="#close" title="Close" class="close">X</a>
 																		<h2 style="margin-top: 0;">
@@ -79,8 +79,7 @@
 																</div>
 																<form action="/postPuja" method="post"
 																	onsubmit="return getPuja${subasta.id}();">
-																	<td class="a-center "><input type="checkbox"
-																		class="tableflat"></td>
+																	<td class="a-center "><span onclick="window.location.href='#openModal${subasta.id}';" class="glyphicon glyphicon-info-sign"> </span></td>
 																	<td class=" "><c:out value="${subasta.id}" /></td>
 																	<td class=" "><c:out
 																			value="${subasta.numUsuarios}" /></td>
