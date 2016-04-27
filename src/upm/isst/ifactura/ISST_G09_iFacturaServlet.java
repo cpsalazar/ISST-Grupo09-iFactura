@@ -27,6 +27,12 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String user = null;
 		String alerta = null;
 		
+		if (req.getSession().getAttribute("puja") == null){
+			req.getSession().setAttribute("alerta", alerta);
+		} else {
+			req.getSession().setAttribute("puja", null);
+		}
+		
 		NotificationDAO daonot = NotificationDAOImpl.getInstance();
 		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
@@ -45,7 +51,6 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 				
-		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("user", user);
 		req.getSession().setAttribute("url", url);
 		req.getSession().setAttribute("urlLinktext", urlLinktext);

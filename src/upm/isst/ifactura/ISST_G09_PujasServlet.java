@@ -27,8 +27,8 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 		
-		String alerta;
-		alerta = "Para que tu puja sea válida debe debe ser múltiplo de 25 céntimos";
+		String alerta = null;
+		//alerta = "Para que tu puja sea válida debe debe ser múltiplo de 25 céntimos";
 	
 		List<IFactura> subasta = dao.readIFactura_id((long) mensaje);
 		if (subasta.get(0).getPujaActual() < Double.parseDouble(req.getParameter("puja"))) {
@@ -40,7 +40,8 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 			dao.update(subasta.get(0));
 			alerta = "Vas ganando la subasta";
 		}
-		
+
+		req.getSession().setAttribute("puja", "true");
 		req.getSession().setAttribute("alerta", alerta);
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 		
