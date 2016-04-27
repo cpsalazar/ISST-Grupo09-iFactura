@@ -69,8 +69,8 @@
 														<c:if test="${subasta.fechaFin gt miliActual}">
 															<tr>
 																<div id="openModal${subasta.id}" class="modalDialog">
-																	<div class="col-xs-4 col-xs-offset-4">
-																		<a href="#close" title="Close" class="close">X</a>
+																	<div class="col-xs-6 col-xs-offset-3">
+																		<a href="#close" class="close">X</a>
 																		<h2 style="margin-top: 0;">
 																			<strong>Descripción de la subasta</strong>
 																		</h2>

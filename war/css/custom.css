@@ -30,13 +30,18 @@ body.nav-sm .container.body .left_col {
 
 .modalDialog > div {
 	position: relative;
-	transform: translateY(25%);
+	transform: translateY(50%);
 	padding: 25px 30px 25px 30px;
 	border-radius: 10px;
 	background: #16A085;
 }
 
-.close {
+.modalDialog > .col-xs-6 {
+	background: rgba(52, 73, 94, 0.94);
+	transform: translateY(100%);
+}
+
+.col-xs-4 .close, .col-xs-6 .close {
 	opacity: .8;
 	background: #606061;
 	color: #FFFFFF;
@@ -223,6 +228,25 @@ body.nav-sm .profile {
 .active a span.fa {
     text-align: right !important;
     margin-right: 4px;
+}
+
+.fa-bars, select {
+	cursor: pointer;
+}
+
+.glyphicon-info-sign {
+	cursor: pointer;
+	font-size: 24px;
+	top: 2px;
+	color: rgb(26, 187, 156);
+}
+
+.headings {
+	height: 40px;
+}
+
+.sorting {
+	vertical-align: middle !important;
 }
 
 body.nav-sm .menu_section {
