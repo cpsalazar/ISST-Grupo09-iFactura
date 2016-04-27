@@ -67,31 +67,39 @@
 															</form>
 														</c:if>
 														<c:if test="${subasta.fechaFin gt miliActual}">
-															<tr>
-																<form action="/postPuja" method="post" onsubmit="return getPuja${subasta.id}();">
-																	<td class="a-center "><input type="checkbox" class="tableflat"></td>
+															<tr onclick="window.location.href='#openModal';">
+																<div id="openModal" class="modalDialog">
+																	<div class="col-xs-4 col-xs-offset-4">
+																		<a href="#close" title="Close" class="close">X</a>
+																		<h2 style="margin-top: 0;">
+																			<strong>Descripción de la subasta</strong>
+																		</h2>
+																		<p><c:out value="${subasta.descripcion}" /></p>
+																	</div>
+																</div>
+																<form action="/postPuja" method="post"
+																	onsubmit="return getPuja${subasta.id}();">
+																	<td class="a-center "><input type="checkbox"
+																		class="tableflat"></td>
 																	<td class=" "><c:out value="${subasta.id}" /></td>
-																	<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
+																	<td class=" "><c:out
+																			value="${subasta.numUsuarios}" /></td>
 																	<td class=" " id="clock${subasta.id}"><span
 																		class="days${subasta.id}"></span> <span
 																		class="hours${subasta.id}"></span> <span
 																		class="minutes${subasta.id}"></span> <span
-																		class="seconds${subasta.id}"></span>
-																	</td>
-																	<td id="rlpuja${subasta.id}">
-																		<span id="rlpuja${subasta.id}_"><c:out value="${subasta.pujaActual}" />€</span>
-																	</td>
-																	<td id="rlpujador${subasta.id}">
-																		<span id="rlpujador${subasta.id}_">
-																			<c:if test="${user == subasta.ganadorActual}">
+																		class="seconds${subasta.id}"></span></td>
+																	<td id="rlpuja${subasta.id}"><span
+																		id="rlpuja${subasta.id}_"><c:out
+																				value="${subasta.pujaActual}" />€</span></td>
+																	<td id="rlpujador${subasta.id}"><span
+																		id="rlpujador${subasta.id}_"> <c:if
+																				test="${user == subasta.ganadorActual}">
 																				<c:out value="${subasta.ganadorActual}" />
-																			</c:if>
-																			<c:if test="${user != subasta.ganadorActual}">
+																			</c:if> <c:if test="${user != subasta.ganadorActual}">
 																				-
 																			</c:if>
-																		</span>
-																	</td>
-																	<input type="hidden" id="fechaFin${subasta.id}"
+																	</span></td> <input type="hidden" id="fechaFin${subasta.id}"
 																		value="${subasta.fechaFin}" />
 																	<td class="a-right a-right ">
 																		<div class="div-form">

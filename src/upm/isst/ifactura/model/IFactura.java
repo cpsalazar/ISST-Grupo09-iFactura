@@ -11,15 +11,17 @@ public class IFactura implements Serializable {
 	private static final long serialVersionUID = 01L;
 	@Id
 	private Long id;
+	private String descripcion;
 	private int numUsuarios;
 	private long fechaFin;
 	private double pujaActual;
 	private String ganadorActual;
 	private List<String> participantes;
 	
-	public IFactura(Long id,int numUsuarios, long fechaFin, double pujaActual, String ganadorActual, List<String> participantes) {
+	public IFactura(Long id, String descripcion, int numUsuarios, long fechaFin, double pujaActual, String ganadorActual, List<String> participantes) {
 		super();
 		this.id = id;
+		this.descripcion = descripcion;
 		this.numUsuarios = numUsuarios;
 		this.fechaFin = fechaFin;
 		this.pujaActual = pujaActual;
@@ -33,6 +35,14 @@ public class IFactura implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getDescripcion(){
+		return this.descripcion;
+	}
+	
+	public void setDescripcion(String descripcion){
+		this.descripcion = descripcion;
 	}
 
 	public int getNumUsuarios() {

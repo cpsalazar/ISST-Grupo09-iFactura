@@ -22,13 +22,13 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 	
 	@Override
-	public IFactura create(Long id, int numUsuarios, long fechaFin, double pujaActual,
+	public IFactura create(Long id, String descripcion, int numUsuarios, long fechaFin, double pujaActual,
 			String ganadorActual, List<String> participantes) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
-		IFactura subasta = new IFactura(id, numUsuarios, fechaFin, pujaActual, ganadorActual, participantes);
+		IFactura subasta = new IFactura(id, descripcion, numUsuarios, fechaFin, pujaActual, ganadorActual, participantes);
 		transaction.begin();
 		em.persist(subasta);
 		transaction.commit();
@@ -43,6 +43,19 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 		EntityManager em = EMFService.get().createEntityManager();
 		
 		Query q = em.createQuery("select t from IFactura t");
+
+		List<IFactura> subastas = q.getResultList();
+		em.close();
+		return subastas;
+	}
+	
+	@Override
+	public List<IFactura> readIFactura_descripcion(String descripcion) {
+		
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from IFactura t where t.descripcion = :descripcion");
+	    q.setParameter("descripcion", descripcion);
 
 		List<IFactura> subastas = q.getResultList();
 		em.close();

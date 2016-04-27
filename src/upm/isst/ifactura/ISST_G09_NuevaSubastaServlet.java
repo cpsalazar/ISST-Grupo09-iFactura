@@ -18,6 +18,8 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
+		
+		String descripcion = req.getParameter("descripcion");
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		String fecha = req.getParameter("fecha");
@@ -44,7 +46,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		List<String> participantes = new ArrayList<String>();
 		
 		
-		dao.create(id, usuarios, milihastafin, puja_inicial, "", participantes);
+		dao.create(id, descripcion, usuarios, milihastafin, puja_inicial, "", participantes);
 		
 		resp.sendRedirect("/isst_g09_ifactura");
 

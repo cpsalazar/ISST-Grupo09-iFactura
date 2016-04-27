@@ -36,7 +36,7 @@
 	                	$(id_puja).load(url + ' ' + id_puja + '_');
 	                	$(id_pujador).load(url + ' ' + id_pujador + '_');
 	               	}
-	            }, 500);
+	            }, 500000);
 	        }); 
 	     })(jQuery);
     </script>
