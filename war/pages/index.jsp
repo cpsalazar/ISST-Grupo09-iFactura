@@ -11,6 +11,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>iFactura</title>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
 	<!-- Bootstrap core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<link href="../fonts/css/font-awesome.min.css" rel="stylesheet">
@@ -30,7 +31,7 @@
 					<div class="">
 						<div class="page-title">
 							<div class="title_left">
-								<h3>Tabla de subastas</h3>
+								<h3>Subastas en curso</h3>
 							</div>
 						</div>
 						<div class="clearfix"></div>

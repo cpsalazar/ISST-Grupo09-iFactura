@@ -8,7 +8,7 @@ body.nav-sm .container.body .left_col {
 
 .modalDialog {
 	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Open Sans, sans-serif;
 	color: white;
 	top: 0;
 	right: 0;
@@ -236,9 +236,13 @@ body.nav-sm .profile {
 
 .glyphicon-info-sign {
 	cursor: pointer;
-	font-size: 24px;
-	top: 2px;
+	font-size: 21px;
+	top: 3px;
 	color: rgb(26, 187, 156);
+}
+
+tr td:first-of-type {
+	width: 3vw;
 }
 
 .headings {
@@ -441,7 +445,7 @@ body {
     background: #2A3F54;
     /*#ECF0F1; #FCFCFC*/
 
-    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;
+    font-family: Open Sans, sans-serif;
     font-size: 13px;
     font-weight: 400;
     line-height: 1.471;
@@ -631,8 +635,8 @@ table.no-margin .progress {
     position: relative;
     min-height: 1px;
     float: left;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 
 .row {
@@ -820,7 +824,7 @@ body.nav-md ul.nav.child_menu li:after {
 .nav.side-menu>li>a,
 .nav.child_menu>li>a {
     color: #E7E7E7 !important;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .nav>li>a {
@@ -2528,6 +2532,10 @@ button,
 
 th {
 	width: auto !important;
+}
+
+.tr_historial th {
+	width: 25% !important;
 }
 
 td {

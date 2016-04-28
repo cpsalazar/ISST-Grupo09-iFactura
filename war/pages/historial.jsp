@@ -38,7 +38,7 @@
 					</div>
 					<!-- /.row -->
 					<div class="row">
-						<div class="col-lg-12">
+						<div class="col-xs-12">
 							<div class="panel panel-default">
 								<!-- /.panel-heading -->
 								<div class="panel-body">
@@ -47,7 +47,7 @@
 											class="table table-striped responsive-utilities jambo_table dataTable no-footer"
 											id="dataTables-example">
 											<thead>
-												<tr class="headings">
+												<tr class="headings tr_historial">
 													<th>Nº Subasta</th>
 													<th>Nº Usuarios</th>
 													<th>Estado</th>

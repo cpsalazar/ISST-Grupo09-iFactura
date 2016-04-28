@@ -130,6 +130,11 @@
 			});
 		});
 	</script>
+	<script type="text/javascript"> 
+		$(document).ready(function() {
+			$("tr > th").removeClass("sorting_asc");
+		});
+    </script>
 	
 	<script>
 		$(document).ready(function() {

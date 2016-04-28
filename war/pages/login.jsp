@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<title>iFactura</title>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet" type="text/css">
 	<!-- Bootstrap Core CSS -->
 	<link href="../css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom CSS -->
@@ -47,7 +48,7 @@
 							<button type="submit" class="btn btn-login">Login</button> 
 						</form>
 						<hr>
-						<div style="width: 195px; margin: 0 auto;">
+						<div style="width: 200px; margin: 0 auto;">
 							<!--<c:if test="${user != null}">
 								<c:out value="${user}" />
 								<p>Puedes pulsar el siguiente enlace para salir</p>

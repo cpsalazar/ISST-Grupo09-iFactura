@@ -1,6 +1,7 @@
 body {
 	background:#222D3A;
 	color: #FFF;
+	font-family: Open Sans, sans-serif;
 }
 
 .alert {
@@ -10,7 +11,7 @@ body {
 
 .modalDialog {
 	position: fixed;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Open Sans, sans-serif;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -113,11 +114,12 @@ input{
 }
 
 .btn.btn-login {
-	width: 55%;
+	width: 56%;
 	display:block;
 	margin: 20px auto 20px;
     padding: 10px;
 	color: white;
+	font-weight: 600;
 	text-transform:uppercase ;	 
 	background: #198573; 
 	-webkit-transition: all .5s ease-in-out;
@@ -273,7 +275,10 @@ label.checkbox input{
     background: rgba(0, 0, 0, 0.1);
 }
 
-.azm-google { background: rgba(52, 73, 94, 0.94); }
+.azm-google {
+	background: rgba(52, 73, 94, 0.94);
+	font-weight: 600;	
+}
 
 .login-box {
 	box-shadow: rgb(29, 38, 49) 1px 1px,
