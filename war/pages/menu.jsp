@@ -36,7 +36,18 @@
 						<a href="javascript:;"
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
 						aria-expanded="false">
-							<img src="../images/img.jpg" alt="">
+							<c:if test="${user == 'oscarvb94@gmail.com'}">
+								<img src="../images/vodafone128.png" alt="">
+							</c:if>
+							<c:if test="${user == 'hectorbm94@gmail.com'}">
+								<img src="../images/movistar46.png" alt="">
+							</c:if>
+							<c:if test="${user == 'cobealex@gmail.com'}">
+								<img src="../images/orange50.gif" alt="">
+							</c:if>
+							<c:if test="${user == 'cpsalazar17@gmail.com'}">
+								<img src="../images/yoigo32.gif" alt="">
+							</c:if>
 							<c:if test="${user != null}">
 									<c:out value="${user}" />
 							</c:if>
