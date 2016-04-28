@@ -36,16 +36,16 @@
 						<a href="javascript:;"
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
 						aria-expanded="false">
-							<c:if test="${user == 'oscarvb94@gmail.com'}">
+							<c:if test="${user == 'vodafone'}">
 								<img src="../images/vodafone128.png" alt="">
 							</c:if>
-							<c:if test="${user == 'hectorbm94@gmail.com'}">
+							<c:if test="${user == 'movistar'}">
 								<img src="../images/movistar46.png" alt="">
 							</c:if>
-							<c:if test="${user == 'cobealex@gmail.com'}">
+							<c:if test="${user == 'orange'}">
 								<img src="../images/orange50.gif" alt="">
 							</c:if>
-							<c:if test="${user == 'cpsalazar17@gmail.com'}">
+							<c:if test="${user == 'yoigo'}">
 								<img src="../images/yoigo32.gif" alt="">
 							</c:if>
 							<c:if test="${user != null}">
@@ -77,10 +77,18 @@
 							class="dropdown-menu list-unstyled msg_list animated fadeInDown"
 							role="menu">
 							<c:forEach items="${notificaciones}" var="noti">
-								<li><a> <span class="image"><img
-										src="../images/img.jpg" alt="Profile Image" /></span> <span> <span>Andrés
-											Menéndez</span>
-									</span> <span class="message"><c:out value="${noti.texto}"/></span>
+								<li><a> <span class="image"> 
+											<c:if test="${user == 'vodafone'}">
+												<img src="../images/vodafone128.png" alt="">
+											</c:if> <c:if test="${user == 'movistar'}">
+												<img src="../images/movistar46.png" alt="">
+											</c:if> <c:if test="${user == 'orange'}">
+												<img src="../images/orange50.gif" alt="">
+											</c:if> <c:if test="${user == 'yoigo'}">
+												<img src="../images/yoigo32.gif" alt="">
+											</c:if>
+									</span> <span> <span><c:out value="${user}" /></span>
+									</span> <span class="message"><c:out value="${noti.texto}" /></span>
 								</a></li>
 							</c:forEach>
 							<li>

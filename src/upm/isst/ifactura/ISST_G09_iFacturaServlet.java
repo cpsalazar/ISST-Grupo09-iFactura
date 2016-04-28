@@ -9,6 +9,8 @@ import javax.servlet.http.*;
 
 import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
+import upm.isst.ifactura.dao.UsersDAO;
+import upm.isst.ifactura.dao.UsersDAOImpl;
 import upm.isst.ifactura.model.IFactura;
 import upm.isst.ifactura.dao.NotificationDAO;
 import upm.isst.ifactura.dao.NotificationDAOImpl;
@@ -26,6 +28,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String urlLinktext = "Login";
 		String user = null;
 		String alerta = null;
+		String compania = null;
 		
 		if (req.getSession().getAttribute("puja") == null){
 			req.getSession().setAttribute("alerta", alerta);
@@ -34,12 +37,14 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		}
 		
 		NotificationDAO daonot = NotificationDAOImpl.getInstance();
+		UsersDAO dao1 = UsersDAOImpl.getInstance();
 		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
 
 		if (req.getUserPrincipal() != null) {
 
 			user = req.getUserPrincipal().getName();
+			compania = dao1.readCorreo(user).get(0).getCompania();
 			url = userService.createLogoutURL(req.getRequestURI());
 			urlLinktext = "Logout";
 
@@ -51,7 +56,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 				
-		req.getSession().setAttribute("user", user);
+		req.getSession().setAttribute("user", compania);
 		req.getSession().setAttribute("url", url);
 		req.getSession().setAttribute("urlLinktext", urlLinktext);
 		req.getSession().setAttribute("miliActual", new Date().getTime());
