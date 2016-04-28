@@ -138,11 +138,14 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 	}
 
 	@Override
-	public void delete(IFactura subasta) {
+	public void delete(Long id) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
-		em.remove(subasta);
-		
-		em.close();
+		try{
+		   IFactura subasta = em.find(IFactura.class, id);
+		   em.remove(subasta);
+		} finally{
+		   em.close();
+		}
 	}
 }

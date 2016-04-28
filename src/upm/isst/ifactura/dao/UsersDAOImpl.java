@@ -85,13 +85,15 @@ public class UsersDAOImpl implements UsersDAO {
 	}
 
 	@Override
-	public void remove(Users usuario) {
+	public void remove(String correo) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
-		
-		em.remove(usuario);
-				
-		em.close();
+		try{
+		   Users usuario = em.find(Users.class, correo);
+		   em.remove(usuario);
+		} finally{
+		   em.close();
+		}
 	}
 
 }

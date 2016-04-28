@@ -15,5 +15,5 @@ public interface IFacturaDAO {
 	public List<IFactura> readIFactura_fecha(long fechaFin);
 	public List<IFactura> readIFactura_id(Long id);
 	public void update (IFactura subasta);
-	public void delete (IFactura subasta);
+	public void delete (Long id);
 }

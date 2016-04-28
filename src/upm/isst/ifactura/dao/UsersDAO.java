@@ -12,5 +12,5 @@ public interface UsersDAO {
 	public List<Users> readCorreo(String correo);
 	public List<Users> readCompania(String compania);
 	public void update(Users usuario);
-	public void remove(Users usuario);
+	public void remove(String correo);
 }

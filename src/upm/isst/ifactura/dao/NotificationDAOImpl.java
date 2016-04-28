@@ -71,12 +71,14 @@ public class NotificationDAOImpl implements NotificationDAO{
 	}
 	
 	@Override
-	public void remove(Notification notification) {
+	public void remove(String correo) {
 		
 		EntityManager em = EMFService.get().createEntityManager();
-		
-		em.remove(notification);
-				
-		em.close();
+		try{
+		   Notification notificacion = em.find(Notification.class, correo);
+		   em.remove(notificacion);
+		} finally{
+		   em.close();
+		}
 	}
 }

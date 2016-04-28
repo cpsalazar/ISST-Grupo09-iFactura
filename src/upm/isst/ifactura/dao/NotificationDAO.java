@@ -9,5 +9,5 @@ public interface NotificationDAO {
 	public List<Notification> readAll();
 	public List<Notification> readCorreo(String correo);
 	public void update(Notification notification);
-	public void remove(Notification notification);
+	public void remove(String correo);
 }
