@@ -2102,10 +2102,30 @@ a.user-profile {
 }
 
 .user-profile img {
-    width: 29px;
-    height: 29px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+
+#vodafone {
+	color: rgb(230, 3, 20);
+	font-weight: bold;
+}
+
+#movistar {
+	color: rgb(123, 194, 68);
+	font-weight: bold;
+}
+#orange {
+	color: rgb(255, 102, 0);
+	font-weight: bold;
+}
+
+#yoigo {
+	color: rgb(144, 39, 138);
+	font-weight: bold;
 }
 
 ul.top_profiles {

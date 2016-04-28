@@ -37,19 +37,20 @@
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
 						aria-expanded="false">
 							<c:if test="${user == 'vodafone'}">
-								<img src="../images/vodafone128.png" alt="">
+								<img src="../images/logo_vodafone.png" alt="">
+								<span id="vodafone"><c:out value="${user}" /></span>
 							</c:if>
 							<c:if test="${user == 'movistar'}">
-								<img src="../images/movistar46.png" alt="">
+								<img src="../images/logo_movistar.png" alt="">
+								<span id="movistar"><c:out value="${user}" /></span>
 							</c:if>
 							<c:if test="${user == 'orange'}">
-								<img src="../images/orange50.gif" alt="">
+								<img src="../images/logo_orange.png" alt="">
+								<span id="orange"><c:out value="${user}" /></span>
 							</c:if>
 							<c:if test="${user == 'yoigo'}">
-								<img src="../images/yoigo32.gif" alt="">
-							</c:if>
-							<c:if test="${user != null}">
-									<c:out value="${user}" />
+								<img src="../images/logo_yoigo.png" alt="">
+								<span id="yoigo"><c:out value="${user}" /></span>
 							</c:if>
 							<c:if test="${user == null}">
 									<p>Ningún usuario registrado</p>
@@ -79,13 +80,13 @@
 							<c:forEach items="${notificaciones}" var="noti">
 								<li><a> <span class="image"> 
 											<c:if test="${user == 'vodafone'}">
-												<img src="../images/vodafone128.png" alt="">
+												<img src="../images/logo_vodafone.png" alt="">
 											</c:if> <c:if test="${user == 'movistar'}">
-												<img src="../images/movistar46.png" alt="">
+												<img src="../images/logo_movistar.png" alt="">
 											</c:if> <c:if test="${user == 'orange'}">
-												<img src="../images/orange50.gif" alt="">
+												<img src="../images/logo_orange.png" alt="">
 											</c:if> <c:if test="${user == 'yoigo'}">
-												<img src="../images/yoigo32.gif" alt="">
+												<img src="../images/logo_yoigo.png" alt="">
 											</c:if>
 									</span> <span> <span><c:out value="${user}" /></span>
 									</span> <span class="message"><c:out value="${noti.texto}" /></span>
