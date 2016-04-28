@@ -31,80 +31,36 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>Formulario de petición de subasta</h3>
+							<h3>Petición de subasta</h3>
 						</div>
 					</div>
 					<div class="clearfix"></div>
 					<!-- /.row -->
-					<div class="row">
-						<div class="col-lg-12">
+					<div class="row" style="margin-top: 5px;">
+						<div class="col-xs-12" style="padding-left: 10px; padding-right: 10px;">
 							<div class="panel panel-default">
 								<!-- /.panel-heading -->
 								<div class="panel-body">
-									<form class="form-horizontal" id="peticion-subasta" style="margin-top: 20px;">
+									<form class="form-horizontal" id="peticion-subasta" style="margin: 10px;">
 										<div class="form-group">
-											<label class="control-label col-md-2 col-md-offset-2">Franja horaria:</label>
-											<div class="col-md-6">
-												<select class="form-control">
-													<option>Mañana</option>
-													<option>Tarde</option>
-													<option>Noche</option>
-												</select>
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="control-label col-md-2 col-md-offset-2">Tarifa actual (€/mes):</label>
-											<div class="col-md-3">
-												<input type="number" class="form-control" placeholder="Mínimo">
-											</div>
-											<div class="col-md-3">
-												<input type="number" class="form-control" placeholder="Máximo">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="control-label col-md-2 col-md-offset-2">Llamadas (min):</label>
-											<div class="col-md-3">
-												<input type="number" class="form-control" placeholder="Mínimo">
-											</div>
-											<div class="col-md-3">
-												<input type="number" class="form-control" placeholder="Máximo">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="control-label col-md-2 col-md-offset-2">Datos	(GB):</label>
-											<div class="col-md-3">
-												<input type="number" class="form-control" placeholder="Mínimo">
-											</div>
-											<div class="col-md-3">
-												<input type="number" class="form-control" placeholder="Máximo">
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="control-label col-md-2 col-md-offset-2">4G:</label>
-											<div class="col-md-1">
-												<label class="radio-inline"> <input type="radio"
-													name="genderRadios" value="male"> Sí
-												</label>
-											</div>
-											<div class="col-md-1">
-												<label class="radio-inline"> <input type="radio"
-													name="genderRadios" value="female"> No
-												</label>
-											</div>
-											<div class="col-md-1">
-												<label class="radio-inline"> <input type="radio"
-													name="genderRadios" value="female"> Indiferente
-												</label>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-md-offset-4 col-md-1">
-												<input type="submit" class="btn btn-primary" value="Enviar">
-											</div>
-											<div class="col-md-5">
-												<label class="checkbox-inline"> <input type="checkbox"
-													value="agree"> Acepto <a href="#">Terminos y condiciones</a>.
-												</label>
+											<label>Exprese brevemente los criterios bajo los cuales le gustaría que se crease una subasta</label>
+											<textarea class="form-control" rows="6" style="float: none; border-radius: 4px; max-width: 82vw;"></textarea>
+											<input class="btn btn-primary" value="Enviar" type="submit" style="margin-top: 5px;"></input>
+											<label class="checkbox-inline">
+												<input value="agree" type="checkbox"></input>Acepto los <a href=#openModal>términos y condiciones</a>
+											</label>
+											<div id="openModal" class="modalDialog">
+												<div class="col-xs-6 col-xs-offset-3" style="transform: translateY(50%);">
+													<a href="#close" class="close">X</a>
+													<h2 style="margin-top: 0;"><strong>Términos y condiciones</strong></h2>
+													<h4><strong>Complaints</strong></h4>
+													<p>Any complaints about items or sellers may be sent to our support team: support@wesellyourstuff.com or (888) 555-0198.
+													There is no guarantee of a resolution. Each case will be looked at individually, and the seller will be in contact as well.</p>
+													<h4><strong>Legalities</strong></h4>
+													<p>blablablablablablabla blablabla blablablabla blablalablablablabla</p>
+													<p>blablablablablablabla blablabla blablablabla blablalablablablabla</p>
+													<p><strong>These terms and conditions are subject to change</strong></p>
+												</div>
 											</div>
 										</div>
 									</form>
