@@ -96,8 +96,8 @@
 		<br>
 		<div class="container">
 			<p class="denied-top col-xs-12">Acceso denegado</p>
-			<p class="denied col-xs-12">Solamente pueden crear subastas miembros de la compañía iFactura.</p>
-			<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
+			<p class="denied col-xs-12">Solamente pueden crear subastas los miembros de la compañía iFactura.</p>
+			<p><a class="denied-a col-xs-12" href="javascript:history.back()"><c:out value="Volver" /></a></p>
 		</div>
 	</c:if>
 </body>

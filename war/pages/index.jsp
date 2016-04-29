@@ -59,17 +59,17 @@
 														<th>Finaliza en</th>
 														<th>Puja actual</th>
 														<th>Ganador actual</th>
-														<th>Tu puja</th>
+														<c:if test="${user != 'ifactura'}">
+															<th>Tu puja</th>
+														</c:if>
 													</tr>
 												</thead>
 												<tbody>
 													<c:set var="cuenta" value="0" />
 													<c:forEach items="${subastas}" var="subasta" varStatus="loop">
 														<c:if test="${subasta.fechaFin lt miliActual}">
-															<form action="/postPuja" method="post"
-																onsubmit="return getPuja${subasta.id}();">
-																<input type="hidden" id="fechaFin${subasta.id}"
-																	value="0" />
+															<form action="/postPuja" method="post" onsubmit="return getPuja${subasta.id}();">
+																<input type="hidden" id="fechaFin${subasta.id}" value="0" />
 															</form>
 														</c:if>
 														<c:if test="${subasta.fechaFin gt miliActual}">
@@ -77,51 +77,49 @@
 																<div id="openModal${subasta.id}" class="modalDialog">
 																	<div class="col-xs-6 col-xs-offset-3">
 																		<a href="#close" class="close">X</a>
-																		<h2 style="margin-top: 0;">
-																			<strong>Descripción de la subasta</strong>
-																		</h2>
+																		<h2 style="margin-top: 0;"><strong>Descripción de la subasta</strong></h2>
 																		<p><c:out value="${subasta.descripcion}" /></p>
 																	</div>
 																</div>
-																<form action="/postPuja" method="post"
-																	onsubmit="return getPuja${subasta.id}();">
+																<form action="/postPuja" method="post" onsubmit="return getPuja${subasta.id}();">
 																	<td class="a-center "><span onclick="window.location.href='#openModal${subasta.id}';" class="glyphicon glyphicon-info-sign"> </span></td>
 																	<td class=" "><c:out value="${subasta.id}" /></td>
-																	<td class=" "><c:out
-																			value="${subasta.numUsuarios}" /></td>
+																	<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
 																	<td class=" " id="clock${subasta.id}"><span
 																		class="days${subasta.id}"></span> <span
 																		class="hours${subasta.id}"></span> <span
 																		class="minutes${subasta.id}"></span> <span
-																		class="seconds${subasta.id}"></span></td>
-																	<td id="rlpuja${subasta.id}"><span
-																		id="rlpuja${subasta.id}_"><c:out
-																				value="${subasta.pujaActual}" />€</span></td>
-																	<td id="rlpujador${subasta.id}"><span
-																		id="rlpujador${subasta.id}_"> <c:if
-																				test="${user == subasta.ganadorActual}">
+																		class="seconds${subasta.id}"></span>
+																	</td>
+																	<td id="rlpuja${subasta.id}">
+																		<span id="rlpuja${subasta.id}_"><c:out value="${subasta.pujaActual}" />€</span>
+																	</td>
+																	<td id="rlpujador${subasta.id}">
+																		<span id="rlpujador${subasta.id}_">
+																			<c:if test="${user == subasta.ganadorActual}">
 																				<c:out value="${subasta.ganadorActual}" />
-																			</c:if> <c:if test="${user != subasta.ganadorActual}">
+																			</c:if>
+																			<c:if test="${user != subasta.ganadorActual}">
 																				-
 																			</c:if>
-																	</span></td> <input type="hidden" id="fechaFin${subasta.id}"
-																		value="${subasta.fechaFin}" />
-																	<td class="a-right a-right ">
-																		<div class="div-form">
-																			<input type="hidden" name="id" value="${subasta.id}">
-																			<input type="number" id="puja_${subasta.id}"
-																				step="0.25" name="puja" class="form-control numeric"
-																				placeholder="Introduzca puja" required> <input
-																				type="submit" id="pujar"
-																				class="btn btn-primary btn-form" value="Pujar">
-																			<script>
-																				function getPuja${subasta.id}() {
-																					var puja = document.getElementById("puja_${subasta.id}").value;
-																					return confirm('¿Seguro que desea pujar ' + puja + '€?');
-																				}
-																			</script>
-																		</div>
+																		</span>
 																	</td>
+																	<input type="hidden" id="fechaFin${subasta.id}"	value="${subasta.fechaFin}" />
+																	<c:if test="${user != 'ifactura'}">
+																		<td class="a-right a-right ">
+																			<div class="div-form">
+																				<input type="hidden" name="id" value="${subasta.id}">
+																				<input type="number" id="puja_${subasta.id}" step="0.25" name="puja" class="form-control numeric" placeholder="Introduzca puja" required>
+																				<input type="submit" id="pujar" class="btn btn-primary btn-form" value="Pujar">
+																				<script>
+																					function getPuja${subasta.id}() {
+																						var puja = document.getElementById("puja_${subasta.id}").value;
+																						return confirm('¿Seguro que desea pujar ' + puja + '€?');
+																					}
+																				</script>
+																			</div>
+																		</td>
+																	</c:if>
 																</form>
 															</tr>
 														</c:if>

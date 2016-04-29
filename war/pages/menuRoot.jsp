@@ -1,7 +1,7 @@
 <%@page pageEncoding="utf8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<c:if test="${user != null}">
+<c:if test="${user == 'ifactura'}">
 	<div class="col-md-3 left_col">
 		<div class="left_col scroll-view">
 			<div class="navbar nav_title" style="border: 0;">
@@ -15,11 +15,9 @@
 					<ul class="nav side-menu">
 						<li><a href="/isst_g09_ifactura"><i class="fa fa-table"></i>
 								Subastas en curso <span class="fa fa-chevron-down"></span></a></li>
-						<li><a href="/pages/peticiones.jsp"><i class="fa fa-edit"></i>
-								Petición de subastas <span class="fa fa-chevron-down"></span></a></li>
 						<li><a href="/pages/historial.jsp"><i class="fa fa-bar-chart-o"></i>
 								Historial de subastas <span class="fa fa-chevron-down"></span></a></li>
-						<li><a href="/pages/nuevaSubasta.jsp"><i class="fa fa-bar-chart-o"></i>
+						<li><a href="/pages/nuevaSubasta.jsp"><i class="fa fa-edit"></i>
 								Crear subasta <span class="fa fa-chevron-down"></span></a></li>
 					</ul>
 				</div>
@@ -38,8 +36,8 @@
 						<a href="javascript:;"
 						class="user-profile dropdown-toggle" data-toggle="dropdown"
 						aria-expanded="false">
-								<img src="../images/logo_vodafone.png" alt="">
-								<span id="vodafone"><c:out value="${user}" /></span>
+								<img src="../images/logo_ifactura.png" alt="" style="  margin-top: -5px; margin-right: 0;">
+								<span id="logo_root"><c:out value="${user}" /></span>
 							<span class=" fa fa-angle-down"></span>
 						</a>
 						<ul
@@ -86,7 +84,7 @@
 		</div>
 	</div>
 </c:if>
-<c:if test="${user == null}">
+<c:if test="${user != 'ifactura'}">
 	<br>
 	<meta http-equiv="refresh" content="0; url=/isst_g09_ifactura" />
 </c:if>
