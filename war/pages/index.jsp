@@ -25,7 +25,12 @@
 	<c:if test="${user != null}">
 		<div class="container body">
 			<div class="main_container">
-				<%@ include file="menu.jsp"%>
+				<c:if test="${user == 'orange' || user == 'vodafone' || user == 'yoigo' || user == 'movistar'}">
+					<%@ include file="menu.jsp"%>
+				</c:if>
+				<c:if test="${user == 'ifactura'}">
+					<%@ include file="menuRoot.jsp"%>
+				</c:if>
 				<!-- /top navigation -->
 				<div class="right_col" role="main">
 					<div class="">

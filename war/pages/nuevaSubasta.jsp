@@ -22,10 +22,10 @@
 	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="nav-md">
-	<c:if test="${user != null}">
+	<c:if test="${user == 'ifactura'}">
 	<div class="container body">
 		<div class="main_container">
-			<%@ include file="menu.jsp" %>
+			<%@ include file="menuRoot.jsp"%>
       		<!-- /top navigation -->
 			<div class="right_col" role="main">
 				<div class="">
@@ -92,11 +92,11 @@
 		<%@ include file="scripts.jsp" %>
 	</div>
 	</c:if>
-	<c:if test="${user == null}">
+	<c:if test="${user != 'ifactura'}">
 		<br>
 		<div class="container">
 			<p class="denied-top col-xs-12">Acceso denegado</p>
-			<p class="denied col-xs-12">No has iniciado sesión en el sistema, pulsa el siguiente enlace para registrarte</p>
+			<p class="denied col-xs-12">Solamente pueden crear subastas miembros de la compañía iFactura.</p>
 			<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
 		</div>
 	</c:if>
