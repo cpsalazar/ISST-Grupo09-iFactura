@@ -39,6 +39,8 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			req.getSession().setAttribute("puja", null);
 		}
 		
+		req.getSession().setAttribute("mensaje", null);
+		
 		NotificationDAO daonot = NotificationDAOImpl.getInstance();
 		UsersDAO dao1 = UsersDAOImpl.getInstance();
 		
@@ -47,13 +49,20 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		if (req.getUserPrincipal() != null) {
 
 			user = req.getUserPrincipal().getName();
-			compania = dao1.readCorreo(user).get(0).getCompania();
+			if (dao1.readCorreo(user).size() > 0){
+				compania = dao1.readCorreo(user).get(0).getCompania();
+				req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
+			} else {
+				user = null;
+				req.getSession().setAttribute("mensaje", "No tiene permisos para acceder a esta aplicacion");
+			}
+			
 			url = userService.createLogoutURL(req.getRequestURI());
 			urlLinktext = "Logout";
-
 			view = req.getRequestDispatcher("/pages/index.jsp");
+
 			// Hay que inicializarlo aqui, porque si no user podría ser null
-			req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
+			
 
 		} 
 

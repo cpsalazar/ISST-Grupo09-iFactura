@@ -96,10 +96,10 @@
 																	</td>
 																	<td id="rlpujador${subasta.id}">
 																		<span id="rlpujador${subasta.id}_">
-																			<c:if test="${user == subasta.ganadorActual}">
+																			<c:if test="${user == subasta.ganadorActual || user == 'ifactura'}">
 																				<c:out value="${subasta.ganadorActual}" />
 																			</c:if>
-																			<c:if test="${user != subasta.ganadorActual}">
+																			<c:if test="${user != subasta.ganadorActual && user != 'ifactura'}">
 																				-
 																			</c:if>
 																		</span>
@@ -166,8 +166,14 @@
 		<br>
 		<div class="container">
 			<p class="denied-top col-xs-12">Acceso denegado</p>
-			<p class="denied col-xs-12">No has iniciado sesión en el sistema, pulsa el siguiente enlace para registrarte</p>
-			<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
+			<c:if test="${mensaje == null}">
+				<p class="denied col-xs-12">No has iniciado sesión en el sistema, pulsa el siguiente enlace para registrarte</p>
+				<p><a class="denied-a col-xs-12" href="<c:url value="/isst_g09_ifactura"/>"><c:out value="Iniciar sesión" /></a></p>
+			</c:if>
+			<c:if test="${mensaje != null}">
+				<p class="denied col-xs-12"><c:out value="${mensaje}" /></p>
+				<p><a class="denied-a col-xs-12" href="<c:url value="${url}"/>"><c:out value="${urlLinktext}"/></a></p>
+			</c:if>
 		</div>
 	</c:if>
 </body>
