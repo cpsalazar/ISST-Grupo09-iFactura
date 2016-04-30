@@ -9,6 +9,9 @@ import javax.servlet.http.*;
 
 import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
+import upm.isst.ifactura.dao.PeticionesDAO;
+import upm.isst.ifactura.dao.PeticionesDAOImpl;
+import upm.isst.ifactura.model.Peticiones;
 import upm.isst.ifactura.dao.UsersDAO;
 import upm.isst.ifactura.dao.UsersDAOImpl;
 import upm.isst.ifactura.model.IFactura;
@@ -55,12 +58,14 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		} 
 
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
+		PeticionesDAO dao2 = PeticionesDAOImpl.getInstance();
 				
 		req.getSession().setAttribute("user", compania);
 		req.getSession().setAttribute("url", url);
 		req.getSession().setAttribute("urlLinktext", urlLinktext);
 		req.getSession().setAttribute("miliActual", new Date().getTime());
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
+		req.getSession().setAttribute("peticiones", new ArrayList<Peticiones>(dao2.readAll()));
 		
 		try {
 			view.forward(req, resp);
