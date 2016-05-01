@@ -53,10 +53,10 @@
 											id="dataTables-example">
 											<thead>
 												<tr class="headings tr_historial">
-													<th>Nº Subasta</th>
-													<th>Nº Usuarios</th>
-													<th>Estado</th>
-													<th>Puja ganadora</th>
+													<th class="sorting">Nº Subasta</th>
+													<th class="sorting">Nº Usuarios</th>
+													<th class="sorting">Estado</th>
+													<th class="sorting">Puja ganadora</th>
 												</tr>
 											</thead>
 											<tbody>

@@ -49,8 +49,7 @@
 									<div class="panel panel-default">
 										<!-- /.panel-heading -->
 										<div class="panel-body">
-											<table id="example"
-												class="table table-striped responsive-utilities jambo_table">
+											<table id="example" class="table table-striped responsive-utilities jambo_table">
 												<thead>
 													<tr class="headings">
 														<th> </th>
@@ -60,7 +59,7 @@
 														<th>Puja actual</th>
 														<th>Ganador actual</th>
 														<c:if test="${user != 'ifactura'}">
-															<th>Tu puja</th>
+															<th id="tu_puja">Tu puja</th>
 														</c:if>
 													</tr>
 												</thead>

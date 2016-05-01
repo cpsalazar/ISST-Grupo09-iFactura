@@ -13,15 +13,34 @@
 			<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 				<div class="menu_section">
 					<ul class="nav side-menu">
-						<li><a href="/isst_g09_ifactura"><i class="fa fa-table"></i>
-								Subastas en curso <span class="fa fa-chevron-down"></span></a></li>
-						<li><a href="/pages/peticionesRecibidas.jsp"><i
-								class="fa fa-edit"></i> Peticiones recibidas <span
-								class="fa fa-chevron-down"></span></a></li>
-						<li><a href="/pages/historial.jsp"><i class="fa fa-bar-chart-o"></i>
-								Historial de subastas <span class="fa fa-chevron-down"></span></a></li>
-						<li><a href="/pages/nuevaSubasta.jsp"><i class="fa fa-edit"></i>
-								Crear subasta <span class="fa fa-chevron-down"></span></a></li>
+						<li>
+							<a href="/isst_g09_ifactura">
+								<i class="fa fa-table"></i>
+								Subastas en curso
+								<span class="fa fa-chevron-down"></span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/historial.jsp">
+								<i class="fa fa-bar-chart-o"></i>
+								Historial de subastas
+								<span class="fa fa-chevron-down"></span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/peticionesRecibidas.jsp">
+								<i class="fa fa-wpforms"></i>
+								Peticiones recibidas
+								<span class="fa fa-chevron-down"></span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/nuevaSubasta.jsp">
+								<i class="fa fa-edit"></i>
+								Crear subasta
+								<span class="fa fa-chevron-down"></span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
