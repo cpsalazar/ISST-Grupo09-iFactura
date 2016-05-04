@@ -1,10 +1,16 @@
 package upm.isst.ifactura;
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+
+import upm.isst.ifactura.dao.NotificationDAO;
+import upm.isst.ifactura.dao.NotificationDAOImpl;
 import upm.isst.ifactura.dao.PeticionesDAO;
 import upm.isst.ifactura.dao.PeticionesDAOImpl;
+
 import java.util.Properties;
+
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -21,9 +27,12 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 		String peticion = req.getParameter("id");
 		String aceptar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido aceptada por el equipo de iFactura, cuando lancemos su subasta se le notificará por medio de la aplicación.";
 		String rechazar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido rechazada por el equipo de iFactura.";
+		String aceptarn = "Su propuesta (" + peticion + ") ha sido aceptada";
+		String rechazarn = "Su propuesta (" + peticion + ") ha sido rechazada";
 		String boton = req.getParameter("solicitud");
 
 		PeticionesDAO dao = PeticionesDAOImpl.getInstance();
+		NotificationDAO dao2 = NotificationDAOImpl.getInstance();
 		
 		String user = req.getUserPrincipal().getName();
 		String correo = req.getParameter("correo");
@@ -38,8 +47,10 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 	        msg.setSubject("Valoracion de subasta");
 	        if (boton.equals("aceptar")){
 		        msg.setText(aceptar);
+		        dao2.create(correo, aceptarn);
 	        } else {
 		        msg.setText(rechazar);
+		        dao2.create(correo, rechazarn);
 	        }
 	        Transport.send(msg);
 

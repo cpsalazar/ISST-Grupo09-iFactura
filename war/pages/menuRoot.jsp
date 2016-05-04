@@ -21,7 +21,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="/pages/historial.jsp">
+							<a href="/pages/historialRoot.jsp">
 								<i class="fa fa-bar-chart-o"></i>
 								Historial de subastas
 								<span class="fa fa-chevron-down"></span>

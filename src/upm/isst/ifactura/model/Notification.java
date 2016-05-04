@@ -9,8 +9,9 @@ import javax.persistence.Id;
 public class Notification implements Serializable{
 	private static final long serialVersionUID = 01L;
 	@Id
-	private String correo;
 	private String texto;
+	private String correo;
+	
 	
 	public Notification(String correo, String texto) {
 		super();
