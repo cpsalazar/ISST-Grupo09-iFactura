@@ -3,8 +3,6 @@ package upm.isst.ifactura.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -13,8 +11,8 @@ public class Peticiones implements Serializable{
 	private static final long serialVersionUID = 01L;
 	@Id 
 	private String peticion; //la peticion en si.
-	private String compania; //compañia asociada al autor.
-	private String correo; //el que envía la petición.
+	private String compania; //compaï¿½ia asociada al autor.
+	private String correo; //el que envï¿½a la peticiï¿½n.
 	
 	public Peticiones(String correo, String compania, String peticion) {
 		super();

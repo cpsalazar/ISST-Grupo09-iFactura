@@ -51,11 +51,11 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 	        if (boton.equals("aceptar")){
 		        msg.setText(aceptar);
 		        imagenn="aceptada.png";
-		        dao2.create(correo,aceptat, aceptarn, imagenn);
+		        dao2.create(correo,aceptarn, aceptat, imagenn);
 	        } else {
 		        msg.setText(rechazar);
 		        imagenn="rechazada.png";
-		        dao2.create(correo, rechazat, rechazarn, imagenn);
+		        dao2.create(correo, rechazarn, rechazat, imagenn);
 	        }
 	        Transport.send(msg);
 

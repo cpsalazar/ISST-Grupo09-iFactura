@@ -83,13 +83,10 @@
 							class="dropdown-menu list-unstyled msg_list animated fadeInDown"
 							role="menu">
 							<c:forEach items="${notificaciones}" var="noti">
-								<li><a> <span class="image"> 
-											<img src="../images/logo_vodafone.png" alt="">
-										</span> 
-										<span> 
-											<span><c:out value="${user}" /></span>
-										</span> 
-										<span class="message"><c:out value="${noti.texto}" /></span>
+								<li><a> <span class="image"> 										
+												<img src="../images/<c:out value="${noti.imagen}"/>" alt="">
+									</span> <span> <span><c:out value="${noti.titulo}" /></span>
+									</span> <span class="message"><c:out value="${noti.texto}" /></span>
 								</a></li>
 							</c:forEach>
 							<li>
