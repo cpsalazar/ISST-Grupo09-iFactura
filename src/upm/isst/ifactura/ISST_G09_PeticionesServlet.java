@@ -12,13 +12,14 @@ public class ISST_G09_PeticionesServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		
 		String peticion = req.getParameter("peticion");
+		String compania =  (String) req.getSession().getAttribute("user");
 		
 		PeticionesDAO dao = PeticionesDAOImpl.getInstance();
 		
 		String user = req.getUserPrincipal().getName();
 
 		if (user != null) {
-			dao.create(user, peticion);
+			dao.create(user, compania, peticion);
 		}
 				
 		resp.sendRedirect("/isst_g09_ifactura");

@@ -25,10 +25,10 @@
 	<c:if test="${user != null}">
 	<div class="container body">
 		<div class="main_container">
-			<c:if test="${user == 'orange' || user == 'vodafone' || user == 'yoigo' || user == 'movistar'}">
+			<c:if test="${user == 'Orange' || user == 'Vodafone' || user == 'Yoigo' || user == 'Movistar'}">
 				<%@ include file="menu.jsp"%>
 			</c:if>
-			<c:if test="${user == 'ifactura'}">
+			<c:if test="${user == 'iFactura'}">
 				<%@ include file="menuRoot.jsp"%>
 			</c:if>
       		<!-- /top navigation -->
@@ -47,6 +47,17 @@
 								<!-- /.panel-heading -->
 								<div class="panel-body">
 									<form class="form-horizontal" id="peticion-subasta" style="margin: 10px;" action="/nuevaPeticion" method="post">
+											
+										<div class="form-group">
+											<c:if test="${peticion != null}">
+												
+												<p>Tiene peticiones pendientes por confirmar:</p>
+												<c:forEach items="${peticion}" var="peti">
+													<p><c:out value="${peti.peticion}" /></p>
+												</c:forEach>
+											</c:if>
+										</div>
+										
 										<div class="form-group">
 											<label>Exprese brevemente los criterios bajo los cuales le gustaría que se crease una subasta</label>
 											<textarea name="peticion" class="form-control" rows="6" style="float: none; border-radius: 4px; max-width: 82vw;"></textarea>

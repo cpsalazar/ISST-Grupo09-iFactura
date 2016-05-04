@@ -2,6 +2,7 @@ package upm.isst.ifactura;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -42,7 +43,9 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		req.getSession().setAttribute("mensaje", null);
 		
 		NotificationDAO daonot = NotificationDAOImpl.getInstance();
+		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 		UsersDAO dao1 = UsersDAOImpl.getInstance();
+		PeticionesDAO dao2 = PeticionesDAOImpl.getInstance();
 		
 		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
 
@@ -50,6 +53,16 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 
 			user = req.getUserPrincipal().getName();
 			if (dao1.readCorreo(user).size() > 0){
+				try {
+					List<Peticiones> comprobacion = dao2.readCorreo(user);
+					if (comprobacion.size() > 0){
+						req.getSession().setAttribute("peticion", new ArrayList<Peticiones>(dao2.readCorreo(user)));
+					} else {
+						req.getSession().setAttribute("peticion", null);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}			
 				compania = dao1.readCorreo(user).get(0).getCompania();
 				req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
 			} else {
@@ -60,14 +73,9 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			url = userService.createLogoutURL(req.getRequestURI());
 			urlLinktext = "Logout";
 			view = req.getRequestDispatcher("/pages/index.jsp");
-
-			// Hay que inicializarlo aqui, porque si no user podría ser null
 			
-
+			
 		} 
-
-		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
-		PeticionesDAO dao2 = PeticionesDAOImpl.getInstance();
 				
 		req.getSession().setAttribute("user", compania);
 		req.getSession().setAttribute("url", url);
@@ -75,6 +83,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		req.getSession().setAttribute("miliActual", new Date().getTime());
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 		req.getSession().setAttribute("peticiones", new ArrayList<Peticiones>(dao2.readAll()));
+
 		
 		try {
 			view.forward(req, resp);

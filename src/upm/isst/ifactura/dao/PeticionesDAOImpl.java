@@ -23,11 +23,11 @@ public class PeticionesDAOImpl implements PeticionesDAO {
 	}
 
 	@Override
-	public Peticiones create(String correo, String texto) {
+	public Peticiones create(String correo, String compania, String texto) {
 		EntityManager em = EMFService.get().createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
-		Peticiones peticion = new Peticiones(correo, texto);
+		Peticiones peticion = new Peticiones(correo, compania, texto);
 		transaction.begin();
 		em.persist(peticion);
 		transaction.commit();
@@ -70,11 +70,11 @@ public class PeticionesDAOImpl implements PeticionesDAO {
 	}
 
 	@Override
-	public void remove(String correo) {
+	public void remove(String peticion) {
 		EntityManager em = EMFService.get().createEntityManager();
 		try{
-		   Peticiones peticion = em.find(Peticiones.class, correo);
-		   em.remove(peticion);
+		   Peticiones borrar = em.find(Peticiones.class, peticion);
+		   em.remove(borrar);
 		} finally{
 		   em.close();
 		}

@@ -1,7 +1,7 @@
 <%@page pageEncoding="utf8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<c:if test="${user == 'ifactura'}">
+<c:if test="${user == 'iFactura'}">
 	<div class="col-md-3 left_col">
 		<div class="left_col scroll-view">
 			<div class="navbar nav_title" style="border: 0;">
@@ -106,7 +106,7 @@
 		</div>
 	</div>
 </c:if>
-<c:if test="${user != 'ifactura'}">
+<c:if test="${user != 'iFactura'}">
 	<br>
 	<meta http-equiv="refresh" content="0; url=/isst_g09_ifactura" />
 </c:if>

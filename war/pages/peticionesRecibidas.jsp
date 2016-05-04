@@ -22,7 +22,7 @@
 	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="nav-md">
-	<c:if test="${user == 'ifactura'}">
+	<c:if test="${user == 'iFactura'}">
 	<div class="container body">
 		<div class="main_container">
 			<%@ include file="menuRoot.jsp"%>
@@ -42,7 +42,16 @@
 								<!-- /.panel-heading -->
 								<div class="panel-body">
 									<c:forEach items="${peticiones}" var="peticion" varStatus="loop">
-										<p><c:out value="${peticion.peticion}" /></p>
+										<form action="/valorarPeticion" method="post">
+											<input type="hidden" name="id" value="${peticion.peticion}">
+											<input type="hidden" name="correo" value="${peticion.correo}">
+											<input type="hidden" name="compania" value="${peticion.compania}">
+											<p>Petición de: <c:out value="${peticion.compania}" /></p>
+											<p><c:out value="${peticion.peticion}" /></p>
+											<input name="solicitud" type="radio" value="aceptar" />Aceptar solicitud
+            								<input name="solicitud" type="radio" value="declinar" />Declinar solicitud          
+            								<input type="submit"  value="Enviar" />
+										</form>	
 									</c:forEach>
 								</div>
 								<!-- /.panel-body -->
@@ -64,7 +73,7 @@
 		<%@ include file="scripts.jsp" %>
 	</div>
 	</c:if>
-	<c:if test="${user != 'ifactura'}">
+	<c:if test="${user != 'iFactura'}">
 		<br>
 		<div class="container">
 			<p class="denied-top col-xs-12">Acceso denegado</p>

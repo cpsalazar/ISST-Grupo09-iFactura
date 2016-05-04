@@ -25,10 +25,10 @@
 	<c:if test="${user != null}">
 	<div class="container body">
 			<div class="main_container">
-			<c:if test="${user == 'orange' || user == 'vodafone' || user == 'yoigo' || user == 'movistar'}">
+			<c:if test="${user == 'Orange' || user == 'Vodafone' || user == 'Yoigo' || user == 'Movistar'}">
 				<%@ include file="menu.jsp"%>
 			</c:if>
-			<c:if test="${user == 'ifactura'}">
+			<c:if test="${user == 'iFactura'}">
 				<%@ include file="menuRoot.jsp"%>
 			</c:if>
 				<!-- /top navigation -->

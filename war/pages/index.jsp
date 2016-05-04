@@ -25,10 +25,10 @@
 	<c:if test="${user != null}">
 		<div class="container body">
 			<div class="main_container">
-				<c:if test="${user == 'orange' || user == 'vodafone' || user == 'yoigo' || user == 'movistar'}">
+				<c:if test="${user == 'Orange' || user == 'Vodafone' || user == 'Yoigo' || user == 'Movistar'}">
 					<%@ include file="menu.jsp"%>
 				</c:if>
-				<c:if test="${user == 'ifactura'}">
+				<c:if test="${user == 'iFactura'}">
 					<%@ include file="menuRoot.jsp"%>
 				</c:if>
 				<!-- /top navigation -->
@@ -58,7 +58,7 @@
 														<th>Finaliza en</th>
 														<th>Puja actual</th>
 														<th>Ganador actual</th>
-														<c:if test="${user != 'ifactura'}">
+														<c:if test="${user != 'iFactura'}">
 															<th id="tu_puja">Tu puja</th>
 														</c:if>
 													</tr>
@@ -95,16 +95,16 @@
 																	</td>
 																	<td id="rlpujador${subasta.id}">
 																		<span id="rlpujador${subasta.id}_">
-																			<c:if test="${user == subasta.ganadorActual || user == 'ifactura'}">
+																			<c:if test="${user == subasta.ganadorActual || user == 'iFactura'}">
 																				<c:out value="${subasta.ganadorActual}" />
 																			</c:if>
-																			<c:if test="${user != subasta.ganadorActual && user != 'ifactura'}">
+																			<c:if test="${user != subasta.ganadorActual && user != 'iFactura'}">
 																				-
 																			</c:if>
 																		</span>
 																	</td>
 																	<input type="hidden" id="fechaFin${subasta.id}"	value="${subasta.fechaFin}" />
-																	<c:if test="${user != 'ifactura'}">
+																	<c:if test="${user != 'iFactura'}">
 																		<td class="a-right a-right ">
 																			<div class="div-form">
 																				<input type="hidden" name="id" value="${subasta.id}">

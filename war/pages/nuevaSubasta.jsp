@@ -22,7 +22,7 @@
 	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="nav-md">
-	<c:if test="${user == 'ifactura'}">
+	<c:if test="${user == 'iFactura'}">
 	<div class="container body">
 		<div class="main_container">
 			<%@ include file="menuRoot.jsp"%>
@@ -92,7 +92,7 @@
 		<%@ include file="scripts.jsp" %>
 	</div>
 	</c:if>
-	<c:if test="${user != 'ifactura'}">
+	<c:if test="${user != 'iFactura'}">
 		<br>
 		<div class="container">
 			<p class="denied-top col-xs-12">Acceso denegado</p>
