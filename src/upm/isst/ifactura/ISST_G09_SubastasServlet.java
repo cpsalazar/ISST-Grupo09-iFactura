@@ -44,12 +44,5 @@ public class ISST_G09_SubastasServlet extends HttpServlet {
 		dao1.create("cobealex@gmail.com", "Orange");
 		dao1.create("cpsalazar17@gmail.com", "Yoigo");
 		dao1.create("ifacturag09@gmail.com", "iFactura");
-		
-		NotificationDAO dao2 = NotificationDAOImpl.getInstance();
-		
-		dao2.create("hectorbm94@gmail.com", "texto de prueba");
-		dao2.create("oscarvb94@gmail.com", "oskorp topo");
-		dao2.create("cobealex@gmail.com", "doka pipa");
-		dao2.create("cpsalazar17@gmail.com", "pudi topacio");
 	}
 }

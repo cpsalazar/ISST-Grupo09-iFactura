@@ -23,11 +23,11 @@ public class NotificationDAOImpl implements NotificationDAO{
 	}
 	
 	@Override
-	public Notification create(String correo, String texto) {
+	public Notification create(String correo, String texto,String titulo, String imagen) {
 		EntityManager em = EMFService.get().createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
-		Notification notification = new Notification(correo, texto);
+		Notification notification = new Notification(correo, texto,titulo, imagen);
 		transaction.begin();
 		em.persist(notification);
 		transaction.commit();

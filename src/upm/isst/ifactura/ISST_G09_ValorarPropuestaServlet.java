@@ -25,10 +25,13 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 		
 		String compania =  req.getParameter("compania");
 		String peticion = req.getParameter("id");
-		String aceptar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido aceptada por el equipo de iFactura, cuando lancemos su subasta se le notificará por medio de la aplicación.";
+		String aceptar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido aceptada por el equipo de iFactura, cuando lancemos su subasta se le notificarï¿½ por medio de la aplicaciï¿½n.";
 		String rechazar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido rechazada por el equipo de iFactura.";
 		String aceptarn = "Su propuesta (" + peticion + ") ha sido aceptada";
 		String rechazarn = "Su propuesta (" + peticion + ") ha sido rechazada";
+		String aceptat= "Propuesta Aceptada";
+		String rechazat = "Propuesta Rechazada";
+		String imagenn = "";
 		String boton = req.getParameter("solicitud");
 
 		PeticionesDAO dao = PeticionesDAOImpl.getInstance();
@@ -47,10 +50,12 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 	        msg.setSubject("Valoracion de subasta");
 	        if (boton.equals("aceptar")){
 		        msg.setText(aceptar);
-		        dao2.create(correo, aceptarn);
+		        imagenn="aceptada.png";
+		        dao2.create(correo,aceptat, aceptarn, imagenn);
 	        } else {
 		        msg.setText(rechazar);
-		        dao2.create(correo, rechazarn);
+		        imagenn="rechazada.png";
+		        dao2.create(correo, rechazat, rechazarn, imagenn);
 	        }
 	        Transport.send(msg);
 
