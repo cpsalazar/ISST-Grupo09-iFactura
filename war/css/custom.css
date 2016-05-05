@@ -1094,14 +1094,7 @@ h2 {
     font-weight: 400;
 }
 
-#left,<li>
-								<div class="text-center">
-									<a href="inbox.jsp"> <strong>Ver notificaciones</strong> <i
-										class="fa fa-angle-right"></i>
-									</a>
-								</div>
-							</li>
-#right {
+#left, #right {
     display: table;
 }
 
