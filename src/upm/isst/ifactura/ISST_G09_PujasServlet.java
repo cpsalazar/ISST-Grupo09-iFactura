@@ -8,6 +8,8 @@ import javax.servlet.http.*;
 
 import upm.isst.ifactura.dao.IFacturaDAO;
 import upm.isst.ifactura.dao.IFacturaDAOImpl;
+import upm.isst.ifactura.dao.NotificationDAO;
+import upm.isst.ifactura.dao.NotificationDAOImpl;
 import upm.isst.ifactura.dao.UsersDAO;
 import upm.isst.ifactura.dao.UsersDAOImpl;
 import upm.isst.ifactura.model.IFactura;
@@ -18,6 +20,9 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
 		int mensaje = 0;
+		String texto = ", han superado tu puja.";
+		String titulo = "Puja Superada";
+		String imagen = "superado.png";
 		
 		try {
 			mensaje = Integer.parseInt (req.getParameter("id"));
@@ -27,17 +32,23 @@ public class ISST_G09_PujasServlet extends HttpServlet {
 		
 		IFacturaDAO dao = IFacturaDAOImpl.getInstance();
 		UsersDAO dao1 = UsersDAOImpl.getInstance();
+		NotificationDAO dao2 = NotificationDAOImpl.getInstance();
 		
 		String alerta = null;
 		//alerta = "Para que tu puja sea válida debe debe ser múltiplo de 25 céntimos";
 	
 		List<IFactura> subasta = dao.readIFactura_id((long) mensaje);
+		List<Users> usuariog = dao1.readCompania(subasta.get(0).getGanadorActual());
 		if (subasta.get(0).getPujaActual() < Double.parseDouble(req.getParameter("puja"))) {
 			alerta = "La puja introducida debe mejorar la actual";
 		} else if ((Double.parseDouble(req.getParameter("puja")) > 0) && ((Double.parseDouble(req.getParameter("puja"))*4)%1 == 0)) {	
 			subasta.get(0).setPujaActual(Double.parseDouble (req.getParameter("puja")));
+			texto = subasta.get(0).getGanadorActual()+texto;
 			String user = req.getUserPrincipal().getName();
 			String compania = dao1.readCorreo(user).get(0).getCompania();
+			if (usuariog.size() > 0) {
+				dao2.create(usuariog.get(0).getCorreo().toString(), texto, titulo, imagen);
+			}
 			subasta.get(0).setGanadorActual(compania);
 			dao.update(subasta.get(0));
 			alerta = "Vas ganando la subasta";
