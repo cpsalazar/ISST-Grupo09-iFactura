@@ -741,7 +741,8 @@ a:focus {
 }
 
 .top_nav li a i {
-    font-size: 15px
+    font-size: 20px;
+    margin-top: 5px;
 }
 
 .navbar-static-top {
@@ -884,7 +885,7 @@ li.current-page a {
 }
 
 .nav.navbar-nav>li>a {
-    color: #515356 !important;
+    color: #2A3F54 !important;
 }
 
 .nav.top_menu>li>a {
@@ -1093,7 +1094,13 @@ h2 {
     font-weight: 400;
 }
 
-#left,
+#left,<li>
+								<div class="text-center">
+									<a href="inbox.jsp"> <strong>Ver notificaciones</strong> <i
+										class="fa fa-angle-right"></i>
+									</a>
+								</div>
+							</li>
 #right {
     display: table;
 }
@@ -1649,22 +1656,26 @@ table.display td.center {
     background: url('../images/sort_asc.png') no-repeat center left;
 	vertical-align: middle !important;
 	padding-left: 20px !important;
+	cursor: pointer;
 }
 
 .sorting_desc {
     background: url('../images/sort_desc.png') no-repeat center left;
 	vertical-align: middle !important;
 	padding-left: 20px !important;
+	cursor: pointer;
 }
 
 .sorting {
     background: url('../images/sort_both.png') no-repeat center left;
 	vertical-align: middle !important;
 	padding-left: 20px !important;
+	cursor: pointer;
 }
 
 #tu_puja {
 	background: none !important;
+	cursor: initial;
 }
 
 table.display thead th:active,
@@ -1800,7 +1811,7 @@ ul.msg_list li a .image img {
     -webkit-border-radius: 2px 2px 2px 2px;
     float: left;
     margin-right: 10px;
-    width: 11%;
+    width: 30px;
 }
 
 ul.msg_list li a .time {
@@ -1814,6 +1825,18 @@ ul.msg_list li a .time {
 ul.msg_list li a .message {
     display: block !important;
     font-size: 11px;
+}
+
+h5 {
+	margin-top: 7px;
+	font-weight: 700;
+}
+
+#cerrar_notificacion {
+	float: right;
+	margin-top:-75px;
+	font-size: 15px;
+	font-weight: 600;
 }
 
 .dropdown-menu.msg_list {

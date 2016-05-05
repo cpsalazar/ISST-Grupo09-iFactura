@@ -11,8 +11,8 @@ public class Peticiones implements Serializable{
 	private static final long serialVersionUID = 01L;
 	@Id 
 	private String peticion; //la peticion en si.
-	private String compania; //compa�ia asociada al autor.
-	private String correo; //el que env�a la petici�n.
+	private String compania; //compañía asociada al autor.
+	private String correo; //el que envía la petición.
 	
 	public Peticiones(String correo, String compania, String peticion) {
 		super();

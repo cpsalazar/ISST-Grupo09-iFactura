@@ -31,7 +31,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		String vode = "Vodafone";
 		String orae = "Orange";
 		String yoie = "Yoigo";
-		String texto = move+" hay una nueva subasta en la que puedes participar ("+descripcion+").";
+		String texto = move+", hay una nueva subasta en la que puedes participar ("+descripcion+").";
 		String titulo = "Nueva subasta";
 		String imagen = "new.png";
 
@@ -62,11 +62,11 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		
 		dao.create(id, descripcion, usuarios, milihastafin, puja_inicial, "", participantes);
 		dao2.create(mov, texto, titulo, imagen);
-		texto = vode+" hay una nueva subasta en la que puedes participar ("+descripcion+").";
+		texto = vode+", hay una nueva subasta en la que puedes participar ("+descripcion+").";
 		dao2.create(vod, texto, titulo, imagen);
-		texto = orae+" hay una nueva subasta en la que puedes participar ("+descripcion+").";
+		texto = orae+", hay una nueva subasta en la que puedes participar ("+descripcion+").";
 		dao2.create(ora, texto, titulo, imagen);
-		texto = yoie+" hay una nueva subasta en la que puedes participar ("+descripcion+").";
+		texto = yoie+", hay una nueva subasta en la que puedes participar ("+descripcion+").";
 		dao2.create(yoi, texto, titulo, imagen);
 		
 		resp.sendRedirect("/isst_g09_ifactura");

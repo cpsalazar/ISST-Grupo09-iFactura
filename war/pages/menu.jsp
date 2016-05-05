@@ -72,25 +72,25 @@
 						<a href="javascript:;"
 						class="dropdown-toggle info-number" data-toggle="dropdown"
 						aria-expanded="false">
-							<i class="fa fa-envelope-o"></i><span class="badge bg-green"><c:out value="${fn:length(notificaciones)}"/></span>
+							<i class="fa fa-envelope"></i><span class="badge bg-green"><c:out value="${fn:length(notificaciones)}"/></span>
 						</a>
 						<ul id="menu1"
 							class="dropdown-menu list-unstyled msg_list animated fadeInDown"
 							role="menu">
 							<c:forEach items="${notificaciones}" var="noti">
-								<li><a> <span class="image"> 										
-												<img src="../images/<c:out value="${noti.imagen}"/>" alt="">
-									</span> <span> <span><c:out value="${noti.titulo}" /></span>
-									</span> <span class="message"><c:out value="${noti.texto}" /></span>
-								</a></li>
-							</c:forEach>
-							<li>
-								<div class="text-center">
-									<a href="inbox.jsp"> <strong>Ver notificaciones</strong> <i
-										class="fa fa-angle-right"></i>
+								<li>
+									<a>
+										<span class="image">
+											<img src="../images/<c:out value="${noti.imagen}"/>" alt="">
+										</span>
+										<span>
+											<h5><c:out value="${noti.titulo}" /></h5>
+										</span>
+										<span class="message"><c:out value="${noti.texto}" /></span>
 									</a>
-								</div>
-							</li>
+									<span id="cerrar_notificacion"><a href="#" style="text-decoration: none">x</a></span>
+								</li>
+							</c:forEach>
 						</ul>
 					</li>
 				</ul>

@@ -18,8 +18,6 @@
 	<link href="../css/animate.min.css" rel="stylesheet">
 	<!-- Custom CSS -->
 	<link href="../css/custom.css" rel="stylesheet">
-	<link href="../css/icheck/flat/green.css" rel="stylesheet" />
-	<link href="../css/floatexamples.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="nav-md">
 	<c:if test="${user == 'iFactura'}">
