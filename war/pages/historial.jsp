@@ -54,23 +54,28 @@
 													<th class="sorting">Nº Subasta</th>
 													<th class="sorting">Nº Usuarios</th>
 													<th class="sorting">Estado</th>
+													<th class="sorting">Ganador Actual</th>
 													<th class="sorting">Puja ganadora</th>
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach items="${subastas}" var="subasta">
+												<c:forEach items="${historial}" var="subasta">
 													<tr>
-														<c:if test="${user == subasta.ganadorActual}">
-															<td class=" "><c:out value="${subasta.id}" /></td>
-															<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
-															<c:if test="${subasta.fechaFin lt miliActual}">
-																<td class=" ">Terminada</td>
-															</c:if>
-															<c:if test="${subasta.fechaFin gt miliActual}">
-																<td class=" ">Activa</td>
-															</c:if>
-															<td class=" "><c:out value="${subasta.pujaActual}" /></td>
+														<td class=" "><c:out value="${subasta.id}" /></td>
+														<td class=" "><c:out value="${subasta.numUsuarios}" /></td>
+														<c:if test="${subasta.fechaFin lt miliActual}">
+															<td class=" ">Terminada</td>
 														</c:if>
+														<c:if test="${subasta.fechaFin gt miliActual}">
+															<td class=" ">Activa</td>
+														</c:if>
+														<c:if test="${user == subasta.ganadorActual}">
+															<td class=" "><c:out value="${subasta.ganadorActual}" /></td>
+														</c:if>
+														<c:if test="${user != subasta.ganadorActual}">
+															<td class=" ">-</td>
+														</c:if>
+														<td class=" "><c:out value="${subasta.pujaActual}" /></td>
 													</tr>
 												</c:forEach>
 											</tbody>

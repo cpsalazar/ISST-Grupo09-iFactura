@@ -47,6 +47,15 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>ISST_G09_Historial</servlet-name>
+		<servlet-class>upm.isst.ifactura.ISST_G09_HistorialServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ISST_G09_Historial</servlet-name>
+		<url-pattern>/historial</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>ISST_G09_ValorarPropuesta</servlet-name>
 		<servlet-class>upm.isst.ifactura.ISST_G09_ValorarPropuestaServlet</servlet-class>
 	</servlet>

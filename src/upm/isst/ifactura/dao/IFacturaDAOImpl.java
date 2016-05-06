@@ -100,7 +100,7 @@ public class IFacturaDAOImpl implements IFacturaDAO {
 		em.close();
 		return subastas;
 	}
-
+	
 	@Override
 	public List<IFactura> readIFactura_fecha(long fechaFin) {
 
