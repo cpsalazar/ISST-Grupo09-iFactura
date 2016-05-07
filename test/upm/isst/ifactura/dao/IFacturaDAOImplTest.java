@@ -221,11 +221,13 @@ public class IFacturaDAOImplTest {
 		IFactura subasta7 = dao1.create((long) 1, "update", 500, 20, 10, "Movistar", listaPrueba);
 
 		subasta2.setDescripcion("update");
+		subasta2.setNumUsuarios(400);
 		subasta2.setFechaFin(20);
 		//subasta2.setId((long)5); //No podemos permitir que el id sea cambiado porque provoca un error en el update.
 		dao1.update(subasta2);
-		assertEquals(subasta2.getDescripcion(), "update");
-		assertEquals(subasta2.getFechaFin(), 20);
+		assertEquals(dao1.readIFactura_descripcion("update").size(), 1);
+		assertEquals(dao1.readIFactura_usuarios(400).size(), 1);
+		assertEquals(dao1.readIFactura_fecha(20).size(), 1);
 	}
 
 	@SuppressWarnings("unused")

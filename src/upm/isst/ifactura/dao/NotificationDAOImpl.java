@@ -5,14 +5,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
-
 import upm.isst.ifactura.model.Notification;
 
 public class NotificationDAOImpl implements NotificationDAO{
 	
 	private static NotificationDAOImpl instance;
 	
-	public NotificationDAOImpl(){
+	private NotificationDAOImpl(){
 	}
 	
 	public static NotificationDAOImpl getInstance() {
@@ -23,7 +22,7 @@ public class NotificationDAOImpl implements NotificationDAO{
 	}
 	
 	@Override
-	public Notification create(String correo, String texto,String titulo, String imagen) {
+	public Notification create(String correo, String texto, String titulo, String imagen) {
 		EntityManager em = EMFService.get().createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
@@ -71,14 +70,27 @@ public class NotificationDAOImpl implements NotificationDAO{
 	}
 	
 	@Override
-	public void remove(String correo) {
+	public void remove(String texto) throws Exception{
 		
 		EntityManager em = EMFService.get().createEntityManager();
 		try{
-		   Notification notificacion = em.find(Notification.class, correo);
+		   Notification notificacion = em.find(Notification.class, texto);
+		   if (notificacion == null){
+				throw new Exception("No se encuentra la notificacion con id: " + texto);
+			}
 		   em.remove(notificacion);
 		} finally{
 		   em.close();
 		}
+	}
+
+	@Override
+	public Notification readID(String texto) throws Exception{
+		EntityManager em = EMFService.get().createEntityManager();
+		Notification not = em.find(Notification.class, texto);
+		if (not == null){
+			throw new Exception("No se encuentra la notificacion con id: " + texto);
+		}
+		return not;
 	}
 }

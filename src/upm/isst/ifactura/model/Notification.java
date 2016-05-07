@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Notification implements Serializable{
+
 	private static final long serialVersionUID = 01L;
 	@Id
 	private String texto;
@@ -51,5 +52,11 @@ public class Notification implements Serializable{
 
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
+	}
+	
+	@Override
+	public String toString() {
+		return "Notification [texto=" + texto + ", correo=" + correo
+				+ ", imagen=" + imagen + ", titulo=" + titulo + "]";
 	}
 }
