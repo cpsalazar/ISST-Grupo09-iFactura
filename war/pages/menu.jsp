@@ -88,7 +88,7 @@
 										</span>
 										<span class="message"><c:out value="${noti.texto}" /></span>
 									</a>
-									<span id="cerrar_notificacion"><a href="#" style="text-decoration: none">x</a></span>
+									<span id="cerrar_notificacion"><a href="/borrar_noti" style="text-decoration: none">x</a></span>
 								</li>
 							</c:forEach>
 						</ul>
