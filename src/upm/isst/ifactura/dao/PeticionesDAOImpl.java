@@ -58,6 +58,18 @@ public class PeticionesDAOImpl implements PeticionesDAO {
 		em.close();
 		return peticiones;
 	}
+	
+	@Override
+	public List<Peticiones> readCompania(String compania) {
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from Peticiones t where t.compania = :compania");
+	    q.setParameter("compania", compania);
+
+		List<Peticiones> peticiones = q.getResultList();
+		em.close();
+		return peticiones;
+	}
 
 	@Override
 	public void update(Peticiones peticion) {
