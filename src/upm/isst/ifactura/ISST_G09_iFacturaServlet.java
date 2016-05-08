@@ -35,6 +35,18 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		String user = null;
 		String alerta = null;
 		String compania = null;
+		String mov = "hectorbm94@gmail.com";
+		String vod = "oscarvb94@gmail.com";
+		String ora = "cobealex@gmail.com";
+		String yoi = "cpsalazar17@gmail.com";
+		String move = "Movistar";
+		String vode = "Vodafone";
+		String orae = "Orange";
+		String yoie = "Yoigo";
+		String texto = move+", ha finalizado una subasta.";
+		String titulo = "Subasta finalizada";
+		String imagen = "end.png";
+		List<IFactura> listsubas = null;
 		
 		if (req.getSession().getAttribute("puja") == null){
 			req.getSession().setAttribute("alerta", alerta);
@@ -78,6 +90,20 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			} else {
 				user = null;
 				req.getSession().setAttribute("mensaje", "No tiene permisos para acceder a esta aplicacion");
+			}
+			if  (dao.readIFactura().size() > 0){
+				listsubas = dao.readIFactura();
+				for (IFactura f : listsubas) {
+					if(f.getFechaFin() < new Date().getTime()) {
+						daonot.create(mov, texto, titulo, imagen);
+						texto = vode+", ha finalizado una subasta.";
+						daonot.create(vod, texto, titulo, imagen);
+						texto = orae+", ha finalizado una subasta.";
+						daonot.create(ora, texto, titulo, imagen);
+						texto = yoie+", ha finalizado una subasta.";
+						daonot.create(yoi, texto, titulo, imagen);
+					}
+				}
 			}
 			
 			url = userService.createLogoutURL(req.getRequestURI());
