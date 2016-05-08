@@ -27,6 +27,8 @@ import com.google.appengine.api.users.UserServiceFactory;
 public class ISST_G09_iFacturaServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
+		resp.setCharacterEncoding("UTF-8");
+
 		UserService userService = UserServiceFactory.getUserService();
 		String url = userService.createLoginURL(req.getRequestURI());
 		String urlLinktext = "Login";
@@ -50,8 +52,16 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		RequestDispatcher view = req.getRequestDispatcher("/pages/login.jsp");
 
 		if (req.getUserPrincipal() != null) {
-
 			user = req.getUserPrincipal().getName();
+			if (daonot.readCorreo(user).size() > 0){
+				try {					
+					req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}			
+			} else {
+				req.getSession().setAttribute("notificaciones", null);
+			}
 			if (dao1.readCorreo(user).size() > 0){
 				try {
 					List<Peticiones> comprobacion = dao2.readCorreo(user);
@@ -64,7 +74,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 					e.printStackTrace();
 				}			
 				compania = dao1.readCorreo(user).get(0).getCompania();
-				req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
+				//req.getSession().setAttribute("notificaciones", new ArrayList<Notification>(daonot.readCorreo(user)));
 			} else {
 				user = null;
 				req.getSession().setAttribute("mensaje", "No tiene permisos para acceder a esta aplicacion");
@@ -72,9 +82,7 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 			
 			url = userService.createLogoutURL(req.getRequestURI());
 			urlLinktext = "Logout";
-			view = req.getRequestDispatcher("/pages/index.jsp");
-			
-			
+			view = req.getRequestDispatcher("/pages/index.jsp");	
 		} 
 				
 		req.getSession().setAttribute("user", compania);
@@ -84,7 +92,6 @@ public class ISST_G09_iFacturaServlet extends HttpServlet {
 		req.getSession().setAttribute("subastas", new ArrayList<IFactura>(dao.readIFactura()));
 		req.getSession().setAttribute("peticiones", new ArrayList<Peticiones>(dao2.readAll()));
 
-		
 		try {
 			view.forward(req, resp);
 		} catch (ServletException e) {

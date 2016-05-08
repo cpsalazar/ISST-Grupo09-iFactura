@@ -65,11 +65,11 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>ISST_G09_iFactura_BorrarNoti</servlet-name>
-		<servlet-class>upm.isst.ifactura.ISST_G09_iFactura_BorrarNoti</servlet-class>
+		<servlet-name>ISST_G09_BorrarNotificacion</servlet-name>
+		<servlet-class>upm.isst.ifactura.ISST_G09_BorrarNotificacionServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>ISST_G09_iFactura_BorrarNoti</servlet-name>
+		<servlet-name>ISST_G09_BorrarNotificacion</servlet-name>
 		<url-pattern>/borrar_noti</url-pattern>
 	</servlet-mapping>
 	

@@ -1,5 +1,4 @@
-<%@page pageEncoding="utf8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%><%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <c:if test="${user != null}">
 	<div class="col-md-3 left_col">
@@ -88,9 +87,25 @@
 										</span>
 										<span class="message"><c:out value="${noti.texto}" /></span>
 									</a>
-									<span id="cerrar_notificacion"><a href="/borrar_noti" style="text-decoration: none">x</a></span>
+									<!-- <span id="cerrar_notificacion"><a href="/borrar_noti" style="text-decoration: none">x</a></span> -->
 								</li>
 							</c:forEach>
+							<c:if test="${notificaciones != null}">
+								<li>
+									<div class="text-center">
+										<a href="/borrar_noti"> <strong>Marcar todas como leídas</strong> 
+											<span class="glyphicon glyphicon-ok"></span>
+										</a>
+									</div>
+								</li>							
+							</c:if>
+							<c:if test="${notificaciones == null}">
+								<li>
+									<div class="text-center">
+										<p>No tienes ninguna notificación pendiente.</p>
+									</div>
+								</li>							
+							</c:if>
 						</ul>
 					</li>
 				</ul>
