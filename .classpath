@@ -11,7 +11,6 @@
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api.jar"/>
-	<classpathentry kind="lib" path="C:/Users/hector/Desktop/eclipse/plugins/com.google.appengine.eclipse.sdkbundle_1.9.30/appengine-java-sdk-1.9.30/lib/impl/appengine-api-labs.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-api-stubs.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-local-runtime.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/appengine-tools-api.jar"/>
