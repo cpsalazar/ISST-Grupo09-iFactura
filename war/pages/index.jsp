@@ -65,7 +65,7 @@
 													<c:set var="cuenta" value="0" />
 													<c:forEach items="${subastas}" var="subasta" varStatus="loop">
 														<c:if test="${subasta.fechaFin lt miliActual}">
-															<form action="/postPuja" method="post" onsubmit="return getPuja${subasta.id}();">
+															<form action="/postPuja" method="post">
 																<input type="hidden" id="fechaFin${subasta.id}" value="0" />
 															</form>
 														</c:if>
