@@ -72,14 +72,8 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 
 		if (user != null) {
 			dao.remove(peticion);
-			try {
-				dao2.remove(peticionl);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-				
+		}		
+
 		resp.sendRedirect("/isst_g09_ifactura");
 	}
 }
