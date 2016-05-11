@@ -23,16 +23,17 @@ import javax.mail.internet.MimeMessage;
 public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		
+		resp.setCharacterEncoding("UTF-8");
 		String compania =  req.getParameter("compania");
 		String peticion = req.getParameter("id");
-		String aceptar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido aceptada por el equipo de iFactura, cuando lancemos su subasta se le notificar√° por medio de la aplicaci√≥n.";
+		String aceptar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido aceptada por el equipo de iFactura, cuando lancemos su subasta se le notificar· por medio de la aplicaciÛn.";
 		String rechazar = "Estimado " + compania + ", su propuesta (" + peticion + ") ha sido rechazada por el equipo de iFactura.";
 		String aceptarn = "Su propuesta (" + peticion + ") ha sido aceptada.";
 		String rechazarn = "Su propuesta (" + peticion + ") ha sido rechazada.";
 		String aceptat= "Propuesta Aceptada";
 		String rechazat = "Propuesta Rechazada";
 		String textoe = "Pendiente de proponer la subasta (" + peticion+").";
-		String peticionl = "Tienes una petici√≥n pendiente ("+peticion+")";
+		String peticionl = "Tienes una peticiÛn pendiente ("+peticion+")";
 		String imagenn = "";
 		String imagenp = "auction.png";
 		String boton = req.getParameter("solicitud");
@@ -71,9 +72,7 @@ public class ISST_G09_ValorarPropuestaServlet extends HttpServlet {
 
 		if (user != null) {
 			dao.remove(peticion);
-			dao2.remove(peticionl);
-		}
-				
+		}		
 		resp.sendRedirect("/isst_g09_ifactura");
 	}
 }
