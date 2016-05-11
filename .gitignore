@@ -16,6 +16,7 @@ local.properties
 .settings/
 .loadpath
 war/WEB-INF/lib/
+war/WEB-INF/appengine-generated/
 
 # External tool builders
 .externalToolBuilders/
