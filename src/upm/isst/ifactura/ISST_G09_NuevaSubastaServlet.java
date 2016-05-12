@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -35,7 +36,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		String titulo = "Nueva subasta";
 		String imagen = "new.png";
 
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.FRANCE);
 		String fecha = req.getParameter("fecha");
 		
 		List<IFactura> subastas = dao.readIFactura();
@@ -60,7 +61,7 @@ public class ISST_G09_NuevaSubastaServlet extends HttpServlet {
 		List<String> participantes = new ArrayList<String>();
 		
 		
-		dao.create(id, descripcion, usuarios, milihastafin, puja_inicial, "", participantes);
+		dao.create(id, descripcion, usuarios, milihastafin, puja_inicial, null, participantes);
 		dao2.create(mov, texto, titulo, imagen);
 		texto = vode+", hay una nueva subasta en la que puedes participar ("+descripcion+").";
 		dao2.create(vod, texto, titulo, imagen);
