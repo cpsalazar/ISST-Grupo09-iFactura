@@ -15,7 +15,7 @@ public class ISST_G09_InvestigacionServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		resp.setCharacterEncoding("UTF-8");
 		
-		//B�SQUEDA DE PATRONES
+		//BUSQUEDA DE PATRONES
 		
 		req.getSession().setAttribute("DatosdeMas", null);
 		req.getSession().setAttribute("VozdeMas", null);
@@ -33,8 +33,6 @@ public class ISST_G09_InvestigacionServlet extends HttpServlet {
 		double totalvoz = 0;
 		double totaltarde = 0;
 		double totalmananas = 0;
-		
-		System.out.println(facturas.size());
 		
 		for (FacturaTelefono fac: facturas){
 			
