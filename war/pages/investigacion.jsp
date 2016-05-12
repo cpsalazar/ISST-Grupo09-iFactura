@@ -48,10 +48,10 @@
 									<c:if test="${Tarde != null}">
 										<p><c:out value="${Tarde}" /></p>
 									</c:if>
-									<c:if test="${Mañanas != null}">
-										<p><c:out value="${Mañanas}" /></p>
+									<c:if test="${Mananas != null}">
+										<p><c:out value="${Mananas}" /></p>
 									</c:if>
-									<c:if test="${Mañanas == null && Tarde == null && VozdeMas == null && DatosdeMas == null}">
+									<c:if test="${Mananas == null && Tarde == null && VozdeMas == null && DatosdeMas == null}">
 										<p>No se ha encontrado ningún patrón.</p>
 									</c:if>
 								</div>

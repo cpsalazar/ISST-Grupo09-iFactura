@@ -15,12 +15,12 @@ public class ISST_G09_InvestigacionServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		resp.setCharacterEncoding("UTF-8");
 		
-		//B⁄SQUEDA DE PATRONES
+		//BÔøΩSQUEDA DE PATRONES
 		
 		req.getSession().setAttribute("DatosdeMas", null);
 		req.getSession().setAttribute("VozdeMas", null);
 		req.getSession().setAttribute("Tarde", null);
-		req.getSession().setAttribute("MaÒanas", null);
+		req.getSession().setAttribute("Mananas", null);
 		
 		FacturaTelefonoDao dao = FacturaTelefonoDaoImpl.getInstance();
 		
@@ -32,7 +32,7 @@ public class ISST_G09_InvestigacionServlet extends HttpServlet {
 		double totaldatos = 0;
 		double totalvoz = 0;
 		double totaltarde = 0;
-		double totalmaÒanas = 0;
+		double totalmananas = 0;
 		
 		System.out.println(facturas.size());
 		
@@ -50,7 +50,7 @@ public class ISST_G09_InvestigacionServlet extends HttpServlet {
 				totaltarde++;
 			}
 			if (!fac.getEsTarde()){
-				totalmaÒanas++;
+				totalmananas++;
 		}
 	
 		}
@@ -60,23 +60,23 @@ public class ISST_G09_InvestigacionServlet extends HttpServlet {
 		System.out.println(totaldatos);
 		System.out.println(totalvoz);
 		System.out.println(totaltarde);
-		System.out.println(totalmaÒanas);
+		System.out.println(totalmananas);
 		
 		if (totaldatos > facturas.size()/20){
-			String texto = "Se han detectado " + totaldatos + " clientes que consumen  m·s datos de los contratados, y que de media consumen " + DatosMedia + " MB.";
+			String texto = "Se han detectado " + totaldatos + " clientes que consumen  mns datos de los contratados, y que de media consumen " + DatosMedia + " MB.";
 			req.getSession().setAttribute("DatosdeMas", texto);
 		}
 		if (totalvoz > facturas.size()/20){
-			String texto = "Se han detectado " + totalvoz + " clientes que consumen  m·s minutos de los contratados, y que de media consumen " + VozMedia + " minutos.";
+			String texto = "Se han detectado " + totalvoz + " clientes que consumen  mns minutos de los contratados, y que de media consumen " + VozMedia + " minutos.";
 			req.getSession().setAttribute("VozdeMas", texto);
 		}
 		if (totaltarde > facturas.size()/20){
 			String texto = "Se han detectado " + totaltarde + " clientes que realizan llamadas exclusivamente por la tarde.";
 			req.getSession().setAttribute("Tarde", texto);
 		}
-		if (totalmaÒanas > facturas.size()/20){
-			String texto = "Se han detectado " + totalmaÒanas + " clientes que realizan llamadas exclusivamente por la maÒana.";
-			req.getSession().setAttribute("MaÒanas", texto);
+		if (totalmananas > facturas.size()/20){
+			String texto = "Se han detectado " + totalmananas + " clientes que realizan llamadas exclusivamente por la ma√±ana.";
+			req.getSession().setAttribute("Mananas", texto);
 		}
 				
 		resp.sendRedirect("/pages/investigacion.jsp");
