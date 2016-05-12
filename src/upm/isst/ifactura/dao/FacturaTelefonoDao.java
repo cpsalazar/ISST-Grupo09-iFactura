@@ -1,6 +1,9 @@
 package upm.isst.ifactura.dao;
 
+import java.util.List;
+
 import upm.isst.ifactura.model.FacturaTelefono;
+
 
 public interface FacturaTelefonoDao {
 
@@ -38,5 +41,8 @@ public interface FacturaTelefonoDao {
 	 * @return the usuario
 	 */
 	FacturaTelefono getUsuario(Long idFactura);
+	
+	public List<FacturaTelefono> readFacturas();
+	
 
 }

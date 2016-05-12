@@ -1,8 +1,10 @@
 package upm.isst.ifactura.dao;
 
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
 import upm.isst.ifactura.dao.FacturaTelefonoDao;
 import upm.isst.ifactura.model.FacturaTelefono;
 
@@ -54,6 +56,17 @@ public class FacturaTelefonoDaoImpl implements FacturaTelefonoDao {
 		em.merge(facturaTelefono);
 		em.close();
 		return facturaTelefono;
+	}
+	
+	@Override
+	public List<FacturaTelefono> readFacturas() {
+		EntityManager em = EMFService.get().createEntityManager();
+		
+		Query q = em.createQuery("select t from FacturaTelefono t");
+
+		List<FacturaTelefono> facturas = q.getResultList();
+		em.close();
+		return facturas;
 	}
 
 	@SuppressWarnings("unchecked")
